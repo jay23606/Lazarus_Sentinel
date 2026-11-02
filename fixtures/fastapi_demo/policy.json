@@ -1,0 +1,12 @@
+{
+  "protected_operations": [
+    {
+      "operation": "app.repository.export_records",
+      "required_authorization": "app.controls.authorize_export",
+      "severity": "HIGH",
+      "impact": "Synthetic records may be exposed without a declared export permission.",
+      "author": "Lazarus Sentinel synthetic fixture maintainers",
+      "created_at": "2026-11-01T00:00:00Z"
+    }
+  ]
+}

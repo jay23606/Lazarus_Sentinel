@@ -1,0 +1,10 @@
+{
+  "fixture": "fastapi_demo",
+  "declared_before_analysis": true,
+  "endpoints": ["GET /weak", "GET /protected", "GET /authenticated", "GET /annotated", "GET /public", "GET /inherited/export"],
+  "candidate_paths": ["GET /weak", "GET /authenticated"],
+  "recognized_authorization": ["GET /protected", "GET /annotated", "GET /inherited/export"],
+  "no_policy": ["GET /public"],
+  "unsupported": ["app.main: dynamic route registration"],
+  "note": "Predeclared synthetic oracle; production analyzer must never load this file. Authorization means observed policy-matching declaration, not proven enforcement."
+}
