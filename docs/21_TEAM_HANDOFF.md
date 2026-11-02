@@ -1,6 +1,6 @@
 # 21 — Team handoff and operating guide
 
-Updated 2026-11-02. This is the teammate entry point; [AGENTS.md](../AGENTS.md) governs work and [AGENT.md](../AGENT.md) records current state. Read [latest verification](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) before claiming platform or remote success. [Documents 13](13_FIRST_SLICE_CONTRACT.md), [16](16_DEMO_DELIVERY_CONTRACT.md), and [20](20_VIEWER_CLARITY_AND_DESIGN.md) freeze the delivered contracts. [Next phase](22_NEXT_PHASE_PLAN.md) is a gated plan, not completed work.
+Updated 2026-11-02. This is the teammate entry point; [AGENTS.md](../AGENTS.md) governs work and [AGENT.md](../AGENT.md) records current state. Read [latest verification](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) before claiming platform or remote success. [Documents 13](13_FIRST_SLICE_CONTRACT.md), [16](16_DEMO_DELIVERY_CONTRACT.md), and [20](20_VIEWER_CLARITY_AND_DESIGN.md) freeze the delivered contracts. [Next phase](22_NEXT_PHASE_PLAN.md) is a gated plan, not completed work. [Document 24](24_CONTRIBUTOR_READINESS_AND_CI.md) records the CI layout, community files and the GitHub issue backlog.
 
 ## What exists
 

@@ -10,7 +10,7 @@ Only fixed synthetic fixture intake is supported. The CLI additionally exports v
 
 ## Team onboarding and platform authority — 2026-11-02
 
-Read [team handoff](docs/21_TEAM_HANDOFF.md), [next-phase plan](docs/22_NEXT_PHASE_PLAN.md), and [latest portability/publication evidence](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md). They supersede earlier remote-state assumptions above. The owner authorized publication to the specified existing repository; publication and native Windows/macOS/Linux checks are verified in document23. `AGENT.md` remains the canonical living log; do not create `Agent.md`. Claude Code uses `CLAUDE.md` and must stop critical decisions when Astra is unavailable unless the owner approves a fallback.
+Read [team handoff](docs/21_TEAM_HANDOFF.md), [next-phase plan](docs/22_NEXT_PHASE_PLAN.md), [latest portability/publication evidence](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md), and [CI/contributor/issue-backlog update](docs/24_CONTRIBUTOR_READINESS_AND_CI.md). They supersede earlier remote-state assumptions above. The owner authorized publication to the specified existing repository; publication and native Windows/macOS/Linux checks are verified in document23. `AGENT.md` remains the canonical living log; do not create `Agent.md`. Claude Code uses `CLAUDE.md` and must stop critical decisions when Astra is unavailable unless the owner approves a fallback.
 
 ## 1. Product objective
 

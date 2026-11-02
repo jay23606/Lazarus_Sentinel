@@ -1,91 +1,189 @@
+<div align="center">
+
 # Lazarus Sentinel
 
-Graph-first, evidence-backed application-security analysis. The implemented release is a **controlled synthetic FastAPI fixture scanner**, not an arbitrary-repository security audit.
+**Graph-first, evidence-backed application-security analysis.**
+Correlate program structure with endpoints, permissions and trust boundaries, and get reproducible, human-reviewable findings. Defensive and read-only.
 
-For teammates, start with the [portable setup and module guide](docs/21_TEAM_HANDOFF.md), [contribution workflow](CONTRIBUTING.md), [next-phase plan](docs/22_NEXT_PHASE_PLAN.md), and [latest platform/publication evidence](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md). Codex reads [AGENTS.md](AGENTS.md); Claude Code has a [CLAUDE.md](CLAUDE.md) entry point.
+[![CI](https://github.com/sumitjadhav1703/Lazarus_Sentinel/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sumitjadhav1703/Lazarus_Sentinel/actions/workflows/ci.yml)
+![Python 3.13](https://img.shields.io/badge/python-3.13-3776AB?logo=python&logoColor=white)
+![Node 24](https://img.shields.io/badge/node-24-339933?logo=nodedotjs&logoColor=white)
+![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey)
+![Status](https://img.shields.io/badge/status-controlled%20fixture-orange)
 
-## Current demo — 2026-11-02
+[Quickstart](#quickstart) · [How it works](#how-it-works) · [Roadmap](#roadmap) · [Contributing](#contributing) · [Docs](#documentation)
+
+</div>
+
+---
+
+> **Honest scope.** The shipped release is a **controlled synthetic FastAPI fixture scanner**, not an arbitrary-repository security audit. A finding is a *candidate for human review*, never a confirmed vulnerability.
+
+## Table of contents
+
+- [What it is, and is not](#what-it-is-and-is-not)
+- [Current status](#current-status)
+- [Quickstart](#quickstart)
+- [How it works](#how-it-works)
+- [Using the CLI](#using-the-cli)
+- [Viewer](#viewer)
+- [Optional API credential](#optional-api-credential)
+- [Quality checks](#quality-checks)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [Documentation](#documentation)
+- [Boundaries and safety](#boundaries-and-safety)
+- [License](#license)
+
+## What it is, and is not
+
+| It is | It is not |
+|---|---|
+| Static, read-only analysis of owned, fixed fixtures | A scanner for arbitrary repositories or live sites |
+| Deterministic, hash-linked evidence (file, lines, analyzer, rule) | An LLM guess: the model may explain evidence, never invent it |
+| Explicit about `unknown`, `unresolved`, `unsupported` | A claim of a complete graph or of proven security |
+| Severity, confidence and coverage kept separate | An exploit tool or auto-remediator |
+
+## Current status
 
 | Capability | Status |
 |---|---|
 | Intake | Fixed `fixture:fastapi-demo` identifier; manifest-bounded, read-only source parsing |
-| Analysis | Python AST structure + supported literal FastAPI routes/dependencies; no target imports/execution |
-| Graph | Schema 0.1.0, deterministic identities, NetworkX MultiDiGraph, source hashes/locations |
-| Rule | LS-AUTH-001, LOW-confidence declaration-gap candidates; opaque controls are diagnostics only |
-| Persistence/report | SQLite committed references; graph/findings/coverage JSON and escaped Markdown |
+| Analysis | Python AST structure plus supported literal FastAPI routes/dependencies; no target imports or execution |
+| Graph | Schema 0.1.0, deterministic identities, NetworkX MultiDiGraph, source hashes and locations |
+| Rule | `LS-AUTH-001`: LOW-confidence declaration-gap candidates; opaque controls are diagnostics only |
+| Persistence / report | SQLite committed references; graph, findings and coverage JSON; escaped Markdown |
 | Measured demo | 6 endpoints, 23 nodes, 36 edges, 2 candidates, 3 matching declarations with effectiveness unverified |
-| Quality | [Current release](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md): native Windows/macOS/Linux CI passed; local139backend tests plus oneWindows-only skip,16frontend tests |
-| Demo | Hash-verified immutable bundle, disabled/mock explanation sidecars, fixed React/Cytoscape viewer; Meta adapter tested offline |
-| Blocked/deferred | Live Meta access, Joern setup, data/trust rules, HTTP API, LangGraph, arbitrary repositories and OS isolation |
+| Quality | [Native Windows, macOS and Linux CI passed](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md); 139 backend tests plus 1 Windows-only skip, 16 frontend tests at last verification |
+| Demo | Hash-verified immutable bundle, disabled/mock explanation sidecars, fixed React + Cytoscape viewer; Meta adapter tested offline |
+| Blocked / deferred | Live Meta access, Joern, data/trust rules, HTTP API, LangGraph, arbitrary repositories, OS isolation |
 
-The fixture intentionally contains unsupported dynamic registration. Its normal outcome is **PARTIAL / exit 2**. A matching authorization declaration is syntax evidence, not proof of enforcement or a secure endpoint.
+The fixture intentionally contains unsupported dynamic registration, so its normal outcome is **PARTIAL / exit 2**. A matching authorization declaration is syntax evidence, not proof of enforcement.
 
-## Platform support
+## Quickstart
 
-Native **Windows, macOS and Ubuntu/Linux** clean installation, tests and build passed in [GitHub Actions](https://github.com/sumitjadhav1703/Lazarus_Sentinel/actions/runs/41492178925). Use the same uv/npm commands below in macOS Terminal or Windows PowerShell. This is a local CLI/browser application; no desktop installer is provided.
-
-## Run locally
-
-From this checkout's root, using the pinned CPython 3.13.14 toolchain:
+Prerequisites: [Git](https://git-scm.com), [uv](https://docs.astral.sh/uv/), and Node.js 24 with npm. Python 3.13 is selected by `uv` from `.python-version`. No global packages or API keys are needed. Works the same in macOS/Linux terminals and Windows PowerShell.
 
 ```sh
+git clone https://github.com/sumitjadhav1703/Lazarus_Sentinel.git
+cd Lazarus_Sentinel
 uv sync --project backend --locked
 uv run --project backend --locked lazarus scan --target fixture:fastapi-demo
 ```
 
-stdout is one JSON summary. Exit 0 means the selected static profile completed without relevant coverage gaps; exit 2 means useful partial output; exit 1 means failure. Artifacts are written to `artifacts/scans/<scan_id>/{graph.json,findings.json,coverage.json,report.md}`. Metadata and committed artifact references are in `artifacts/sentinel.sqlite3`. Repeated scans do not overwrite each other. Evidence stores relative locations and hashes, not raw source excerpts.
+> **Exit code 2 is expected here.** 0 = completed with no relevant coverage gaps, 2 = useful partial output, 1 = failure. stdout is one JSON summary.
 
-Trusted implementation checks:
+Artifacts land in `artifacts/scans/<scan_id>/{graph.json,findings.json,coverage.json,report.md}` and metadata in `artifacts/sentinel.sqlite3`. Repeated scans never overwrite each other. Evidence stores relative locations and hashes, not raw source excerpts.
 
-```sh
-uv run --project backend --locked pytest backend/tests
-uv run --project backend --locked ruff check backend/src backend/tests
-uv run --project backend --locked ruff format --check backend/src backend/tests
-uv run --project backend --locked mypy --config-file backend/pyproject.toml backend/src
-```
-
-If a restricted environment cannot use the shared uv cache, use the platform-specific writable-cache instructions in [document 21](docs/21_TEAM_HANDOFF.md). Do not manually delete shared caches. Installation is project-local; FastAPI is not needed to parse the synthetic target.
-
-## View the integrated demo
+Install dependencies once (needs network access to the uv and npm registries):
 
 ```sh
+uv sync --project backend --locked
 npm ci --prefix frontend --ignore-scripts --no-audit --no-fund
-npm run dev --prefix frontend
 ```
 
-The viewer loads only the reviewed synthetic bundle in `frontend/public/demo/v1/`; use the loopback URL printed by Vite. Start with the three-step guide, search an endpoint, and inspect a focused path with readable node types and labeled arrows. Switch to Full graph for all relationships; select a node to inspect its source evidence. Fit/zoom/reset, keyboard step controls and expandable identity tables support deeper review. See the [viewer design and verification](docs/20_VIEWER_CLARITY_AND_DESIGN.md). No upload, source path input or HTTP backend is involved.
-
-To create new immutable artifacts, substitute IDs returned by your own scan (finding IDs are in its findings.json):
+Then run the full verification. This step makes no network or model calls and needs no API key:
 
 ```sh
+uv run --project backend --locked python scripts/verify_demo.py
+```
+
+## How it works
+
+```mermaid
+flowchart LR
+    A[fixture:fastapi-demo] --> B[Bounded snapshot<br/>intake.py]
+    B --> C[Python AST adapter<br/>analysis.py / worker.py]
+    C --> D[NetworkX graph<br/>models.py]
+    D --> E[LS-AUTH-001<br/>rules.py]
+    E --> F[(SQLite + JSON/Markdown reports<br/>persistence.py)]
+    F --> G[Verified export bundle<br/>bundle.py]
+    G --> H[React + Cytoscape viewer<br/>frontend/]
+    F -.optional.-> I[Explanation sidecar<br/>disabled / mock / meta]
+    I -.-> G
+```
+
+| Area | Files |
+|---|---|
+| CLI and coordination | `backend/src/lazarus_sentinel/cli.py`, `service.py` |
+| Intake and extraction | `intake.py`, `worker.py`, `analysis.py` |
+| Canonical facts | `models.py`, `rules.py` |
+| Artifacts | `persistence.py`, `bundle.py`, `demo_models.py` |
+| Explanation boundary | `explanations.py`, `meta_provider.py`, `budget.py` |
+| Viewer | `frontend/src/`, fixed assets in `frontend/public/demo/v1/` |
+| Reproduction | `scripts/verify_demo.py`, `prepare_demo.py`, `inspect_artifacts.py` |
+
+Backend Pydantic schemas are authoritative. `CALLS` is not data flow; `DEPENDS_ON` is not enforcement. See [architecture](docs/02_ARCHITECTURE.md) and [graph schema](docs/03_GRAPH_SCHEMA.md).
+
+## Using the CLI
+
+```sh
+uv run --project backend --locked lazarus --help
 uv run --project backend --locked lazarus demo export --scan-id <SCAN_UUID>
 uv run --project backend --locked lazarus explain --scan-id <SCAN_UUID> --finding-id <FINDING_ID>
 uv run --project backend --locked lazarus explain --scan-id <SCAN_UUID> --finding-id <FINDING_ID> --provider mock
 uv run --project backend --locked lazarus demo export --scan-id <SCAN_UUID> --annotation-id <ANNOTATION_UUID>
 ```
 
-Explanation defaults to DISABLED. Mock output is offline and unreviewed assistance; it never changes canonical findings. The Meta adapter requires explicit selection and reviewed access/privacy/budget gates; live verification is BLOCKED by the missing key, with zero paid calls. The application cap is USD3 and five live attempts, without retries. Do not treat mock operation as live API verification.
+Substitute IDs returned by your own scan (finding IDs are in its `findings.json`). Explanation defaults to **DISABLED**. Mock output is offline, unreviewed assistance and never changes canonical findings. The Meta adapter needs explicit selection and reviewed access/privacy/budget gates; live verification is BLOCKED with zero paid calls, under a USD 3 / five-attempt cap and no retries.
 
-The shipped dataset uses scan `d4788c12-b956-4535-b897-13744439093e`, bundle `f85376c4-9ec1-4b8f-aea2-1c0f89abae3e`, and a recorded mock annotation. See [demo contract](docs/16_DEMO_DELIVERY_CONTRACT.md), [capability report](docs/17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](docs/18_DEMO_EVALUATION.md), and [integrated review](docs/19_INTEGRATED_DEMO_REVIEW.md). [Every N01–N18 disposition](docs/15_NEXT_STEPS.md) is mirrored on the [task board](TASK_BOARD.md). Owner portal requirements, license selection and submission receipt remain unresolved.
+## Viewer
 
-## Documentation map and authority
+```sh
+npm ci --prefix frontend --ignore-scripts --no-audit --no-fund
+npm run dev --prefix frontend
+```
 
-1. [AGENTS.md](AGENTS.md): persistent safety/model/workflow instructions.
-2. [AGENT.md](AGENT.md): live state and append-only session evidence; do not restart completed tasks.
-3. [First-slice contract](docs/13_FIRST_SLICE_CONTRACT.md): approved implemented scope.
-4. [Implementation/review summary](docs/14_IMPLEMENTATION_REVIEW.md): measured results and limitations.
-5. [Next steps](docs/15_NEXT_STEPS.md): recommended remaining work, dependencies, owners and exit criteria.
-6. [Task board](TASK_BOARD.md): completed baseline and remaining task IDs.
-7. [Continuation prompt](CODEX_BOOTSTRAP_PROMPT.md): handoff to a fresh agent.
+Open the loopback URL Vite prints. The viewer loads only the reviewed synthetic bundle in `frontend/public/demo/v1/`: search an endpoint, inspect a focused path, switch to the full graph, and select a node to see its source evidence. Fit/zoom/reset, keyboard step controls and expandable identity tables support deeper review. No upload, source path input or HTTP backend is involved. Details: [viewer design and verification](docs/20_VIEWER_CLARITY_AND_DESIGN.md).
 
-Reference specifications distinguish current implementation from future capability:
+The shipped dataset uses scan `d4788c12-b956-4535-b897-13744439093e` and bundle `f85376c4-9ec1-4b8f-aea2-1c0f89abae3e`, with a recorded mock annotation. Generated reports are historical evidence: create new scan identities instead of editing old ones.
 
-- [00 Charter](docs/00_PROJECT_CHARTER.md), [01 Requirements](docs/01_REQUIREMENTS.md), [02 Architecture](docs/02_ARCHITECTURE.md), [03 Graph schema](docs/03_GRAPH_SCHEMA.md), [04 Rules](docs/04_ANALYSIS_RULES.md).
-- [05 Orchestration](docs/05_ORCHESTRATION.md), [06 API/persistence](docs/06_API_AND_PERSISTENCE.md), [07 Frontend](docs/07_FRONTEND.md), [08 Security](docs/08_SECURITY_MODEL.md), [09 Evaluation](docs/09_TESTING_EVALUATION.md).
-- [10 Roadmap](docs/10_IMPLEMENTATION_PLAN.md), [11 Decisions/assumptions](docs/11_DECISIONS_AND_ASSUMPTIONS.md), [12 Source register](docs/12_SOURCES.md).
+## Optional API credential
 
-## Boundaries
+Not needed for scans, the viewer or disabled/mock explanations. To prepare a local key file, copy [.env.example](.env.example) to `.env` once (`cp .env.example .env`, or `Copy-Item .env.example .env` in PowerShell) and fill in `MODEL_API_KEY`. `.env` is Git-ignored. The backend reads `MODEL_API_KEY`, not `META_API_KEY`, and the CLI does not load `.env` automatically: pass `uv run --env-file .env ...` when you choose to. Creating the file does not enable live calls. Keep credentials out of the frontend and all `VITE_*` variables.
 
-Only the fixed owned fixture is accepted. Intake caps are 100 Python files, 256 KiB/file, 5 MiB total; a credential-free parser child has a 30-second deadline. These are process/input limits, **not an OS filesystem/network sandbox**. Hostile concurrent filesystem replacement is outside scope. No target code is executed, no runtime security is established, and no live source/model request has been made in this delivery. Explicit live transport is gated and disabled by default.
+## Quality checks
 
-Joern is NOT_ATTEMPTED; LS-DATA-001 and LS-TRUST-001 are NOT_IMPLEMENTED. Local Git baseline `7797b85` exists on `feat/integrated-demo`; license selection is pending. The owner has authorized publication to the specified existing repository; see [document 23](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md) for the actual outcome. Submission remains unverified. Generated scan reports are historical evidence; use new scan identities rather than editing old results.
+```sh
+uv run --project backend --locked pytest backend/tests
+uv run --project backend --locked ruff check backend/src backend/tests
+uv run --project backend --locked ruff format --check backend/src backend/tests
+uv run --project backend --locked mypy --config-file backend/pyproject.toml backend/src
+npm --prefix frontend run typecheck && npm --prefix frontend run lint && npm --prefix frontend test
+```
+
+CI runs these as separate jobs on every pull request and on pushes to `main`, plus a 3-OS (macOS, Windows, Linux) offline verification and CodeQL. If a restricted environment cannot use the shared uv cache, see [document 21](docs/21_TEAM_HANDOFF.md).
+
+## Roadmap
+
+Planned work is tracked as [GitHub issues](https://github.com/sumitjadhav1703/Lazarus_Sentinel/issues) (labels `roadmap`, `good first issue`, `help wanted`). Gated plan: [next-phase plan](docs/22_NEXT_PHASE_PLAN.md) and [spec](spec/README.md).
+
+- [ ] P03 fresh-clone reproduction on a second machine
+- [ ] P04 accessibility feedback round
+- [ ] P05 measure and, if justified, split the viewer chunk
+- [ ] P07 one bounded, authorised live Meta explanation call
+- [ ] P08 reviewed sandbox runtime with denial probes
+- [ ] P09 bounded next-intake contract, optional Joern spike, `LS-DATA-001` / `LS-TRUST-001`
+- [ ] P10 public demo on GitHub Pages
+- [ ] S01 semantic contract for the next analysis stage
+
+## Contributing
+
+New here? Start with issues labelled [`good first issue`](https://github.com/sumitjadhav1703/Lazarus_Sentinel/labels/good%20first%20issue). Read [CONTRIBUTING.md](CONTRIBUTING.md) and the [team handoff](docs/21_TEAM_HANDOFF.md), branch from `main`, run `scripts/verify_demo.py`, and open a PR using the template. Report vulnerabilities privately per [SECURITY.md](SECURITY.md). Participation is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Documentation
+
+- Start: [team handoff](docs/21_TEAM_HANDOFF.md), [contributing](CONTRIBUTING.md), [task board](TASK_BOARD.md), [live log](AGENT.md), [platform evidence](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md), [CI and issue backlog](docs/24_CONTRIBUTOR_READINESS_AND_CI.md).
+- Contracts: [first slice](docs/13_FIRST_SLICE_CONTRACT.md), [demo delivery](docs/16_DEMO_DELIVERY_CONTRACT.md), [implementation review](docs/14_IMPLEMENTATION_REVIEW.md), [next steps](docs/15_NEXT_STEPS.md).
+- Evidence: [capability report](docs/17_CAPABILITY_AND_RESEARCH_REPORT.md), [evaluation](docs/18_DEMO_EVALUATION.md), [integrated review](docs/19_INTEGRATED_DEMO_REVIEW.md).
+- Reference: [00 Charter](docs/00_PROJECT_CHARTER.md), [01 Requirements](docs/01_REQUIREMENTS.md), [02 Architecture](docs/02_ARCHITECTURE.md), [03 Graph schema](docs/03_GRAPH_SCHEMA.md), [04 Rules](docs/04_ANALYSIS_RULES.md), [05 Orchestration](docs/05_ORCHESTRATION.md), [06 API/persistence](docs/06_API_AND_PERSISTENCE.md), [07 Frontend](docs/07_FRONTEND.md), [08 Security](docs/08_SECURITY_MODEL.md), [09 Evaluation](docs/09_TESTING_EVALUATION.md), [10 Roadmap](docs/10_IMPLEMENTATION_PLAN.md), [11 Decisions](docs/11_DECISIONS_AND_ASSUMPTIONS.md), [12 Sources](docs/12_SOURCES.md).
+- Blueprint audit and next stage: [spec/](spec/README.md).
+- AI-agent workflow (maintainers): [AGENTS.md](AGENTS.md), [CLAUDE.md](CLAUDE.md), [CODEX_BOOTSTRAP_PROMPT.md](CODEX_BOOTSTRAP_PROMPT.md).
+
+## Boundaries and safety
+
+Only the fixed owned fixture is accepted. Intake caps are 100 Python files, 256 KiB per file, 5 MiB total; a credential-free parser child has a 30-second deadline. These are process and input limits, **not an OS filesystem/network sandbox**. Hostile concurrent filesystem replacement is out of scope. No target code is executed, no runtime security is established, and no live source or model request has been made. Joern is NOT_ATTEMPTED; `LS-DATA-001` and `LS-TRUST-001` are NOT_IMPLEMENTED. Only analyse code you own or are authorised to assess.
+
+## License
+
+**Not yet chosen.** Publication to GitHub does not grant reuse rights. License selection is an open owner decision; see the license issue before reusing the code.
