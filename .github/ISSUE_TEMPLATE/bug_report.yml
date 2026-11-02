@@ -1,0 +1,28 @@
+name: Bug report
+description: Something in the scanner, report, bundle or viewer behaves wrongly
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Include expected vs actual behaviour. Do not paste secrets or exploit payloads.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Exact commands, for example `uv run --project backend --locked lazarus scan --target fixture:fastapi-demo`.
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: OS, uv, Node versions
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output or screenshots
