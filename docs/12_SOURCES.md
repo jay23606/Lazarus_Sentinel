@@ -1,5 +1,11 @@
 # 12 — Sources and Technical References
 
+## Integrated demo status — 2026-11-02
+
+The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
+
+Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
+
 > Initial source register prepared **2026-11-01**; documentation refreshed **2026-11-02**. Only the event page, Meta overview and pricing/mode pages were reopened in this refresh (section I); other links retain their earlier verification scope. Prefer primary documentation. Before implementation, Codex must reopen relevant docs to verify current APIs, install steps, compatibility, licensing, model IDs, and terms. Do not treat a web search snippet as a complete specification.
 
 ## A. Core graph/static-analysis foundations

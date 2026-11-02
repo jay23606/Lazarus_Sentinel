@@ -2,11 +2,36 @@
 
 Updated **2026-11-02**. This is the recommended roadmap after the completed first slice, not authorization to implement every item. Document 13 remains the approved implemented scope; document 14 contains verification evidence. Task IDs below are mirrored in TASK_BOARD.md.
 
-## Where we are now
+## Integrated demo status — 2026-11-02
 
-The fixture-only AST → graph → LS-AUTH-001 → SQLite/JSON/Markdown pipeline works. The latest verified baseline is **73 tests**, **6 endpoints**, **23 nodes**, **36 edges**, **2 LOW-confidence candidates**, and **3 matching declarations with effectiveness unverified**. PARTIAL/exit 2 is intentional for seeded dynamic registration. No Git repository, UI, HTTP service, live model provider, Joern POC, data-flow/trust detector, or hostile-repository sandbox is implemented.
+The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
 
-**Recommended next engineering milestone:** a small graph/findings/coverage viewer over the existing validated synthetic artifacts, with a separate evidence-bounded explanation contract. Check event and provider access early so external blockers do not appear on submission day. Keep the existing CLI/report usable throughout.
+Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
+
+## Current disposition of every task
+
+| ID | Status | Evidence / remaining gate |
+|---|---|---|
+| N01 | BLOCKED | Owner portal acceptance, complete rules and receipt unknown. |
+| N02 | BLOCKED | Missing key/account verification; no live request. |
+| N03 | DONE; license pending | Local baseline 7797b85 and feat/integrated-demo; no remote/publication. |
+| N04 | DONE | Predeclared variant: 3 endpoints, 1 candidate, 1 declaration, 1 unknown; finite synthetic evaluation only. |
+| N05 | DONE | Bundle/explanation/viewer contract frozen in document 16. |
+| N06 | DONE | Fixed accessible graph/findings/coverage viewer; final checks/review in document 19. |
+| N07 | DONE | Disabled/offline mock boundary and hostile-output validation; canonical facts unchanged. |
+| N08 | ADAPTER TESTED; live BLOCKED | Explicit Meta adapter and transactional budget; zero paid calls; USD3 / five-attempt cap. |
+| N09 | SETUP_BLOCKED; NOT_ATTEMPTED | Joern v4.0.666 pinned; release README JDK21 versus installation docs19; installed JDK26. No Joern; 1.64GB asset not downloaded. |
+| N10 | NOT_IMPLEMENTED | DATA/TRUST capability/policy gates unmet; CALLS is not value flow. |
+| N11 | SKIPPED | Fixed assets meet demo need; no HTTP service. |
+| N12 | DONE (offline) | Exact integrated checks and Astra disposition are authoritative in document 19. |
+| N13 | LOCAL MATERIALS READY; submission BLOCKED | Synthetic bundle and local walkthrough available; portal requirements/receipt unknown. |
+| N14 | BLOCKED | sandbox-exec exit71: sandbox_apply: Operation not permitted. Denial probes not run; no enforced isolation claim. |
+| N15 | BLOCKED | Requires N14 before broader authorized intake. |
+| N16 | FINITE PILOT DONE; broader OPEN | Controlled variant support measured; no broad accuracy or interprocedural/data-flow claim. |
+| N17 | FINITE TRANCHE DONE; broader OPEN | Read-only inspector, scripts and credential-free CI configuration present; hosted CI NOT_RUN; clean-copy verification passed in document 19. Retention/triage/remote service remain open. |
+| N18 | FINITE RESEARCH DONE; broader OPEN | Catalog and DATA/TRUST research in document 17; broad detector/language program remains future work. |
+
+The detailed exit criteria below remain useful for unresolved portions; completed work must not be restarted. Status above supersedes prospective wording below.
 
 ## Step-by-step sequence
 
@@ -32,7 +57,7 @@ The fixture-only AST → graph → LS-AUTH-001 → SQLite/JSON/Markdown pipeline
 - Initialize a local Git repository as a separately selected execution task; review ignores, source/fixture files, lockfile, docs, and absence of credentials/generated artifacts before the first commit. Decide project license and dependency notices with the owner.
 - Keep `.venv`, caches, `.env`, and scan artifacts out of commits. Do not push/publish without explicit instruction; a remote repository is not required for local reproducibility.
 - Continue using the scanned-byte manifest for source evidence; a Git commit supplements it and never substitutes for dirty/untracked content identity.
-- **Done when:** a reviewed baseline commit can be reproduced locally, or a dated source archive/content inventory is retained pending Git setup. No Git initialization has occurred in the current delivery.
+- **Done when:** a reviewed baseline commit can be reproduced locally, or a dated source archive/content inventory is retained pending Git setup. Baseline 7797b85 now exists; license remains owner-selected and pending.
 
 ### N04 — Lock the demo and evaluation fixture
 
@@ -48,7 +73,7 @@ The fixture-only AST → graph → LS-AUTH-001 → SQLite/JSON/Markdown pipeline
 - Keep graph schema 0.1.0 and existing finding/evidence IDs. Freeze the artifact-loader, selected-path, coverage-display and explanation request/response examples before parallel work.
 - **Default:** fixed, validated synthetic artifact dataset → local viewer. An HTTP API, scan-start UI, file uploads, arbitrary path input and remote deployment are not prerequisites.
 - Decide which artifacts can be bundled; retain schema/version/hash checks and source minimization. Display errors/unknowns when artifacts are invalid rather than a success-shaped empty graph.
-- **Done when:** one written next-increment contract and example dataset define what frontend and explanation work can consume. This document recommends that increment; it does not mark it implemented or approved.
+- **Done when:** one written next-increment contract and example dataset define what frontend and explanation work can consume. The selected demo increment is now implemented under document 16; remaining expansion is separately gated.
 
 ### N06 — Build the minimum graph/findings/coverage viewer
 

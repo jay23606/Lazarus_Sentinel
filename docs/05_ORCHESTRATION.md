@@ -1,6 +1,10 @@
 # 05 — Scan Orchestration
 
-Current implementation is governed by the [approved first-slice contract](13_FIRST_SLICE_CONTRACT.md). [Verified results](14_IMPLEMENTATION_REVIEW.md) describe the measured fixture run; [ordered next steps](15_NEXT_STEPS.md) are proposals for subsequent work, not approval to implement them.
+## Integrated demo status — 2026-11-02
+
+The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
+
+Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
 
 ## Implemented linear workflow
 
@@ -28,4 +32,4 @@ Invalid intake, stale evidence/source, unusable graph or publication failure pro
 
 LangGraph is neither installed nor required for first-slice completion. If later justified by measured concurrency/state needs, map the existing deterministic stages into typed nodes and explicit transitions while preserving evidence gates, bounded failure handling and no automatic duplicate analysis. Any parallel analyzer branches require agreed immutable inputs and merge contracts first.
 
-A model explanation node would be a separate optional enrichment after deterministic evidence validation, with provider/privacy/output gates. Durable checkpoints, user pause/resume, cancellation, retries, streaming and API job queues are future design questions rather than current interfaces.
+The separate `explain` command is optional enrichment after deterministic evidence validation, with provider/privacy/output gates; it is not a LangGraph node. Durable checkpoints, user pause/resume, cancellation, retries, streaming and API job queues are future design questions rather than current interfaces.

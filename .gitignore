@@ -17,3 +17,5 @@ test-results/
 playwright-report/
 .cache/
 .tools/
+.playwright-mcp/
+*.tsbuildinfo

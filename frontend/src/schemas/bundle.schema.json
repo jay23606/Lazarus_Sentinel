@@ -1,0 +1,103 @@
+{
+  "$defs": {
+    "ArtifactDigest": {
+      "additionalProperties": false,
+      "properties": {
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "size": {
+          "maximum": 1048576,
+          "minimum": 1,
+          "title": "Size",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sha256",
+        "size"
+      ],
+      "title": "ArtifactDigest",
+      "type": "object"
+    },
+    "DemoScan": {
+      "additionalProperties": false,
+      "properties": {
+        "profile": {
+          "const": "reduced-static-auth",
+          "title": "Profile",
+          "type": "string"
+        },
+        "revision": {
+          "pattern": "^revision:sha256:[0-9a-f]{64}$",
+          "title": "Revision",
+          "type": "string"
+        },
+        "scan_id": {
+          "title": "Scan Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "PARTIAL",
+            "COMPLETED"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scan_id",
+        "revision",
+        "status",
+        "profile"
+      ],
+      "title": "DemoScan",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "artifacts": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ArtifactDigest"
+      },
+      "title": "Artifacts",
+      "type": "object"
+    },
+    "bundle_id": {
+      "title": "Bundle Id",
+      "type": "string"
+    },
+    "bundle_version": {
+      "const": "0.1.0",
+      "title": "Bundle Version",
+      "type": "string"
+    },
+    "generator_version": {
+      "const": "0.1.0",
+      "title": "Generator Version",
+      "type": "string"
+    },
+    "origin": {
+      "const": "controlled-synthetic-fixture",
+      "title": "Origin",
+      "type": "string"
+    },
+    "scan": {
+      "$ref": "#/$defs/DemoScan"
+    }
+  },
+  "required": [
+    "bundle_version",
+    "bundle_id",
+    "origin",
+    "generator_version",
+    "scan",
+    "artifacts"
+  ],
+  "title": "BundleManifest",
+  "type": "object"
+}

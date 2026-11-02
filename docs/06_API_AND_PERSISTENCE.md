@@ -1,6 +1,10 @@
 # 06 — CLI, Artifacts, API Roadmap and Persistence
 
-Current implementation is governed by the [approved first-slice contract](13_FIRST_SLICE_CONTRACT.md). [Verified results](14_IMPLEMENTATION_REVIEW.md) describe the measured fixture run; [ordered next steps](15_NEXT_STEPS.md) are proposals for subsequent work, not approval to implement them.
+## Integrated demo status — 2026-11-02
+
+The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
+
+Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
 
 ## Implemented command
 
@@ -10,7 +14,7 @@ From the project root after the project-local environment is synced:
 uv run --project backend --locked lazarus scan --target fixture:fastapi-demo
 ```
 
-Only `scan --target fixture:fastapi-demo` is supported. There are no report/export/findings subcommands, `--profile`, HTTP endpoints, uploads or arbitrary repository paths. The current internal profile is `reduced-static-auth`.
+Scanning still accepts only `fixture:fastapi-demo`. The CLI additionally supports `demo export --scan-id <UUID> [--annotation-id <UUID>]` and `explain --scan-id <UUID> --finding-id <ID> [--provider disabled|mock|meta]` (default disabled). There are no HTTP endpoints, uploads or arbitrary repository intake paths. The current internal profile is `reduced-static-auth`.
 
 stdout is one JSON summary including scan_id, status, artifact_dir, counts and diagnostic_codes; successful scan processing additionally records schema/profile/revision/timestamps. Exit 0 means COMPLETED, 2 PARTIAL and 1 FAILED. Invalid arguments and internal failures return safe codes without echoing untrusted exception text. See README for setup and the implementation review for verified commands.
 

@@ -1,0 +1,574 @@
+{
+  "$defs": {
+    "Coverage": {
+      "additionalProperties": false,
+      "properties": {
+        "affected_concepts": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Concepts",
+          "type": "array"
+        },
+        "analyzer": {
+          "default": "python_ast",
+          "title": "Analyzer",
+          "type": "string"
+        },
+        "analyzer_version": {
+          "default": "0.1.0",
+          "title": "Analyzer Version",
+          "type": "string"
+        },
+        "file_path": {
+          "title": "File Path",
+          "type": "string"
+        },
+        "reason": {
+          "default": "",
+          "title": "Reason",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "ANALYZED",
+            "PARTIALLY_ANALYZED",
+            "SKIPPED_BY_POLICY",
+            "UNSUPPORTED_LANGUAGE",
+            "PARSER_ERROR",
+            "TIMEOUT",
+            "NOT_ATTEMPTED",
+            "EXCLUDED_GENERATED_OR_VENDOR"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "file_path",
+        "status"
+      ],
+      "title": "Coverage",
+      "type": "object"
+    },
+    "Diagnostic": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "file_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File Path"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "severity": {
+          "default": "WARNING",
+          "enum": [
+            "INFO",
+            "WARNING",
+            "ERROR"
+          ],
+          "title": "Severity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "Diagnostic",
+      "type": "object"
+    },
+    "Edge": {
+      "additionalProperties": false,
+      "properties": {
+        "analyzer": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Analyzer",
+          "type": "object"
+        },
+        "confidence": {
+          "default": "HIGH",
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "fact_status": {
+          "default": "OBSERVED",
+          "enum": [
+            "OBSERVED",
+            "INFERRED",
+            "UNKNOWN",
+            "UNRESOLVED",
+            "UNSUPPORTED",
+            "HUMAN_ASSERTED"
+          ],
+          "title": "Fact Status",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "layer": {
+          "default": "CODE",
+          "enum": [
+            "CODE",
+            "APP",
+            "SECURITY"
+          ],
+          "title": "Layer",
+          "type": "string"
+        },
+        "properties": {
+          "additionalProperties": true,
+          "title": "Properties",
+          "type": "object"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "target": {
+          "title": "Target",
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "target",
+        "type"
+      ],
+      "title": "Edge",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "analyzer_name": {
+          "default": "python_ast",
+          "title": "Analyzer Name",
+          "type": "string"
+        },
+        "analyzer_version": {
+          "default": "0.1.0",
+          "title": "Analyzer Version",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "",
+          "title": "Created At",
+          "type": "string"
+        },
+        "end_line": {
+          "minimum": 1,
+          "title": "End Line",
+          "type": "integer"
+        },
+        "evidence_kind": {
+          "title": "Evidence Kind",
+          "type": "string"
+        },
+        "excerpt_hash": {
+          "title": "Excerpt Hash",
+          "type": "string"
+        },
+        "file_path": {
+          "title": "File Path",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "repository_revision": {
+          "title": "Repository Revision",
+          "type": "string"
+        },
+        "rule_or_query_id": {
+          "title": "Rule Or Query Id",
+          "type": "string"
+        },
+        "start_line": {
+          "minimum": 1,
+          "title": "Start Line",
+          "type": "integer"
+        },
+        "symbol": {
+          "default": "",
+          "title": "Symbol",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "repository_revision",
+        "file_path",
+        "start_line",
+        "end_line",
+        "excerpt_hash",
+        "rule_or_query_id",
+        "evidence_kind"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "assessment": {
+          "const": "POTENTIAL_GAP",
+          "default": "POTENTIAL_GAP",
+          "title": "Assessment",
+          "type": "string"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "category": {
+          "default": "BROKEN_ACCESS_CONTROL",
+          "title": "Category",
+          "type": "string"
+        },
+        "confidence": {
+          "default": "LOW",
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "coverage_context": {
+          "additionalProperties": true,
+          "title": "Coverage Context",
+          "type": "object"
+        },
+        "created_at": {
+          "default": "",
+          "title": "Created At",
+          "type": "string"
+        },
+        "entry_node_id": {
+          "title": "Entry Node Id",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "false_positive_considerations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "False Positive Considerations",
+          "type": "array"
+        },
+        "human_review_steps": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Human Review Steps",
+          "type": "array"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "impact_hypothesis": {
+          "default": "",
+          "title": "Impact Hypothesis",
+          "type": "string"
+        },
+        "missing_or_uncertain_controls": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Or Uncertain Controls",
+          "type": "array"
+        },
+        "path_edge_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Path Edge Ids",
+          "type": "array"
+        },
+        "path_node_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Path Node Ids",
+          "type": "array"
+        },
+        "recognized_controls": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Recognized Controls",
+          "type": "array"
+        },
+        "repository_revision": {
+          "title": "Repository Revision",
+          "type": "string"
+        },
+        "rule_id": {
+          "default": "LS-AUTH-001",
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "rule_version": {
+          "default": "0.1.0",
+          "title": "Rule Version",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "CRITICAL",
+            "HIGH",
+            "MEDIUM",
+            "LOW",
+            "INFO"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "triage_status": {
+          "const": "NEEDS_REVIEW",
+          "default": "NEEDS_REVIEW",
+          "title": "Triage Status",
+          "type": "string"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unknowns",
+          "type": "array"
+        },
+        "verification_status": {
+          "const": "CANDIDATE",
+          "default": "CANDIDATE",
+          "title": "Verification Status",
+          "type": "string"
+        },
+        "why_flagged": {
+          "default": "",
+          "title": "Why Flagged",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "severity",
+        "repository_revision",
+        "entry_node_id",
+        "path_node_ids",
+        "path_edge_ids",
+        "evidence_ids"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "Node": {
+      "additionalProperties": false,
+      "properties": {
+        "confidence": {
+          "default": "HIGH",
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "fact_status": {
+          "default": "OBSERVED",
+          "enum": [
+            "OBSERVED",
+            "INFERRED",
+            "UNKNOWN",
+            "UNRESOLVED",
+            "UNSUPPORTED",
+            "HUMAN_ASSERTED"
+          ],
+          "title": "Fact Status",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "layer": {
+          "enum": [
+            "CODE",
+            "APP",
+            "SECURITY"
+          ],
+          "title": "Layer",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "properties": {
+          "additionalProperties": true,
+          "title": "Properties",
+          "type": "object"
+        },
+        "qualified_name": {
+          "default": "",
+          "title": "Qualified Name",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": "0.1.0",
+          "default": "0.1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "layer",
+        "name"
+      ],
+      "title": "Node",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "coverage": {
+      "items": {
+        "$ref": "#/$defs/Coverage"
+      },
+      "title": "Coverage",
+      "type": "array"
+    },
+    "diagnostics": {
+      "items": {
+        "$ref": "#/$defs/Diagnostic"
+      },
+      "title": "Diagnostics",
+      "type": "array"
+    },
+    "edges": {
+      "items": {
+        "$ref": "#/$defs/Edge"
+      },
+      "title": "Edges",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "title": "Findings",
+      "type": "array"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/Node"
+      },
+      "title": "Nodes",
+      "type": "array"
+    },
+    "repository": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Repository",
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "default": "0.1.0",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "repository"
+  ],
+  "title": "Graph",
+  "type": "object"
+}

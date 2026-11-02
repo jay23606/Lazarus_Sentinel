@@ -1,0 +1,2096 @@
+{
+  "coverage": [
+    {
+      "affected_concepts": [
+        "CALLS",
+        "API_ENDPOINT",
+        "DEPENDS_ON"
+      ],
+      "analyzer": "python_ast",
+      "analyzer_version": "0.1.0",
+      "file_path": "app/controls.py",
+      "reason": "Static subset only; no dataflow or runtime execution.",
+      "status": "ANALYZED"
+    },
+    {
+      "affected_concepts": [
+        "CALLS",
+        "API_ENDPOINT",
+        "DEPENDS_ON"
+      ],
+      "analyzer": "python_ast",
+      "analyzer_version": "0.1.0",
+      "file_path": "app/main.py",
+      "reason": "Static subset only; no dataflow or runtime execution.",
+      "status": "PARTIALLY_ANALYZED"
+    },
+    {
+      "affected_concepts": [
+        "CALLS",
+        "API_ENDPOINT",
+        "DEPENDS_ON"
+      ],
+      "analyzer": "python_ast",
+      "analyzer_version": "0.1.0",
+      "file_path": "app/repository.py",
+      "reason": "Static subset only; no dataflow or runtime execution.",
+      "status": "ANALYZED"
+    },
+    {
+      "affected_concepts": [
+        "CALLS",
+        "API_ENDPOINT",
+        "DEPENDS_ON"
+      ],
+      "analyzer": "python_ast",
+      "analyzer_version": "0.1.0",
+      "file_path": "app/routes.py",
+      "reason": "Static subset only; no dataflow or runtime execution.",
+      "status": "ANALYZED"
+    },
+    {
+      "affected_concepts": [
+        "CALLS",
+        "API_ENDPOINT",
+        "DEPENDS_ON"
+      ],
+      "analyzer": "python_ast",
+      "analyzer_version": "0.1.0",
+      "file_path": "app/services.py",
+      "reason": "Static subset only; no dataflow or runtime execution.",
+      "status": "ANALYZED"
+    },
+    {
+      "affected_concepts": [],
+      "analyzer": "LS-DATA-001",
+      "analyzer_version": "0.1.0",
+      "file_path": "",
+      "reason": "NOT_IMPLEMENTED",
+      "status": "NOT_ATTEMPTED"
+    },
+    {
+      "affected_concepts": [],
+      "analyzer": "LS-TRUST-001",
+      "analyzer_version": "0.1.0",
+      "file_path": "",
+      "reason": "NOT_IMPLEMENTED",
+      "status": "NOT_ATTEMPTED"
+    },
+    {
+      "affected_concepts": [],
+      "analyzer": "joern",
+      "analyzer_version": "0.1.0",
+      "file_path": "",
+      "reason": "NOT_ATTEMPTED",
+      "status": "NOT_ATTEMPTED"
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "NEEDS_CONTEXT",
+      "file_path": "app/main.py",
+      "message": "Dynamic route registration is not extracted.",
+      "severity": "WARNING"
+    },
+    {
+      "code": "AUTHORIZATION_DECLARATION_RECOGNIZED",
+      "file_path": null,
+      "message": "Expected authorization declaration recognized; effectiveness unverified.",
+      "severity": "WARNING"
+    },
+    {
+      "code": "AUTHORIZATION_DECLARATION_RECOGNIZED",
+      "file_path": null,
+      "message": "Expected authorization declaration recognized; effectiveness unverified.",
+      "severity": "WARNING"
+    },
+    {
+      "code": "AUTHORIZATION_DECLARATION_RECOGNIZED",
+      "file_path": null,
+      "message": "Expected authorization declaration recognized; effectiveness unverified.",
+      "severity": "WARNING"
+    }
+  ],
+  "edges": [
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:1f8aad9a513ee1bfb4af92899a157d387f284ee7fb91b0dce2214d1841b2b4b4"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:2ad7d6056a918ee6d44d4a7116068cbdc7e5c778106b2c318e2972a5b33f7bf4",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:1ae905c63a72c46383874ba91a654c2bc08923ba304660dd17e3148b6cd358d8",
+      "target": "node:sha256:530266153f89e37cb0796680bd323d4e7eb0019cd024bd680bbe19ef5194b30d",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:3db2244301c26ec4d340593350402a78e1a3eac930271f68b8f2689ba0266e0e"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:6744815b5adc394ee8213bbc903c369f7f7740cc323386827deec8125f457ad1",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:1ae905c63a72c46383874ba91a654c2bc08923ba304660dd17e3148b6cd358d8",
+      "target": "node:sha256:9167aedd96d1b64a12c83dccddcb84485e497e7c5061706972f7e0ecb398de08",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:cf75567f2f964df0b960c3f80a64b614cff999863e0392b311e9247bc7267c5e"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:1ef4bca0b43de60900d2fa88a60877da87cd8539448e19e2c32dfdf689bd719f",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "target": "node:sha256:67e1228f7f33ec7c0eb6d366b0a8a2f03cdf799bb8bc5f2cb8c6722fee081b31",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:b7f901cff1c8044e9839d53694a749292f3e99ee6e9f318a0bd1d872454d69a4"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:1fa1795cfeb99496aa48e9f3b544946461b3b40a0950a27cdfeb41c4ea5bbad4",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "target": "node:sha256:2f68004c5bbe1aee76face6106df108f42925c9907d5372592d76fdc765806a9",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:737a5f07c965b1881c99c63549096a7bdef73ead195f596fd8d2110f7e289210"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:25e160916d120075a35261b52af6e8306d2076f90888f44f112ff50ddc52f875",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "target": "node:sha256:a4266b6e732636242b71c5d6509e7b4a88e821a823d7704a4892fcbcaec269a8",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:741b83a2517ded10ab80a065fa0a196c986a73c0beeeb2fc583e4c832c54db34"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:ded6fea8dceb57416b2082c429aff568bf536693c9e9a98bb000dedf68abf553",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "target": "node:sha256:5bce02bb0dacb581e69c90e76273be1051a50855f4ed336e5bd2c0bf6ea0b0cb",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:cd41ed6f41bcf4f9d6447c77ab7d35691f114bf9a47cde0f809ede3ad2f10b98"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:22c49fe88de61234806013a3b760b4bcebf2a917673ce2ed8c09740d95db77bb",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "target": "node:sha256:bd76de1c8b953778b251fda0b1ea28bff8b0e4249eafcb86484f3e6d56b17502",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:968b4c4b1046618564b80ae9faeafe7c8440b653cc38e00fe2b47c0b1e9b63c5"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:4f3516239079df54d6a92c96a1d93c9e0534e6666727cbedcbcdaa019ecb5ea6",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "target": "node:sha256:04f3846151651e76fa4aac4f43d9cbb0751f21d2a68aba6e8751973ad4c645be",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:e33706353d494d624779488b8ec60024e11be15561a6f9390447b8413d7da4fa"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:134dae7fe91fa168c819b20bd9e68670000ed18c44b8ec0a158125c0e49667e6",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:3f8701c0e9324992f4de3c97fbf5b7b38140ece8ea07d736f17b177f63285ba1",
+      "target": "node:sha256:bb6daacc3620d9d46f0b06f04935632a36b6582bc67f55b1ae06e1e7bfd92eec",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:7ade7d96c88ea40bc1ed6e33cabf24c65c23f4c96ab74a5637311c8b22d492d3"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:ef8cf13610299d96e0f096f1b481cb7a5a73226bb6a6e0727e86a4fae48a4193",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:369add66f290fb19e9a287864390b02d0c9bdca6d19631a0adf9b2acac53af1b",
+      "target": "node:sha256:fcb232c9766063fefcda7698b09c54878cc77342fbd216247fbe5d999b21e269",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:f7bfdb5b20939c92222c85d018177b3eb517ce8f614844171cffad0b9921a235"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:734d4aa0f153af1fffeed3b1d61f36d9ff6d10962754c3c6139694bbb4c7008c",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:9f40127eaa5bfe3bf013d695ced1755bd0ea2a838451da2042967efd1b1e697e",
+      "target": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:6b8ba45e69afcef76ad5a9a808cb0eeb7a62b4544ab2068023426456925428ca"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:a36c9d1b81ecc0f3a443dde999e4baf4af0f470d559ca2d5423ba0f2b965dfcf",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:9f40127eaa5bfe3bf013d695ced1755bd0ea2a838451da2042967efd1b1e697e",
+      "target": "node:sha256:9400facaf13d34e5bdc87e26bbd10bbe03dffc62beeba122f359539150108fc9",
+      "type": "CONTAINS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:738a7fb66a349439ebfe29e769a7e0087b266baea7a0b64b6f03f2bb966d4ba9"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:175d7daa96c6060faff8639bfe999394e8ad5951bf2629c877ec0f879deeb406",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "target": "node:sha256:530266153f89e37cb0796680bd323d4e7eb0019cd024bd680bbe19ef5194b30d",
+      "type": "IMPORTS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:738a7fb66a349439ebfe29e769a7e0087b266baea7a0b64b6f03f2bb966d4ba9"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:b709c58c72a1f912a531252c0dda086d43f4bd524a867f5cdd4c64bed71e07af",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "target": "node:sha256:9167aedd96d1b64a12c83dccddcb84485e497e7c5061706972f7e0ecb398de08",
+      "type": "IMPORTS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:f9589bcad1b2cd8a18d417bc7b6ae56488114b034af2ea6e893b755f8c0e0ee8"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:a716bf720cb0204e5f9871f631123e09489598618871a90fa426ef7daf3f6933",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "target": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "type": "IMPORTS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:f9589bcad1b2cd8a18d417bc7b6ae56488114b034af2ea6e893b755f8c0e0ee8"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:d7ca2916e69a40f3411910ad854fee73e1a6a82c7d7ac54b1d06800abbb22aa2",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "target": "node:sha256:9400facaf13d34e5bdc87e26bbd10bbe03dffc62beeba122f359539150108fc9",
+      "type": "IMPORTS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:0d2732682c3616c9bf6260155dfd94504e1e9b55f2528f4d3ab70c750efb9f7b"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:37ed6fbc04436a3e0e2840cc1dfa8e5fc3553f598d6d69ee23d787bf4f73700a",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:369add66f290fb19e9a287864390b02d0c9bdca6d19631a0adf9b2acac53af1b",
+      "target": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "type": "IMPORTS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:59efcdadf2a7ffcf1b66318e6a9ced6ce28f69a211d0e10703a6f54b1cfaa20e"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:ec0cbef014d9c7df67d07813cbac763befb44bab42479600bf180be1882f1ced",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:9f40127eaa5bfe3bf013d695ced1755bd0ea2a838451da2042967efd1b1e697e",
+      "target": "node:sha256:bb6daacc3620d9d46f0b06f04935632a36b6582bc67f55b1ae06e1e7bfd92eec",
+      "type": "IMPORTS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:91c54e71530c17ab27f4c285d1ac6c14a302f3739c98314221b1e1bbb700e91e"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:fa1db973e3ee6d392e8f7e71fd4d6cac08066ab64f5853a04219c02869cbc49f",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:67e1228f7f33ec7c0eb6d366b0a8a2f03cdf799bb8bc5f2cb8c6722fee081b31",
+      "target": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "type": "CALLS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:8137d87f2f6a180423c240fcfa586c1d59850bb29fd9ab5b1c3a677bbc0aeaf4"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:68243bb224c97598d16981445396fbac148d71555dcdacc9299e8344c49c6b13",
+      "layer": "APP",
+      "properties": {},
+      "source": "node:sha256:ae2b7d633030f77d1b1977465bd7e5391f23e41745f9111248eca110393c2a33",
+      "target": "node:sha256:67e1228f7f33ec7c0eb6d366b0a8a2f03cdf799bb8bc5f2cb8c6722fee081b31",
+      "type": "HANDLES"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:35a5157707edde44141ea7916ad95c38902bd08bcd7cf065cbf97fa703b7782e"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:5e11e1794974b5c8684d0fd80c07326b2ced9b520b7c293571a0ac6917d2f68c",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:2f68004c5bbe1aee76face6106df108f42925c9907d5372592d76fdc765806a9",
+      "target": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "type": "CALLS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:841a86b0c50cfb0c6445200f24fac90f486a03fdf4a408c9ee3d50bbd1599c2a"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:a539cf0396bfb957a4e4c254074f399db65dd8911e4249c2e54d3889029f4faa",
+      "layer": "APP",
+      "properties": {},
+      "source": "node:sha256:07e6f477ac62761852a2fdfe47d76dc7f4c763be3d82ce2613587f63fdd38522",
+      "target": "node:sha256:2f68004c5bbe1aee76face6106df108f42925c9907d5372592d76fdc765806a9",
+      "type": "HANDLES"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:3e28d6e69a4a9549d55d888a9bcbc734250bf0a96b174ed863e04e2810adbb72"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:5a2776e8abe42f7ad01bd3c665dec05fdc8dfb34cbe20150a818f5542eae3ddb",
+      "layer": "APP",
+      "properties": {},
+      "source": "node:sha256:07e6f477ac62761852a2fdfe47d76dc7f4c763be3d82ce2613587f63fdd38522",
+      "target": "node:sha256:9167aedd96d1b64a12c83dccddcb84485e497e7c5061706972f7e0ecb398de08",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:2feab2706d56281b486dbafd85476b14789eb081959ca1a6084d480cec39790a"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:412c16acd2c43800cccf7938cdd5fe79c52f00ff88779b8e8a201f3135b12c29",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:a4266b6e732636242b71c5d6509e7b4a88e821a823d7704a4892fcbcaec269a8",
+      "target": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "type": "CALLS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:61fa56e3d9c3d4b0cf695b53d8c2437e25b6852252480675f67bb1bb583362c4"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:7c582871a4cbe316fae84b10a9f7b64f67582aae1d538da1941d0fa246294e9f",
+      "layer": "APP",
+      "properties": {},
+      "source": "node:sha256:dc8caffca2aaa4a9b8ad2b7b655b4a37ea13641b2e001a80918f61d19ece6913",
+      "target": "node:sha256:a4266b6e732636242b71c5d6509e7b4a88e821a823d7704a4892fcbcaec269a8",
+      "type": "HANDLES"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:e8c21e753bffceff8dca9b98bd10c7f2d7a1c370dbe0bbbf6453e91c8444e114"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:e9edac7582ab7851b889e159b6826797aa6b55dcd362f9e7ccc39fe9a1cd0a7b",
+      "layer": "APP",
+      "properties": {},
+      "source": "node:sha256:dc8caffca2aaa4a9b8ad2b7b655b4a37ea13641b2e001a80918f61d19ece6913",
+      "target": "node:sha256:530266153f89e37cb0796680bd323d4e7eb0019cd024bd680bbe19ef5194b30d",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:c0f7b78e8f41cc294cf2769ddc78e2e0a5ad0e397bae23a4c135c6a675efac8e"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:80dde0499ad80ae1e84d2da5a7572c0f17bd21ebe74c30c293f6215791ec58d6",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:5bce02bb0dacb581e69c90e76273be1051a50855f4ed336e5bd2c0bf6ea0b0cb",
+      "target": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "type": "CALLS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:50442a9e17a3425d692a1744dd6dae4335b9f89c8506541852465a9f3da20a39"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:fb3f9ef630fc0365614d650b75028306b962889697b9d6e81fb46e8fb4f67d38",
+      "layer": "APP",
+      "properties": {},
+      "source": "node:sha256:77a47b5126b1cffb82567aa4518e1ce7ad30edf3110a23d86df7e4f35a61a696",
+      "target": "node:sha256:5bce02bb0dacb581e69c90e76273be1051a50855f4ed336e5bd2c0bf6ea0b0cb",
+      "type": "HANDLES"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:dbfa611a327ac8fa86f00720bb3fd5c85fa3ddc087c51bf756a36562bc426d57"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:fe201289b5523630046b7af2cd8810afc8bfa4897664c8f73efa8c80858a3e92",
+      "layer": "APP",
+      "properties": {},
+      "source": "node:sha256:77a47b5126b1cffb82567aa4518e1ce7ad30edf3110a23d86df7e4f35a61a696",
+      "target": "node:sha256:9167aedd96d1b64a12c83dccddcb84485e497e7c5061706972f7e0ecb398de08",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:64315747f8528c7adfacc64d50bcdeb6fb61b66290d00698f50711ca82045782"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:19b3687688cab9c37c79f63e37c053a44a016b3547e418bead22651e88b09825",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:bd76de1c8b953778b251fda0b1ea28bff8b0e4249eafcb86484f3e6d56b17502",
+      "target": "node:sha256:9400facaf13d34e5bdc87e26bbd10bbe03dffc62beeba122f359539150108fc9",
+      "type": "CALLS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:ab0861b3f0a5e20fd5b1ba949c8b5e6cfb321034112ebeb835b2c5de26522c4c"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:f8f323076a06e7df806b1ae953257e4ec59d1fcffedb43df95126dccfe4e83fd",
+      "layer": "APP",
+      "properties": {},
+      "source": "node:sha256:b5986e9cdaac6a75a820596557112bd58072288adbd20914035f921def5af1c5",
+      "target": "node:sha256:bd76de1c8b953778b251fda0b1ea28bff8b0e4249eafcb86484f3e6d56b17502",
+      "type": "HANDLES"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:b6f24a4bc60b0c5908c454a86095b9e0d8cc2e3e60ed1cd7b172ffd3c3bed5ac"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:ede89c04fa3ba4568e6b8621ef5b7d910fa20cdeb4d63033fae0054d5b45bbdd",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:04f3846151651e76fa4aac4f43d9cbb0751f21d2a68aba6e8751973ad4c645be",
+      "target": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "type": "CALLS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:16f5c8b0810ac56bc6020421ba245a6c70b9384d60e06d1fa0ea0fc230070224"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:673b89a25dc98498cec14177576a679f644cb91cb2492f8201bdb887fb318520",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:fcb232c9766063fefcda7698b09c54878cc77342fbd216247fbe5d999b21e269",
+      "target": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "type": "CALLS"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:0be9dafe21ae2ecbeaa73643de89c0a12dd46ed876fa1bbc6b7ae30c451b000e"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:1f85c0a99722d8b913194c538099956327dccac95350ba3d1400a1e6ad6acd25",
+      "layer": "APP",
+      "properties": {},
+      "source": "node:sha256:3bbad66ffac3b7833f913e520d81b6dc0d2b5a6e37dce79d63d8ca6604be1650",
+      "target": "node:sha256:fcb232c9766063fefcda7698b09c54878cc77342fbd216247fbe5d999b21e269",
+      "type": "HANDLES"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:c0e0039e3502cad4c77c32681454aae3e4ebb61ef36dea4a21642dea6296a3df"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:ddd778804bca66ff00c26ee0681e67c78e08a6c33f2e830639091714f7216b22",
+      "layer": "APP",
+      "properties": {},
+      "source": "node:sha256:3bbad66ffac3b7833f913e520d81b6dc0d2b5a6e37dce79d63d8ca6604be1650",
+      "target": "node:sha256:9167aedd96d1b64a12c83dccddcb84485e497e7c5061706972f7e0ecb398de08",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "analyzer": {
+        "name": "python_ast",
+        "version": "0.1.0"
+      },
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:57fbf13c2ec36cf34bd1f9516be8e32d8b6bd8b70ba3d4a19e29f46fba35d304"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "edge:sha256:830acbe701d2e68b1e6f7df0f1fd5d81aa0827d9f87dcb2bcfa37bc8bd69082b",
+      "layer": "CODE",
+      "properties": {},
+      "source": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "target": "node:sha256:bb6daacc3620d9d46f0b06f04935632a36b6582bc67f55b1ae06e1e7bfd92eec",
+      "type": "CALLS"
+    }
+  ],
+  "evidence": [
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 1,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:a0ee9667cf760238c07fe450cb4ab1445fdd2155266ce7d8c2da355268fd39e9",
+      "file_path": "app/controls.py",
+      "id": "evidence:sha256:59f09e5b4752ac1d661c0a1019177592fa1f274a2852ed0f569627e654dc3621",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 1,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 2,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:c232fb45d32e4d3c3b8798a3a4e1c66659f43f0600522e47b3e7406b5c918653",
+      "file_path": "app/controls.py",
+      "id": "evidence:sha256:ade393b2479a7b7f0f640c004a841e73b17671f919fbd0e93075651dec5211e6",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 1,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 2,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:c232fb45d32e4d3c3b8798a3a4e1c66659f43f0600522e47b3e7406b5c918653",
+      "file_path": "app/controls.py",
+      "id": "evidence:sha256:1f8aad9a513ee1bfb4af92899a157d387f284ee7fb91b0dce2214d1841b2b4b4",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 1,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 6,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:6938938430a5a25be98340bab27945eafa523ce831717b13926f1d4d6778e6e1",
+      "file_path": "app/controls.py",
+      "id": "evidence:sha256:0c8d1ba29edf3fdc7d0a69c09d885cb9871da09043df7f8e225ac2849bfebc65",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 5,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 6,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:6938938430a5a25be98340bab27945eafa523ce831717b13926f1d4d6778e6e1",
+      "file_path": "app/controls.py",
+      "id": "evidence:sha256:3db2244301c26ec4d340593350402a78e1a3eac930271f68b8f2689ba0266e0e",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 5,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 1,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:23fbea526d9b55af8547b987b65aadee4874f312710edba595f4b09d0e6368eb",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:935a65c87da7407df12cda8076992e6754b98c6bf8d29bc05fb38dfa4c5ee438",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 1,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 13,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:94110c7fcb4134cc7e80baf1cc88320ce1aa5bf61dceaa95ffe3f4f9efecae87",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:b0ee1807a8583989413daa35a800b7f8df94295c75be1f847ad6867ae9e7a315",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 12,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 13,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:94110c7fcb4134cc7e80baf1cc88320ce1aa5bf61dceaa95ffe3f4f9efecae87",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:cf75567f2f964df0b960c3f80a64b614cff999863e0392b311e9247bc7267c5e",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 12,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 18,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:edb6f2e1433a258ecaebd9c2414664da5c17d3106d7b713ff9e0118b38d6c592",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:f92a20c3e162687fca88e20358301de865937e504aab6731818ccc6a728804a3",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 17,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 18,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:edb6f2e1433a258ecaebd9c2414664da5c17d3106d7b713ff9e0118b38d6c592",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:b7f901cff1c8044e9839d53694a749292f3e99ee6e9f318a0bd1d872454d69a4",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 17,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 23,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:baa35b75bd4240a57d3d256940de83d8042181525114b0742d3c31516cbc55da",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:95da0ea0833517a49121f2f9dbc723fb9cbfc44b4fc6edfe73bfc751cda30519",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 22,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 23,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:baa35b75bd4240a57d3d256940de83d8042181525114b0742d3c31516cbc55da",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:737a5f07c965b1881c99c63549096a7bdef73ead195f596fd8d2110f7e289210",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 22,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 28,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:ac786f124faf1e66420c8c80169bb1a3ba5128707b806e54880cce549189de64",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:bc6124ef1284ffea5dedbae69b8db1ef197dd171e647f707a0077f65239a6639",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 27,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 28,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:ac786f124faf1e66420c8c80169bb1a3ba5128707b806e54880cce549189de64",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:741b83a2517ded10ab80a065fa0a196c986a73c0beeeb2fc583e4c832c54db34",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 27,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 33,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:51ece9c7efb5ca30a040ce60612afe8ec8cac68ae2d0d8a7376cee411deacff9",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:6c5353af15fa8499b3a4ff11486838f9d1fca2aa76fbc4a5fca3e9f32dcb51dd",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 32,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 33,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:51ece9c7efb5ca30a040ce60612afe8ec8cac68ae2d0d8a7376cee411deacff9",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:cd41ed6f41bcf4f9d6447c77ab7d35691f114bf9a47cde0f809ede3ad2f10b98",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 32,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 37,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:14a47234c46bdd53fb88228640122d52ed7950ca11646968fca428f81c777574",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:c322d2de98423ee588042f4c4e90799e3a3fca159d42f40e0b0dfba3fc5a929a",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 36,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 37,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:14a47234c46bdd53fb88228640122d52ed7950ca11646968fca428f81c777574",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:968b4c4b1046618564b80ae9faeafe7c8440b653cc38e00fe2b47c0b1e9b63c5",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 36,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 1,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:794f2e2903b25ea10a2efb634e232db40127a97488b1c4054c18905c7f0ff432",
+      "file_path": "app/repository.py",
+      "id": "evidence:sha256:1b2e4c4a6dbfc5fbe361338a3714cfaa2074572eacd39a13ea6d7acedcd2aab5",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 1,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 2,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:49a122dd1e457e161f22cca5e820e80cc7060ec45d43f0b6aa8dc421f12afdec",
+      "file_path": "app/repository.py",
+      "id": "evidence:sha256:ebb6acf47a053d19fa7e644ba8c50a293f37c8c9eeeec8311b816db53ed2e283",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 1,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 2,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:49a122dd1e457e161f22cca5e820e80cc7060ec45d43f0b6aa8dc421f12afdec",
+      "file_path": "app/repository.py",
+      "id": "evidence:sha256:e33706353d494d624779488b8ec60024e11be15561a6f9390447b8413d7da4fa",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 1,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 1,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:dab348e21fc51b191b13a7128dabfda421bcaf06e64116bc6310da71a4469233",
+      "file_path": "app/routes.py",
+      "id": "evidence:sha256:64481f84338bae779915395bf87ef7fd27d388248185ac4d5ac06edb04d14b3a",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 1,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 9,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:729e8e9254fc165d320de082f21c8ab2320821bd82acafc209cc619acedeaef2",
+      "file_path": "app/routes.py",
+      "id": "evidence:sha256:18602ee3591b497d751844b3a6b35350b42325edb24c4a68c139acd6ac44ac75",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 8,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 9,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:729e8e9254fc165d320de082f21c8ab2320821bd82acafc209cc619acedeaef2",
+      "file_path": "app/routes.py",
+      "id": "evidence:sha256:7ade7d96c88ea40bc1ed6e33cabf24c65c23f4c96ab74a5637311c8b22d492d3",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 8,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 1,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:0467498cab18ff51d7b3a88c0c433a89aaefd0e982ed48bba3a6ac748903ea6c",
+      "file_path": "app/services.py",
+      "id": "evidence:sha256:aba1adb47595654b255f049c7f00223bde13457015fefc5da7adce679aab8c01",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 1,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 5,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:634bb1df822c63b8f85494eda19061b2ff5de711874388ce2676c3543511d37d",
+      "file_path": "app/services.py",
+      "id": "evidence:sha256:ba8fe7e60d460c5ddd74a527f7250265ecef7a079475b8db4fdd5813163983e9",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 4,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 5,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:634bb1df822c63b8f85494eda19061b2ff5de711874388ce2676c3543511d37d",
+      "file_path": "app/services.py",
+      "id": "evidence:sha256:f7bfdb5b20939c92222c85d018177b3eb517ce8f614844171cffad0b9921a235",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 4,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 9,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:ffcabaf6f0bd3fe03d37b7fad71ab1ed93a6c843d37120d56cd820697db60f46",
+      "file_path": "app/services.py",
+      "id": "evidence:sha256:29abf230200f111d76cdca1509bb389cf06a651cfb4a2134b0db6d28bf4582cd",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 8,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 9,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:ffcabaf6f0bd3fe03d37b7fad71ab1ed93a6c843d37120d56cd820697db60f46",
+      "file_path": "app/services.py",
+      "id": "evidence:sha256:6b8ba45e69afcef76ad5a9a808cb0eeb7a62b4544ab2068023426456925428ca",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 8,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 3,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:658048dd51126f47afc19f77305485c186c007f8cc0bba685d5c82dcfae9c71a",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:738a7fb66a349439ebfe29e769a7e0087b266baea7a0b64b6f03f2bb966d4ba9",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 3,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 4,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:fca321175ef89e736a0cba1ea0bdf2d0a6b85d36a41104b7504422dfdf392677",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:f9589bcad1b2cd8a18d417bc7b6ae56488114b034af2ea6e893b755f8c0e0ee8",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 4,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 2,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:2171659dba84493f4fcd1a13d75545c86c108b5e96e84cc2e4df26bc6bd350d6",
+      "file_path": "app/routes.py",
+      "id": "evidence:sha256:0d2732682c3616c9bf6260155dfd94504e1e9b55f2528f4d3ab70c750efb9f7b",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 2,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 1,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:0467498cab18ff51d7b3a88c0c433a89aaefd0e982ed48bba3a6ac748903ea6c",
+      "file_path": "app/services.py",
+      "id": "evidence:sha256:59efcdadf2a7ffcf1b66318e6a9ced6ce28f69a211d0e10703a6f54b1cfaa20e",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 1,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 13,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:02648ee1ef75f27b0048fa2489fe4b5266d28c538f95de02952fa96a680b2566",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:91c54e71530c17ab27f4c285d1ac6c14a302f3739c98314221b1e1bbb700e91e",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 13,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 11,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:4570ac1eb3a1959ecc9e6755dd7f8d417e76af2b2e57cdc1267485d83a3abbef",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:de9e8ca16eb79f9dbef48e2ea451b57760332ef153d61574e68464eb5144760c",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 11,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 11,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:4570ac1eb3a1959ecc9e6755dd7f8d417e76af2b2e57cdc1267485d83a3abbef",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:8137d87f2f6a180423c240fcfa586c1d59850bb29fd9ab5b1c3a677bbc0aeaf4",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "fastapi.scope.v1",
+      "start_line": 11,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 18,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:02648ee1ef75f27b0048fa2489fe4b5266d28c538f95de02952fa96a680b2566",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:35a5157707edde44141ea7916ad95c38902bd08bcd7cf065cbf97fa703b7782e",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 18,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 16,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:ea0fd7e1cb2f838c62270c5c4291e6389522e05e8d140123aa1d758f5bff3672",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:b9352e57ebf291366c87ab2581dd43edc781ee6bb68cf12b095f8d21b4bc8f19",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 16,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 16,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:ea0fd7e1cb2f838c62270c5c4291e6389522e05e8d140123aa1d758f5bff3672",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:841a86b0c50cfb0c6445200f24fac90f486a03fdf4a408c9ee3d50bbd1599c2a",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "fastapi.scope.v1",
+      "start_line": 16,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 17,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:d0bf9894cf12206579b38913e97fc7f1121502112886ee665da829c897049cb0",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:3e28d6e69a4a9549d55d888a9bcbc734250bf0a96b174ed863e04e2810adbb72",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "fastapi.scope.v1",
+      "start_line": 17,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 23,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:02648ee1ef75f27b0048fa2489fe4b5266d28c538f95de02952fa96a680b2566",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:2feab2706d56281b486dbafd85476b14789eb081959ca1a6084d480cec39790a",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 23,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 21,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:2504e8c879033272a057f5e9d806a9fe398194639fb6bf951a6bec22025aa220",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:558b5e62aeed8f8457f6bdac9351928a4e996c5413b9721eccef8fe6f528d771",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 21,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 21,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:2504e8c879033272a057f5e9d806a9fe398194639fb6bf951a6bec22025aa220",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:61fa56e3d9c3d4b0cf695b53d8c2437e25b6852252480675f67bb1bb583362c4",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "fastapi.scope.v1",
+      "start_line": 21,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 22,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:c110eb1065fe13f316f0b39d249f782063512ae3849ad832f982d607cad32679",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:e8c21e753bffceff8dca9b98bd10c7f2d7a1c370dbe0bbbf6453e91c8444e114",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "fastapi.scope.v1",
+      "start_line": 22,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 28,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:02648ee1ef75f27b0048fa2489fe4b5266d28c538f95de02952fa96a680b2566",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:c0f7b78e8f41cc294cf2769ddc78e2e0a5ad0e397bae23a4c135c6a675efac8e",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 28,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 26,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:6bb6c36e8d1fd0731e063904956af94179249046a05e11e5f6735a8209b88972",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:7c41644548c45bb22d961d9d32be900b9a79aa896f1185eaf977d868fafb4c73",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 26,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 26,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:6bb6c36e8d1fd0731e063904956af94179249046a05e11e5f6735a8209b88972",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:50442a9e17a3425d692a1744dd6dae4335b9f89c8506541852465a9f3da20a39",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "fastapi.scope.v1",
+      "start_line": 26,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 27,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:13d5f82af229eb96db07c12383535302f70c75818eb98168025f9723640c063a",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:dbfa611a327ac8fa86f00720bb3fd5c85fa3ddc087c51bf756a36562bc426d57",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "fastapi.scope.v1",
+      "start_line": 27,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 33,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:875f70c1ff43bf362d035cbf57d411f92ddb774eed6ed541932c584c01aa595f",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:64315747f8528c7adfacc64d50bcdeb6fb61b66290d00698f50711ca82045782",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 33,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 31,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:86975226d292d918a2a78d59e863115d93ffb08f8cfeff4d673188c7caf42f44",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:2dc631345666f8eb2247a6e56607e082e5a35567c723e10ca6da933d550394b6",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 31,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 31,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:86975226d292d918a2a78d59e863115d93ffb08f8cfeff4d673188c7caf42f44",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:ab0861b3f0a5e20fd5b1ba949c8b5e6cfb321034112ebeb835b2c5de26522c4c",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "fastapi.scope.v1",
+      "start_line": 31,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 37,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:02648ee1ef75f27b0048fa2489fe4b5266d28c538f95de02952fa96a680b2566",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:b6f24a4bc60b0c5908c454a86095b9e0d8cc2e3e60ed1cd7b172ffd3c3bed5ac",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 37,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 9,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:02648ee1ef75f27b0048fa2489fe4b5266d28c538f95de02952fa96a680b2566",
+      "file_path": "app/routes.py",
+      "id": "evidence:sha256:16f5c8b0810ac56bc6020421ba245a6c70b9384d60e06d1fa0ea0fc230070224",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 9,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 7,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:8e48f6ac363383db7b94c6a566c10404133d369c2030b6ab655bbd1f5c8894ee",
+      "file_path": "app/routes.py",
+      "id": "evidence:sha256:fa2e8b414379c81805bbdb1325d9a9674adc9b456159dac11db909dc7987bb04",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.structure.v1",
+      "start_line": 7,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 7,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:8e48f6ac363383db7b94c6a566c10404133d369c2030b6ab655bbd1f5c8894ee",
+      "file_path": "app/routes.py",
+      "id": "evidence:sha256:0be9dafe21ae2ecbeaa73643de89c0a12dd46ed876fa1bbc6b7ae30c451b000e",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "fastapi.scope.v1",
+      "start_line": 7,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 8,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:4760bf6b10580a37a93555afb686deddc310f61979ff245688ac2eee3fcae948",
+      "file_path": "app/main.py",
+      "id": "evidence:sha256:c0e0039e3502cad4c77c32681454aae3e4ebb61ef36dea4a21642dea6296a3df",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "fastapi.scope.v1",
+      "start_line": 8,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "python_ast",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 5,
+      "evidence_kind": "AST",
+      "excerpt_hash": "sha256:4ab0300a5c40401875c30c29a8c80b572566e960dc9b21f618aaeb34120e8c9a",
+      "file_path": "app/services.py",
+      "id": "evidence:sha256:57fbf13c2ec36cf34bd1f9516be8e32d8b6bd8b70ba3d4a19e29f46fba35d304",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "python_ast.relationship.v1",
+      "start_line": 5,
+      "symbol": ""
+    },
+    {
+      "analyzer_name": "human_policy",
+      "analyzer_version": "0.1.0",
+      "created_at": "",
+      "end_line": 12,
+      "evidence_kind": "HUMAN_ASSERTION",
+      "excerpt_hash": "sha256:ee39a626bc9b91b1db376f01b93eda464cc43aa9c44c72f86d6b25a6a5c2f116",
+      "file_path": "policy.json",
+      "id": "evidence:sha256:ce7371378f90ef97b9d100c0ef6317039bcbb0e259969b69611a9324bcb40ccb",
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_or_query_id": "LS-AUTH-001",
+      "start_line": 1,
+      "symbol": "protected_operations"
+    }
+  ],
+  "findings": [
+    {
+      "assessment": "POTENTIAL_GAP",
+      "assumptions": [
+        "Human policy assertion defines protected operation sensitivity."
+      ],
+      "category": "BROKEN_ACCESS_CONTROL",
+      "confidence": "LOW",
+      "coverage_context": {
+        "policy_assertion": {
+          "author": "Lazarus Sentinel synthetic fixture maintainers",
+          "created_at": "2026-11-01T00:00:00Z",
+          "impact": "Synthetic records may be exposed without a declared export permission.",
+          "operation": "app.repository.export_records",
+          "required_authorization": "app.controls.authorize_export",
+          "severity": "HIGH"
+        },
+        "profile": "reduced-static-auth"
+      },
+      "created_at": "",
+      "entry_node_id": "node:sha256:dc8caffca2aaa4a9b8ad2b7b655b4a37ea13641b2e001a80918f61d19ece6913",
+      "evidence_ids": [
+        "evidence:sha256:2feab2706d56281b486dbafd85476b14789eb081959ca1a6084d480cec39790a",
+        "evidence:sha256:558b5e62aeed8f8457f6bdac9351928a4e996c5413b9721eccef8fe6f528d771",
+        "evidence:sha256:57fbf13c2ec36cf34bd1f9516be8e32d8b6bd8b70ba3d4a19e29f46fba35d304",
+        "evidence:sha256:61fa56e3d9c3d4b0cf695b53d8c2437e25b6852252480675f67bb1bb583362c4",
+        "evidence:sha256:95da0ea0833517a49121f2f9dbc723fb9cbfc44b4fc6edfe73bfc751cda30519",
+        "evidence:sha256:ba8fe7e60d460c5ddd74a527f7250265ecef7a079475b8db4fdd5813163983e9",
+        "evidence:sha256:ce7371378f90ef97b9d100c0ef6317039bcbb0e259969b69611a9324bcb40ccb",
+        "evidence:sha256:ebb6acf47a053d19fa7e644ba8c50a293f37c8c9eeeec8311b816db53ed2e283"
+      ],
+      "false_positive_considerations": [
+        "Authorization may exist outside this supported static model."
+      ],
+      "human_review_steps": [
+        "Review the pinned source path and policy assertion before accepting the candidate."
+      ],
+      "id": "finding:sha256:0dafd0a6885d2fc6d1dbf06fa1cbf095f28b69577ae8a4d5879ae0843306d4a0",
+      "impact_hypothesis": "Synthetic records may be exposed without a declared export permission.",
+      "missing_or_uncertain_controls": [
+        "app.controls.authorize_export"
+      ],
+      "path_edge_ids": [
+        "edge:sha256:7c582871a4cbe316fae84b10a9f7b64f67582aae1d538da1941d0fa246294e9f",
+        "edge:sha256:412c16acd2c43800cccf7938cdd5fe79c52f00ff88779b8e8a201f3135b12c29",
+        "edge:sha256:830acbe701d2e68b1e6f7df0f1fd5d81aa0827d9f87dcb2bcfa37bc8bd69082b"
+      ],
+      "path_node_ids": [
+        "node:sha256:dc8caffca2aaa4a9b8ad2b7b655b4a37ea13641b2e001a80918f61d19ece6913",
+        "node:sha256:a4266b6e732636242b71c5d6509e7b4a88e821a823d7704a4892fcbcaec269a8",
+        "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+        "node:sha256:bb6daacc3620d9d46f0b06f04935632a36b6582bc67f55b1ae06e1e7bfd92eec"
+      ],
+      "recognized_controls": [],
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_id": "LS-AUTH-001",
+      "rule_version": "0.1.0",
+      "schema_version": "0.1.0",
+      "severity": "HIGH",
+      "title": "Potential authorization declaration gap",
+      "triage_status": "NEEDS_REVIEW",
+      "unknowns": [
+        "Declaration effectiveness and runtime enforcement are unverified."
+      ],
+      "verification_status": "CANDIDATE",
+      "why_flagged": "A policy-protected operation is reachable through supported calls without its expected authorization declaration."
+    },
+    {
+      "assessment": "POTENTIAL_GAP",
+      "assumptions": [
+        "Human policy assertion defines protected operation sensitivity."
+      ],
+      "category": "BROKEN_ACCESS_CONTROL",
+      "confidence": "LOW",
+      "coverage_context": {
+        "policy_assertion": {
+          "author": "Lazarus Sentinel synthetic fixture maintainers",
+          "created_at": "2026-11-01T00:00:00Z",
+          "impact": "Synthetic records may be exposed without a declared export permission.",
+          "operation": "app.repository.export_records",
+          "required_authorization": "app.controls.authorize_export",
+          "severity": "HIGH"
+        },
+        "profile": "reduced-static-auth"
+      },
+      "created_at": "",
+      "entry_node_id": "node:sha256:ae2b7d633030f77d1b1977465bd7e5391f23e41745f9111248eca110393c2a33",
+      "evidence_ids": [
+        "evidence:sha256:57fbf13c2ec36cf34bd1f9516be8e32d8b6bd8b70ba3d4a19e29f46fba35d304",
+        "evidence:sha256:8137d87f2f6a180423c240fcfa586c1d59850bb29fd9ab5b1c3a677bbc0aeaf4",
+        "evidence:sha256:91c54e71530c17ab27f4c285d1ac6c14a302f3739c98314221b1e1bbb700e91e",
+        "evidence:sha256:b0ee1807a8583989413daa35a800b7f8df94295c75be1f847ad6867ae9e7a315",
+        "evidence:sha256:ba8fe7e60d460c5ddd74a527f7250265ecef7a079475b8db4fdd5813163983e9",
+        "evidence:sha256:ce7371378f90ef97b9d100c0ef6317039bcbb0e259969b69611a9324bcb40ccb",
+        "evidence:sha256:de9e8ca16eb79f9dbef48e2ea451b57760332ef153d61574e68464eb5144760c",
+        "evidence:sha256:ebb6acf47a053d19fa7e644ba8c50a293f37c8c9eeeec8311b816db53ed2e283"
+      ],
+      "false_positive_considerations": [
+        "Authorization may exist outside this supported static model."
+      ],
+      "human_review_steps": [
+        "Review the pinned source path and policy assertion before accepting the candidate."
+      ],
+      "id": "finding:sha256:1a6e5d8e2eef581e13314546c6eccfcaec0aa7324c184ccae5ec3b74cdc77b4f",
+      "impact_hypothesis": "Synthetic records may be exposed without a declared export permission.",
+      "missing_or_uncertain_controls": [
+        "app.controls.authorize_export"
+      ],
+      "path_edge_ids": [
+        "edge:sha256:68243bb224c97598d16981445396fbac148d71555dcdacc9299e8344c49c6b13",
+        "edge:sha256:fa1db973e3ee6d392e8f7e71fd4d6cac08066ab64f5853a04219c02869cbc49f",
+        "edge:sha256:830acbe701d2e68b1e6f7df0f1fd5d81aa0827d9f87dcb2bcfa37bc8bd69082b"
+      ],
+      "path_node_ids": [
+        "node:sha256:ae2b7d633030f77d1b1977465bd7e5391f23e41745f9111248eca110393c2a33",
+        "node:sha256:67e1228f7f33ec7c0eb6d366b0a8a2f03cdf799bb8bc5f2cb8c6722fee081b31",
+        "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+        "node:sha256:bb6daacc3620d9d46f0b06f04935632a36b6582bc67f55b1ae06e1e7bfd92eec"
+      ],
+      "recognized_controls": [],
+      "repository_revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+      "rule_id": "LS-AUTH-001",
+      "rule_version": "0.1.0",
+      "schema_version": "0.1.0",
+      "severity": "HIGH",
+      "title": "Potential authorization declaration gap",
+      "triage_status": "NEEDS_REVIEW",
+      "unknowns": [
+        "Declaration effectiveness and runtime enforcement are unverified."
+      ],
+      "verification_status": "CANDIDATE",
+      "why_flagged": "A policy-protected operation is reachable through supported calls without its expected authorization declaration."
+    }
+  ],
+  "nodes": [
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:59f09e5b4752ac1d661c0a1019177592fa1f274a2852ed0f569627e654dc3621"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:1ae905c63a72c46383874ba91a654c2bc08923ba304660dd17e3148b6cd358d8",
+      "layer": "CODE",
+      "name": "controls",
+      "properties": {},
+      "qualified_name": "app.controls",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "MODULE"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:ade393b2479a7b7f0f640c004a841e73b17671f919fbd0e93075651dec5211e6"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:530266153f89e37cb0796680bd323d4e7eb0019cd024bd680bbe19ef5194b30d",
+      "layer": "CODE",
+      "name": "authenticate",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.controls.authenticate",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:0c8d1ba29edf3fdc7d0a69c09d885cb9871da09043df7f8e225ac2849bfebc65"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:9167aedd96d1b64a12c83dccddcb84485e497e7c5061706972f7e0ecb398de08",
+      "layer": "CODE",
+      "name": "authorize_export",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.controls.authorize_export",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:935a65c87da7407df12cda8076992e6754b98c6bf8d29bc05fb38dfa4c5ee438"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:eb9aea96f859bc10014ef976ccc38974606c1f796722a7bbbb1145d13be50ac2",
+      "layer": "CODE",
+      "name": "main",
+      "properties": {},
+      "qualified_name": "app.main",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "MODULE"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:b0ee1807a8583989413daa35a800b7f8df94295c75be1f847ad6867ae9e7a315"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:67e1228f7f33ec7c0eb6d366b0a8a2f03cdf799bb8bc5f2cb8c6722fee081b31",
+      "layer": "CODE",
+      "name": "weak_export",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.main.weak_export",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:f92a20c3e162687fca88e20358301de865937e504aab6731818ccc6a728804a3"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:2f68004c5bbe1aee76face6106df108f42925c9907d5372592d76fdc765806a9",
+      "layer": "CODE",
+      "name": "protected_export",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.main.protected_export",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:95da0ea0833517a49121f2f9dbc723fb9cbfc44b4fc6edfe73bfc751cda30519"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:a4266b6e732636242b71c5d6509e7b4a88e821a823d7704a4892fcbcaec269a8",
+      "layer": "CODE",
+      "name": "authenticated_export",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.main.authenticated_export",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:bc6124ef1284ffea5dedbae69b8db1ef197dd171e647f707a0077f65239a6639"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:5bce02bb0dacb581e69c90e76273be1051a50855f4ed336e5bd2c0bf6ea0b0cb",
+      "layer": "CODE",
+      "name": "annotated_export",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.main.annotated_export",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:6c5353af15fa8499b3a4ff11486838f9d1fca2aa76fbc4a5fca3e9f32dcb51dd"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:bd76de1c8b953778b251fda0b1ea28bff8b0e4249eafcb86484f3e6d56b17502",
+      "layer": "CODE",
+      "name": "public_status",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.main.public_status",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:c322d2de98423ee588042f4c4e90799e3a3fca159d42f40e0b0dfba3fc5a929a"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:04f3846151651e76fa4aac4f43d9cbb0751f21d2a68aba6e8751973ad4c645be",
+      "layer": "CODE",
+      "name": "dynamic_export",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.main.dynamic_export",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:1b2e4c4a6dbfc5fbe361338a3714cfaa2074572eacd39a13ea6d7acedcd2aab5"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:3f8701c0e9324992f4de3c97fbf5b7b38140ece8ea07d736f17b177f63285ba1",
+      "layer": "CODE",
+      "name": "repository",
+      "properties": {},
+      "qualified_name": "app.repository",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "MODULE"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:ebb6acf47a053d19fa7e644ba8c50a293f37c8c9eeeec8311b816db53ed2e283"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:bb6daacc3620d9d46f0b06f04935632a36b6582bc67f55b1ae06e1e7bfd92eec",
+      "layer": "CODE",
+      "name": "export_records",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.repository.export_records",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:64481f84338bae779915395bf87ef7fd27d388248185ac4d5ac06edb04d14b3a"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:369add66f290fb19e9a287864390b02d0c9bdca6d19631a0adf9b2acac53af1b",
+      "layer": "CODE",
+      "name": "routes",
+      "properties": {},
+      "qualified_name": "app.routes",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "MODULE"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:18602ee3591b497d751844b3a6b35350b42325edb24c4a68c139acd6ac44ac75"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:fcb232c9766063fefcda7698b09c54878cc77342fbd216247fbe5d999b21e269",
+      "layer": "CODE",
+      "name": "inherited_export",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.routes.inherited_export",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:aba1adb47595654b255f049c7f00223bde13457015fefc5da7adce679aab8c01"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:9f40127eaa5bfe3bf013d695ced1755bd0ea2a838451da2042967efd1b1e697e",
+      "layer": "CODE",
+      "name": "services",
+      "properties": {},
+      "qualified_name": "app.services",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "MODULE"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:ba8fe7e60d460c5ddd74a527f7250265ecef7a079475b8db4fdd5813163983e9"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:4ff605ff975a0b2dff2d99fbc867f4468b7f504ebd8c50f5dffa1b2a81e42c9f",
+      "layer": "CODE",
+      "name": "export_service",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.services.export_service",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:29abf230200f111d76cdca1509bb389cf06a651cfb4a2134b0db6d28bf4582cd"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:9400facaf13d34e5bdc87e26bbd10bbe03dffc62beeba122f359539150108fc9",
+      "layer": "CODE",
+      "name": "public_service",
+      "properties": {
+        "control_scope_supported": true
+      },
+      "qualified_name": "app.services.public_service",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "FUNCTION"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:de9e8ca16eb79f9dbef48e2ea451b57760332ef153d61574e68464eb5144760c"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:ae2b7d633030f77d1b1977465bd7e5391f23e41745f9111248eca110393c2a33",
+      "layer": "APP",
+      "name": "GET /weak",
+      "properties": {
+        "control_scope_supported": true,
+        "dependencies": [],
+        "handler_id": "node:sha256:67e1228f7f33ec7c0eb6d366b0a8a2f03cdf799bb8bc5f2cb8c6722fee081b31",
+        "method": "GET",
+        "path": "/weak"
+      },
+      "qualified_name": "app.main.weak_export:GET /weak",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "API_ENDPOINT"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:b9352e57ebf291366c87ab2581dd43edc781ee6bb68cf12b095f8d21b4bc8f19"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:07e6f477ac62761852a2fdfe47d76dc7f4c763be3d82ce2613587f63fdd38522",
+      "layer": "APP",
+      "name": "GET /protected",
+      "properties": {
+        "control_scope_supported": true,
+        "dependencies": [
+          "app.controls.authorize_export"
+        ],
+        "handler_id": "node:sha256:2f68004c5bbe1aee76face6106df108f42925c9907d5372592d76fdc765806a9",
+        "method": "GET",
+        "path": "/protected"
+      },
+      "qualified_name": "app.main.protected_export:GET /protected",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "API_ENDPOINT"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:558b5e62aeed8f8457f6bdac9351928a4e996c5413b9721eccef8fe6f528d771"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:dc8caffca2aaa4a9b8ad2b7b655b4a37ea13641b2e001a80918f61d19ece6913",
+      "layer": "APP",
+      "name": "GET /authenticated",
+      "properties": {
+        "control_scope_supported": true,
+        "dependencies": [
+          "app.controls.authenticate"
+        ],
+        "handler_id": "node:sha256:a4266b6e732636242b71c5d6509e7b4a88e821a823d7704a4892fcbcaec269a8",
+        "method": "GET",
+        "path": "/authenticated"
+      },
+      "qualified_name": "app.main.authenticated_export:GET /authenticated",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "API_ENDPOINT"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:7c41644548c45bb22d961d9d32be900b9a79aa896f1185eaf977d868fafb4c73"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:77a47b5126b1cffb82567aa4518e1ce7ad30edf3110a23d86df7e4f35a61a696",
+      "layer": "APP",
+      "name": "GET /annotated",
+      "properties": {
+        "control_scope_supported": true,
+        "dependencies": [
+          "app.controls.authorize_export"
+        ],
+        "handler_id": "node:sha256:5bce02bb0dacb581e69c90e76273be1051a50855f4ed336e5bd2c0bf6ea0b0cb",
+        "method": "GET",
+        "path": "/annotated"
+      },
+      "qualified_name": "app.main.annotated_export:GET /annotated",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "API_ENDPOINT"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:2dc631345666f8eb2247a6e56607e082e5a35567c723e10ca6da933d550394b6"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:b5986e9cdaac6a75a820596557112bd58072288adbd20914035f921def5af1c5",
+      "layer": "APP",
+      "name": "GET /public",
+      "properties": {
+        "control_scope_supported": true,
+        "dependencies": [],
+        "handler_id": "node:sha256:bd76de1c8b953778b251fda0b1ea28bff8b0e4249eafcb86484f3e6d56b17502",
+        "method": "GET",
+        "path": "/public"
+      },
+      "qualified_name": "app.main.public_status:GET /public",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "API_ENDPOINT"
+    },
+    {
+      "confidence": "HIGH",
+      "evidence_ids": [
+        "evidence:sha256:fa2e8b414379c81805bbdb1325d9a9674adc9b456159dac11db909dc7987bb04"
+      ],
+      "fact_status": "OBSERVED",
+      "id": "node:sha256:3bbad66ffac3b7833f913e520d81b6dc0d2b5a6e37dce79d63d8ca6604be1650",
+      "layer": "APP",
+      "name": "GET /inherited/export",
+      "properties": {
+        "control_scope_supported": true,
+        "dependencies": [
+          "app.controls.authorize_export"
+        ],
+        "handler_id": "node:sha256:fcb232c9766063fefcda7698b09c54878cc77342fbd216247fbe5d999b21e269",
+        "method": "GET",
+        "path": "/inherited/export"
+      },
+      "qualified_name": "app.routes.inherited_export:GET /inherited/export",
+      "schema_version": "0.1.0",
+      "tags": [],
+      "type": "API_ENDPOINT"
+    }
+  ],
+  "repository": {
+    "revision": "revision:sha256:b9cbcb3c59a1e4220ef42f5dcf5dea3a482e364f9907cfd6d5d81fe33ee9d49d",
+    "root_label": "fastapi-demo"
+  },
+  "schema_version": "0.1.0"
+}

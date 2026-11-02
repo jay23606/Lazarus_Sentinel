@@ -4,9 +4,9 @@ These instructions apply to all work in this repository. Read `AGENT.md` and the
 
 ## Current repository state and documentation authority — 2026-11-02
 
-The first controlled-fixture delivery is complete; do not restart its implementation or treat the old blueprint as an empty-repository task. Read `AGENT.md` and `TASK_BOARD.md`, then `docs/13_FIRST_SLICE_CONTRACT.md` for approved current scope, `docs/14_IMPLEMENTATION_REVIEW.md` for evidence, and `docs/15_NEXT_STEPS.md` for proposed remaining task IDs N01–N18. Documents 00–12 distinguish implemented behavior from future capability. Future recommendations do not override safety instructions or authorize their implementation.
+The first controlled-fixture delivery and the separately approved integrated demo increment are implemented. Read `AGENT.md`, `TASK_BOARD.md`, docs/13_FIRST_SLICE_CONTRACT.md (baseline), docs/16_DEMO_DELIVERY_CONTRACT.md (demo contract), docs/17_CAPABILITY_AND_RESEARCH_REPORT.md, docs/18_DEMO_EVALUATION.md and docs/19_INTEGRATED_DEMO_REVIEW.md (current final checks/review). Document 14 is historical baseline evidence; document 15 records every N01–N18 disposition. Do not restart completed work.
 
-Only the fixed synthetic fixture CLI is currently supported. Joern is NOT_ATTEMPTED; data/trust rules are NOT_IMPLEMENTED; API/UI/LangGraph/live model integration and broader intake are not present. Generated reports are historical scan evidence: create new scan identities rather than rewriting old reports to make them reflect newer documentation.
+Only fixed synthetic fixture intake is supported. The CLI additionally exports verified bundles and optional explanation sidecars; a fixed artifact React viewer is present. Meta transport exists but live access is BLOCKED, with zero paid calls. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules are NOT_IMPLEMENTED. HTTP API, LangGraph and broader intake are absent. OS sandbox launch was blocked, not verified. Generated reports are historical evidence: create new scan identities rather than rewriting old reports. Local Git baseline 7797b85 exists on feat/integrated-demo; no remote/publication/license choice or submission is implied.
 
 ## 1. Product objective
 

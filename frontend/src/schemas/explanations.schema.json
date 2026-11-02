@@ -1,0 +1,167 @@
+{
+  "$defs": {
+    "Annotation": {
+      "additionalProperties": false,
+      "properties": {
+        "annotation_id": {
+          "title": "Annotation Id",
+          "type": "string"
+        },
+        "annotation_version": {
+          "const": "0.1.0",
+          "title": "Annotation Version",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "display_provenance": {
+          "const": "recorded",
+          "title": "Display Provenance",
+          "type": "string"
+        },
+        "finding_id": {
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "generation": {
+          "enum": [
+            "mock",
+            "live"
+          ],
+          "title": "Generation",
+          "type": "string"
+        },
+        "graph_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Graph Sha256",
+          "type": "string"
+        },
+        "model": {
+          "enum": [
+            "deterministic-mock-v1",
+            "muse-spark-1.3"
+          ],
+          "title": "Model",
+          "type": "string"
+        },
+        "provider": {
+          "enum": [
+            "mock",
+            "meta"
+          ],
+          "title": "Provider",
+          "type": "string"
+        },
+        "request_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Request Sha256",
+          "type": "string"
+        },
+        "response": {
+          "$ref": "#/$defs/ExplanationResponse"
+        },
+        "review_status": {
+          "const": "UNREVIEWED",
+          "title": "Review Status",
+          "type": "string"
+        },
+        "revision": {
+          "title": "Revision",
+          "type": "string"
+        },
+        "scan_id": {
+          "title": "Scan Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "annotation_version",
+        "annotation_id",
+        "scan_id",
+        "revision",
+        "graph_sha256",
+        "finding_id",
+        "request_sha256",
+        "provider",
+        "model",
+        "generation",
+        "display_provenance",
+        "review_status",
+        "created_at",
+        "response"
+      ],
+      "title": "Annotation",
+      "type": "object"
+    },
+    "ExplanationResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 64,
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "maxLength": 500,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Limitations",
+          "type": "array"
+        },
+        "summary": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Summary",
+          "type": "string"
+        },
+        "why_it_matters": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Why It Matters",
+          "type": "string"
+        }
+      },
+      "required": [
+        "summary",
+        "why_it_matters",
+        "limitations",
+        "evidence_ids"
+      ],
+      "title": "ExplanationResponse",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "annotation_version": {
+      "const": "0.1.0",
+      "title": "Annotation Version",
+      "type": "string"
+    },
+    "annotations": {
+      "items": {
+        "$ref": "#/$defs/Annotation"
+      },
+      "maxItems": 1,
+      "minItems": 1,
+      "title": "Annotations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "annotation_version",
+    "annotations"
+  ],
+  "title": "ExplanationEnvelope",
+  "type": "object"
+}

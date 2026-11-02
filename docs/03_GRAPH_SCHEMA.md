@@ -1,6 +1,10 @@
 # 03 — Normalized Graph Schema and Evidence Model
 
-Current schema is implemented in `backend/src/lazarus_sentinel/models.py` and governed by the [first-slice contract](13_FIRST_SLICE_CONTRACT.md). The vocabulary below includes future concepts; it is not a claim that the analyzer emits every type. See [verified results](14_IMPLEMENTATION_REVIEW.md) and [proposed next steps](15_NEXT_STEPS.md).
+## Integrated demo status — 2026-11-02
+
+The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
+
+Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
 
 ## 1. Design goals
 
@@ -150,7 +154,7 @@ Every source-derived fact must point to one or more evidence records:
 }
 ```
 
-The implemented Evidence model forbids extra fields, including excerpt_redacted. It retains exact byte-range hashes and relative source locations, never source snippets. No external model calls are enabled; any future egress needs separately approved minimization/redaction. The current revision is a content-manifest hash including policy; no Git repository was initialized.
+The implemented Evidence model forbids extra fields, including excerpt_redacted. It retains exact byte-range hashes and relative source locations, never source snippets. Optional explanation sidecars use minimized synthetic context under document 16; default disabled, live verification blocked. The current revision is a content-manifest hash including policy; Git baseline 7797b85 supplements it.
 
 ## 6. Stable IDs
 

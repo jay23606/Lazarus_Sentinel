@@ -5,15 +5,15 @@
 ## Current status
 
 - **Project:** Lazarus Sentinel
-- **Status:** Evidence-first slice complete within the controlled fixture scope; 73 tests and quality checks pass; Astra review approved. Demo scan is PARTIAL by design.
-- **Current phase:** First delivery — fixture-only static graph / authorization-context assessment.
+- **Status:** Integrated fixed synthetic demo complete; 115 backend tests, 8 frontend tests and quality checks pass; independent Astra review accepted. Live access/submission and platform-expansion gates remain explicit in docs/19_INTEGRATED_DEMO_REVIEW.md.
+- **Current phase:** Offline integrated demo — fixture analysis, immutable bundles, recorded mock explanations and fixed artifact viewer.
 - **Primary MVP language/framework:** CPython 3.13.14 analyzing a synthetic FastAPI fixture without importing FastAPI.
 - **Primary code-analysis candidate:** Python AST structure adapter; Joern NOT_ATTEMPTED (absent from PATH; no failed POC claim).
 - **Graph computation:** NetworkX for MVP.
 - **Persistence:** SQLite for scans/findings/artifact references; normalized JSON graph/findings/coverage and Markdown reports.
 - **Workflow orchestration:** Linear Python pipeline; LangGraph deferred.
-- **Frontend:** CLI plus JSON/Markdown report; React/API deferred.
-- **Runtime model provider:** Disabled; no provider SDK or external model egress in this slice.
+- **Frontend:** React/Vite/TypeScript/Cytoscape fixed synthetic bundle viewer plus CLI/JSON/Markdown; HTTP API skipped.
+- **Runtime model provider:** Disabled by default; deterministic mock and bounded Standard Meta adapter implemented. Live access unverified, zero paid calls. USD3/five-attempt application cap.
 - **MVP mode:** Controlled fixture ID only; read-only parsing; candidate findings; no automatic fixes, arbitrary repositories, or target execution.
 
 ## Owner's model preferences
@@ -81,7 +81,7 @@ Use independent sub-agents if available, ideally up to three concurrent workers.
 ### Current work state
 
 - No first-slice implementation task is open. Environment, integration, final Astra review and documentation closeout are complete.
-- The next delivery is proposed, not started: follow N01–N18 in docs/15_NEXT_STEPS.md.
+- Owner approved integrated demo execution on 2026-11-02; parallel implementation is in progress under docs/16_DEMO_DELIVERY_CONTRACT.md.
 
 ### Deferred / unverified
 
@@ -187,3 +187,26 @@ For every substantial session, append:
 **Next 3 actions:** Resolve N01 event gates; resolve N02 provider prerequisites in parallel with local work; select/freeze N03–N06 baseline and fixed artifact viewer scope. The full list is in document 15.
 
 **Documentation-closeout results:** 21 maintained Markdown files reconciled. Local links, JSON examples, code fences, pack_manifest.json coverage and N01–N18 task-ID mirroring all validated. SHA256 fingerprints of backend source/tests, Python fixture files, pyproject.toml and uv.lock match their pre-refresh values. Astra approved the final roadmap/checklist read-only with no material contradiction. No product checks were rerun for these documentation-only edits; the earlier 73-test baseline remains explicitly dated. Historical generated scan artifacts were not rewritten.
+
+### 2026-11-02 — Integrated demo execution started
+
+**Goal:** Implement the approved parallel demo-first plan, then bounded optional/expansion work with explicit gates.
+**Baseline:** Local Git initialized and reviewed source/docs/fixtures committed as 7797b85; feature branch feat/integrated-demo. Existing identity used; no remote/publication/license selection. Original blueprint PDF remains user-owned untracked input.
+**Contract:** docs/16_DEMO_DELIVERY_CONTRACT.md freezes bundle/explanation/viewer shapes and caps. Hard model budget USD3/five live attempts; no configured MODEL_API_KEY/META_API_KEY in current process, so real calls remain gated. Owner event acceptance/portal rules unknown. Fixed fixture analysis remains unchanged.
+**Assignments:** Sol backend modules/tests; Terra frontend; independent Sol QA/compatibility/research; one integration worker after handoffs; Astra security review. Root owns shared contracts/ledgers and acceptance. No concurrent shared-file ownership.
+**State:** In progress; results will be appended after measured checks. Missing external gates are not completed by mock operation.
+
+
+### 2026-11-02 — Interrupted agents resumed and integrated demo accepted
+
+**Continuation:** Prior workers had ended after the session limit; their saved files were retained. Restarted bounded Sol integration, read-only Astra security review and Sol documentation reconciliation. No completed component was reimplemented. Actual supported model IDs exercised: gpt-6.1-sol, gpt-6.1-terra and gpt-6-astra; coordinator display label not exposed. Existing MCP/plugin tools reused; no global tool/plugin installation.
+
+**Delivered:** Read-only committed-artifact loader and immutable export; generated schema contract; default-disabled/mock explanation annotations and live adapter with transactional USD3/five-attempt reservations; fixed React graph/path/evidence/coverage viewer; controlled variants, artifact inspector, reproduction scripts and credential-free CI configuration. docs/19_INTEGRATED_DEMO_REVIEW.md records the exact delivery and N01–N18 statuses.
+
+**Fresh checks:** Full pytest115 passed; frontend8 tests passed; Ruff check/format (35 Python files) and strict mypy passed. scripts/verify_demo.py passed all nine checks. A formatting-only repair to scripts/prepare_demo.py resolved the sole initial integrated check failure. Two fresh scans aaccee49-bdd3-4133-8771-cbf935889925 and ed2ddbc5-3646-432e-b912-cb2f0ef3b1ba yielded identical graph bytes (23nodes/36edges/2findings, expected PARTIAL). Existing eight scans/32artifact refs inspected read-only with no issues before these two new scans.
+
+**Browser/review:** Final desktop1440/mobile320 document widths match viewports; table-local scrolling, graph resize/refit and keyboard exact4-node/3-edge path selection verified. 200% equivalent CDP reflow/DPR tested, native browser zoom unverified. Astra independently passed40focused backend tests/8frontend tests and revalidated shipped bundle/current source; no material security issue remaining in scoped synthetic demo.
+
+**Reproducibility:** Fresh source copy in /private/tmp excluding environments, generated artifacts, credentials and build output; npm ci --ignore-scripts --offline succeeded. uv locked offline setup lacked cached mypy; explicit network-enabled locked sync installed the missing project-local dependencies. This is a clean working-tree copy, not a claim of hosted CI execution. All nine checks passed in the clean copy. Final clean-copy result is recorded in artifacts/clean-copy-verification.json.
+
+**Limits and next actions:** Meta credentials absent; zero live calls/US$0. Event eligibility/portal submission and license undecided; no remote publication or submission. Joern setup blocked (analysis NOT_ATTEMPTED); DATA/TRUST NOT_IMPLEMENTED. sandbox-exec launch denied, so N14/N15 remain BLOCKED. Finite N16–N18 evaluation/operations/research deliverables are complete, not their open-ended product programs. Preserve original blueprint PDF and historical scans. Next: owner external gates, bounded live verification when prerequisites pass, then reviewed isolation infrastructure.

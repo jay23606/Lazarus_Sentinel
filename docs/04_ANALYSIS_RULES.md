@@ -1,6 +1,10 @@
 # 04 — Analysis Engine and Security Rules
 
-Current implementation is governed by the [approved first-slice contract](13_FIRST_SLICE_CONTRACT.md). [Verified results](14_IMPLEMENTATION_REVIEW.md) describe the measured fixture run; [ordered next steps](15_NEXT_STEPS.md) are proposals for subsequent work, not approval to implement them.
+## Integrated demo status — 2026-11-02
+
+The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
+
+Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
 
 ## Implemented LS-AUTH-001
 
@@ -25,8 +29,8 @@ The measured fixture produces candidates for GET /weak and GET /authenticated, r
 
 **LS-TRUST-001:** candidate handling gap across an explicitly modeled trust boundary. Requires a documented expected-handling policy, boundary evidence and uncertainty treatment. Crossing a boundary alone is not a vulnerability.
 
-Dependency advisory correlation, configuration/secrets analysis, access-control inconsistencies, logging exposure and cloud/runtime context are later ideas. No common GraphRule protocol or model-review pipeline is implemented; freeze future interfaces only when a bounded increment is selected.
+Dependency advisory correlation, configuration/secrets analysis, access-control inconsistencies, logging exposure and cloud/runtime context are later ideas. No common GraphRule protocol is implemented. The explanation pipeline validates references without adjudicating finding truth; freeze new detector interfaces only for a selected increment.
 
-## Future model interpretation guardrails
+## Model interpretation guardrails
 
-A future model may explain supplied evidence or identify missing context. It may not invent graph/source facts, establish absent controls from missing extraction, confirm vulnerabilities, execute payloads or modify targets. Schema and evidence-reference validation, redaction and egress review are prerequisites, not existing capabilities. Threat-category/ASVS mappings require verified source identifiers; none should be guessed.
+The optional explanation provider may explain supplied evidence or identify missing context. It may not invent graph/source facts, establish absent controls from missing extraction, confirm vulnerabilities, execute payloads or modify targets. Schema/evidence-reference validation and minimized synthetic context are implemented under document 16; live account/privacy verification remains blocked. Threat-category/ASVS mappings require verified source identifiers; none should be guessed.

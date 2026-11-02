@@ -1,6 +1,10 @@
 # 02 — System Architecture
 
-Current implementation is governed by the [approved first-slice contract](13_FIRST_SLICE_CONTRACT.md). [Verified results](14_IMPLEMENTATION_REVIEW.md) describe the measured fixture run; [ordered next steps](15_NEXT_STEPS.md) are proposals for subsequent work, not approval to implement them.
+## Integrated demo status — 2026-11-02
+
+The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
+
+Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
 
 ## Implemented modular monolith
 
@@ -29,6 +33,6 @@ Artifacts are uniquely staged and renamed, then their validated references and r
 
 ## Future architecture — proposed only
 
-The broader three-layer thesis remains code structure + application architecture + security context. Joern/CodeQL/Semgrep adapters, data-flow facts, asset/identity models, a FastAPI service, React/Cytoscape.js frontend and a bounded runtime explainer are separate future increments. Joern remains NOT_ATTEMPTED rather than a failed adapter or required predecessor to AST.
+The broader three-layer thesis remains code structure + application architecture + security context. Joern/CodeQL/Semgrep adapters, data-flow facts, asset/identity models, a FastAPI service and verified live runtime access remain future increments. The fixed React/Cytoscape frontend and bounded explanation modules now consume separately validated exports; they do not alter the scanner. Joern remains NOT_ATTEMPTED rather than a failed adapter or required predecessor to AST.
 
 LangGraph may replace linear coordination if measured state/concurrency requirements justify it. Provider integration must remain evidence-bounded and separately authorized. Neo4j, distributed workers, object storage, per-tenant services and runtime telemetry are not current requirements; revisit only against measured needs. No directories, interfaces or dependencies are promised by this roadmap.

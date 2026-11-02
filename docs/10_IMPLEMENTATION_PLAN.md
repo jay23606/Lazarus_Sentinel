@@ -1,5 +1,11 @@
 # 10 — Current delivery and remaining roadmap
 
+## Integrated demo status — 2026-11-02
+
+The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
+
+Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
+
 Updated **2026-11-02**. The first slice in document 13 is complete; document 14 records its verification. The canonical actionable checklist is **[15_NEXT_STEPS.md](15_NEXT_STEPS.md)**, mirrored by [TASK_BOARD.md](../TASK_BOARD.md). Future work below is recommended, not implemented or automatically authorized.
 
 ## Completed baseline
@@ -8,7 +14,7 @@ Updated **2026-11-02**. The first slice in document 13 is complete; document 14 
 - Schema 0.1.0 evidence graph, exact locations/hashes and deterministic identities, NetworkX MultiDiGraph.
 - LS-AUTH-001 declaration-context candidates, unknown diagnostics, evidence gate, SQLite and JSON/Markdown reports.
 - Last verified 73 tests, clean Ruff/strict mypy; 6 endpoints, 23 nodes, 36 edges, 2 LOW-confidence candidates and 3 matching declarations with effectiveness unverified.
-- Expected demo PARTIAL/exit 2; no Git, UI/API, live provider, Joern POC, data/trust rules or OS hostile-repository sandbox.
+- Expected demo PARTIAL/exit 2; local Git and fixed artifact UI now exist; HTTP API, verified live provider, Joern POC, data/trust rules and OS hostile-repository sandbox remain absent.
 
 ## Recommended order
 

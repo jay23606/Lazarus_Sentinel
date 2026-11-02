@@ -2,7 +2,7 @@
 
 Approved by the owner on 2026-11-01 following consolidated EGM review and Astra architecture/security review. This contract takes precedence over broader MVP targets in documents 00–12 for the first delivery.
 
-> Status refreshed 2026-11-02: this approved first slice is complete. See [verification evidence](14_IMPLEMENTATION_REVIEW.md) and [proposed remaining checklist](15_NEXT_STEPS.md). The later roadmap does not silently widen this contract.
+> Status refreshed 2026-11-02: this approved first slice is complete. See [verification evidence](14_IMPLEMENTATION_REVIEW.md) and [proposed remaining checklist](15_NEXT_STEPS.md). The later roadmap does not silently widen this contract. The separately approved [integrated demo contract](16_DEMO_DELIVERY_CONTRACT.md) adds exports, explanations and a fixed viewer; [document 19](19_INTEGRATED_DEMO_REVIEW.md) records its current verification. The exclusions below describe this historical first-slice milestone.
 
 ## Scope and acceptance
 

@@ -1,0 +1,27 @@
+name: Offline demo verification
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.12.5"
+          python-version: "3.13.14"
+          enable-cache: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24.14.0"
+          package-manager-cache: false
+      - run: uv sync --project backend --locked
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: frontend
+      - run: uv run --project backend --locked python scripts/verify_demo.py

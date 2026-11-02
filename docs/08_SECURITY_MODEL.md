@@ -1,6 +1,10 @@
 # 08 — Security, Privacy, Authorization and Isolation
 
-Current implementation is governed by the [approved first-slice contract](13_FIRST_SLICE_CONTRACT.md). [Verified results](14_IMPLEMENTATION_REVIEW.md) describe the measured fixture run; [ordered next steps](15_NEXT_STEPS.md) are proposals for subsequent work, not approval to implement them.
+## Integrated demo status — 2026-11-02
+
+The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
+
+Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
 
 ## Current authorized boundary
 
@@ -10,7 +14,7 @@ The approved product scans only the checked-in synthetic `fixture:fastapi-demo`.
 
 Manifest-driven fd-relative/no-follow reads reject invalid paths, symlinks and non-regular files. Limits are 100 Python files, 256 KiB per file, 5 MiB total source and 64 KiB each for manifest/policy metadata. Immutable snapshots retain exact bytes for parsing; evidence hashes and line ranges are validated, and source identity is rechecked before publication.
 
-The extraction child uses a sanitized credential-free environment, 30-second coordinator deadline, 25-second CPU limit, 16 MiB output/file-size bound, 8 MiB input bound and 64-file-descriptor limit. Output locations are checked for existing symlink aliases; artifacts use generated scan directories. Public errors do not echo raw exceptions, host paths or source. Reports escape displayed metadata and retain locations/hashes rather than excerpts. No external model/provider integration or egress path is enabled.
+The extraction child uses a sanitized credential-free environment, 30-second coordinator deadline, 25-second CPU limit, 16 MiB output/file-size bound, 8 MiB input bound and 64-file-descriptor limit. Output locations are checked for existing symlink aliases; artifacts use generated scan directories. Public errors do not echo raw exceptions, host paths or source. Reports escape displayed metadata and retain locations/hashes rather than excerpts. The default provider is disabled; explicit mock is offline. The Meta adapter is present but live access is blocked; minimal synthetic context would leave the machine only under explicit live selection and the reviewed budget/privacy gates.
 
 ## Explicit limitations
 

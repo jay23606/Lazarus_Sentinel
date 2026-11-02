@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "declared_before_analysis": true,
+  "fixture": "authorization_context",
+  "endpoints": ["GET /gap", "GET /declared", "GET /unknown"],
+  "candidate_paths": ["GET /gap"],
+  "declarations": {"GET /declared": ["app.controls.authorize_export"]},
+  "unknown_paths": ["GET /unknown"],
+  "terminal_operation": "app.repository.export_records",
+  "note": "Three synthetic declaration-context cases only. Oracle is outside intake root and never supplied to analyzer. No runtime safety or production accuracy labels."
+}

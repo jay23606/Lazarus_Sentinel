@@ -2,7 +2,7 @@
 
 Graph-first, evidence-backed application-security analysis. The implemented release is a **controlled synthetic FastAPI fixture scanner**, not an arbitrary-repository security audit.
 
-## Current verified baseline — 2026-11-02
+## Current demo — 2026-11-02
 
 | Capability | Status |
 |---|---|
@@ -12,8 +12,9 @@ Graph-first, evidence-backed application-security analysis. The implemented rele
 | Rule | LS-AUTH-001, LOW-confidence declaration-gap candidates; opaque controls are diagnostics only |
 | Persistence/report | SQLite committed references; graph/findings/coverage JSON and escaped Markdown |
 | Measured demo | 6 endpoints, 23 nodes, 36 edges, 2 candidates, 3 matching declarations with effectiveness unverified |
-| Quality | Last verified: 73 tests; Ruff check/format clean; strict mypy clean on 11 source modules |
-| Deferred | Joern POC, data/trust rules, UI/API, LangGraph, live LLM, arbitrary repositories and hostile-input isolation |
+| Quality | See [integrated verification](docs/19_INTEGRATED_DEMO_REVIEW.md) for final counts/checks/review; 73 tests is the historical first-slice baseline |
+| Demo | Hash-verified immutable bundle, disabled/mock explanation sidecars, fixed React/Cytoscape viewer; Meta adapter tested offline |
+| Blocked/deferred | Live Meta access, Joern setup, data/trust rules, HTTP API, LangGraph, arbitrary repositories and OS isolation |
 
 The fixture intentionally contains unsupported dynamic registration. Its normal outcome is **PARTIAL / exit 2**. A matching authorization declaration is syntax evidence, not proof of enforcement or a secure endpoint.
 
@@ -39,11 +40,27 @@ uv run --project backend --locked mypy --config-file backend/pyproject.toml back
 
 If a restricted environment cannot use the shared uv cache, prefix uv commands with `UV_CACHE_DIR=/private/tmp/lazarus-uv-cache`. Do not manually delete shared caches. Installation is project-local; FastAPI is not needed to parse the synthetic target.
 
-## What to do next
+## View the integrated demo
 
-Follow the **[complete ordered checklist](docs/15_NEXT_STEPS.md)** and its mirrored [task board](TASK_BOARD.md). The recommended next milestone is a viewer of existing validated synthetic graph/findings/coverage artifacts. Check event acceptance and runtime-provider requirements immediately; then freeze the viewer/explanation contracts. HTTP services, new detectors and orchestration are not prerequisites for that demo.
+```sh
+npm ci --prefix frontend --ignore-scripts --no-audit --no-fund
+npm run dev --prefix frontend
+```
 
-Everything beyond the completed first slice is a recommendation awaiting its own selected scope. This documentation refresh does not initialize Git, install another dependency, enable model egress, build a UI, deploy, or submit anything.
+The viewer loads only the reviewed synthetic bundle in `frontend/public/demo/v1/`; use the loopback URL printed by Vite. Select a candidate to inspect its exact ordered graph path, evidence hashes, coverage and recorded mock explanation. No upload, source path input or HTTP backend is involved.
+
+To create new immutable artifacts, substitute IDs returned by your own scan (finding IDs are in its findings.json):
+
+```sh
+uv run --project backend --locked lazarus demo export --scan-id <SCAN_UUID>
+uv run --project backend --locked lazarus explain --scan-id <SCAN_UUID> --finding-id <FINDING_ID>
+uv run --project backend --locked lazarus explain --scan-id <SCAN_UUID> --finding-id <FINDING_ID> --provider mock
+uv run --project backend --locked lazarus demo export --scan-id <SCAN_UUID> --annotation-id <ANNOTATION_UUID>
+```
+
+Explanation defaults to DISABLED. Mock output is offline and unreviewed assistance; it never changes canonical findings. The Meta adapter requires explicit selection and reviewed access/privacy/budget gates; live verification is BLOCKED by the missing key, with zero paid calls. The application cap is USD3 and five live attempts, without retries. Do not treat mock operation as live API verification.
+
+The shipped dataset uses scan `d4788c12-b956-4535-b897-13744439093e`, bundle `f85376c4-9ec1-4b8f-aea2-1c0f89abae3e`, and a recorded mock annotation. See [demo contract](docs/16_DEMO_DELIVERY_CONTRACT.md), [capability report](docs/17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](docs/18_DEMO_EVALUATION.md), and [integrated review](docs/19_INTEGRATED_DEMO_REVIEW.md). [Every N01–N18 disposition](docs/15_NEXT_STEPS.md) is mirrored on the [task board](TASK_BOARD.md). Owner portal requirements, license selection and submission receipt remain unresolved.
 
 ## Documentation map and authority
 
@@ -63,6 +80,6 @@ Reference specifications distinguish current implementation from future capabili
 
 ## Boundaries
 
-Only the fixed owned fixture is accepted. Intake caps are 100 Python files, 256 KiB/file, 5 MiB total; a credential-free parser child has a 30-second deadline. These are process/input limits, **not an OS filesystem/network sandbox**. Hostile concurrent filesystem replacement is outside scope. No target code is executed, no runtime security is established, and no source/model request is sent externally by this release.
+Only the fixed owned fixture is accepted. Intake caps are 100 Python files, 256 KiB/file, 5 MiB total; a credential-free parser child has a 30-second deadline. These are process/input limits, **not an OS filesystem/network sandbox**. Hostile concurrent filesystem replacement is outside scope. No target code is executed, no runtime security is established, and no live source/model request has been made in this delivery. Explicit live transport is gated and disabled by default.
 
-Joern is NOT_ATTEMPTED; LS-DATA-001 and LS-TRUST-001 are NOT_IMPLEMENTED. No Git repository has been initialized, no license has been selected, and nothing has been committed, published or submitted. Generated scan reports are historical evidence; use new scan identities rather than editing old results.
+Joern is NOT_ATTEMPTED; LS-DATA-001 and LS-TRUST-001 are NOT_IMPLEMENTED. Local Git baseline `7797b85` exists on `feat/integrated-demo`; license selection is pending. No remote publication or submission occurred. Generated scan reports are historical evidence; use new scan identities rather than editing old results.
