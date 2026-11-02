@@ -23,3 +23,16 @@ Proposed execution order, updated 2026-11-02. Completed baseline/demo/viewer wor
 5. Update task board, decision register when necessary, and append AGENT.md session evidence. Close the P-item only after its acceptance gate is observed.
 
 Keep the demo working throughout. No speculative API, LangGraph, microservices, upload UI, automatic remediation or global tool installation is required by this plan. A broader accuracy program, retention service and multi-language scanner remain separate future proposals.
+
+
+## Optional next coding milestone: public demo readiness (P10, proposed)
+
+The repository About description/topics are configured; Website remainsblank because no deployedURL exists. After selecting this increment, keep only the existing public synthetic viewer:
+
+1. Preserve P03 teammate reproduction and run P04 accessibility/P05 loading measurements alongside development.
+2. Make Vite assets and fixed bundle loading work under `/Lazarus_Sentinel/`, preserving the fixed artifact allowlist, hashes, schemas and invalid-data suppression. Test both local root and repository subpath; never add arbitrary URL/upload input.
+3. Add production-preview and subpath regressions, then measure load/render before splitting Cytoscape or adding dependencies.
+4. Prepare a reviewable GitHub Pages workflow and static-file inventory. Obtain required owner/Astra publication review before enabling deployment; source publication is not automatic deployment authorization.
+5. Once selected deployment actually succeeds, verify the live synthetic graph/evidence, set the About Website to its realURL, and recheck the Deployments homepage option.
+
+Acceptance: reviewed production build loads the same validated bundle at both supported bases, no secrets/backend/modelkeys are shipped, actual deployedURL works before being advertised. No release/package/deployment is created merely to populate sidebar counters. [Official Vite GitHub Pages guidance](https://vite.dev/guide/static-deploy.html#github-pages) documents the repository base-path requirement. This remains a proposal, not implemented or deployed work.
