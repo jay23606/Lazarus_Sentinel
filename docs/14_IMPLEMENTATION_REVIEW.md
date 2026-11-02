@@ -1,5 +1,8 @@
 # Evidence-first implementation — verified 2026-11-02
 
+> Team/platform update (2026-11-02): [team handoff](21_TEAM_HANDOFF.md), [finite next-phase plan](22_NEXT_PHASE_PLAN.md), and [current portability/publication evidence](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) supersede earlier onboarding, remote-state and platform assumptions. Historical checks below retain their original date and scope.
+
+
 The owner-approved controlled fixture slice is implemented. This is a scoped static declaration assessment, not an audit of arbitrary repositories or proof of runtime security.
 
 > This document records the verified baseline; the [complete next-step checklist](15_NEXT_STEPS.md) and [task board](../TASK_BOARD.md) describe remaining work. A documentation refresh does not imply these tests or live provider checks were rerun.

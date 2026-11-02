@@ -1,10 +1,13 @@
 # 12 — Sources and Technical References
 
+> Team/platform update (2026-11-02): [team handoff](21_TEAM_HANDOFF.md), [finite next-phase plan](22_NEXT_PHASE_PLAN.md), and [current portability/publication evidence](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) supersede earlier onboarding, remote-state and platform assumptions. Historical checks below retain their original date and scope.
+
+
 ## Integrated demo status — 2026-11-02
 
 The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
 
-Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
+Baseline commit `7797b85`, integrated demo `4f0346c` and viewer refinement `2cda191` are preserved on `feat/integrated-demo`. Publication to the owner-specified repository is now authorized; actual remote/CI outcomes are recorded in document 23. License and submission decisions remain unresolved. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
 
 > Initial source register prepared **2026-11-01**; documentation refreshed **2026-11-02**. Only the event page, Meta overview and pricing/mode pages were reopened in this refresh (section I); other links retain their earlier verification scope. Prefer primary documentation. Before implementation, Codex must reopen relevant docs to verify current APIs, install steps, compatibility, licensing, model IDs, and terms. Do not treat a web search snippet as a complete specification.
 
@@ -242,3 +245,7 @@ The full recommended sequence is [15_NEXT_STEPS.md](15_NEXT_STEPS.md). Implement
 - [Cytoscape layout guide](https://blog.js.cytoscape.org/2020/05/11/layouts/) and [preset layout documentation](https://js.cytoscape.org/#layouts/preset): opened for selected-subgraph and deterministic-position design; implementation retains the installed dependency/lock.
 - [Nielsen Norman Group: Progressive Disclosure](https://www.nngroup.com/articles/progressive-disclosure/): opened for first-pass guidance versus deeper evidence.
 - Owner-requested local UI UX Pro Max chart/React guidance and Impeccable Operate/craft-floor/context/detector workflow applied; no new plugin/global installation. See [design decisions and verification](20_VIEWER_CLARITY_AND_DESIGN.md).
+
+## Team instructions source refresh — 2026-11-02
+
+Official [Claude Code memory/import documentation](https://code.claude.com/docs/en/memory#import-additional-files) was reopened. It documents `CLAUDE.md` project instructions and relative `@path` imports expanded alongside that file. The repository uses `@AGENTS.md` and `@docs/21_TEAM_HANDOFF.md`; instruction loading does not establish model availability or enforce isolation. No Claude runtime was launched in this documentation check. Codex instruction discovery is verified separately in the portability/publication record.

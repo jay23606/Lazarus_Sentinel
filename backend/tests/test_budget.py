@@ -13,6 +13,7 @@ def test_budget_ambiguous_attempt_blocks(tmp_path):
 
 
 import multiprocessing
+import os
 import sqlite3
 
 import pytest
@@ -27,7 +28,7 @@ def _reserve(path, ready):
 
 
 def test_concurrent_reservations_one_transport_only(tmp_path):
-    context = multiprocessing.get_context("fork")
+    context = multiprocessing.get_context("spawn" if os.name == "nt" else "fork")
     ready = context.Queue()
     path = tmp_path / "budget.sqlite3"
     Budget(path)

@@ -8,6 +8,10 @@ The first controlled-fixture delivery and the separately approved integrated dem
 
 Only fixed synthetic fixture intake is supported. The CLI additionally exports verified bundles and optional explanation sidecars; a fixed artifact React viewer is present. Meta transport exists but live access is BLOCKED, with zero paid calls. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules are NOT_IMPLEMENTED. HTTP API, LangGraph and broader intake are absent. OS sandbox launch was blocked, not verified. Generated reports are historical evidence: create new scan identities rather than rewriting old reports. Local Git baseline 7797b85 exists on feat/integrated-demo; no remote/publication/license choice or submission is implied.
 
+## Team onboarding and platform authority — 2026-11-02
+
+Read [team handoff](docs/21_TEAM_HANDOFF.md), [next-phase plan](docs/22_NEXT_PHASE_PLAN.md), and [latest portability/publication evidence](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md). They supersede earlier remote-state assumptions above. The owner authorized publication to the specified existing repository; actual push/native CI status requires recorded evidence. `AGENT.md` remains the canonical living log; do not create `Agent.md`. Claude Code uses `CLAUDE.md` and must stop critical decisions when Astra is unavailable unless the owner approves a fallback.
+
 ## 1. Product objective
 
 Build Lazarus Sentinel: a graph-first, evidence-backed application-security analysis system. It correlates program structure with application-level endpoints, identities, permissions, data assets, trust boundaries, external services, and security controls. It prioritizes potential security weaknesses across code paths and produces reproducible findings for human review.

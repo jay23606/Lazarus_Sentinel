@@ -54,3 +54,15 @@ def test_isolated_worker_analyzes_owned_fixture():
     graph = analyze_snapshot(snapshot)
     assert graph.repository["revision"] == snapshot.revision
     assert any(node.type == "API_ENDPOINT" for node in graph.nodes)
+
+
+def test_windows_worker_environment_preserves_only_systemroot(monkeypatch):
+    from lazarus_sentinel import worker
+
+    monkeypatch.setattr(worker.os, "name", "nt")
+    monkeypatch.setenv("SystemRoot", "C:\\Windows")
+    monkeypatch.setenv("MODEL_API_KEY", "never-forward")
+    environment = _environment()
+    assert {key.upper(): value for key, value in environment.items()}["SYSTEMROOT"] == "C:\\Windows"
+    assert "MODEL_API_KEY" not in environment
+    assert {key.upper() for key in environment} == {"PATH", "LANG", "LC_ALL", "SYSTEMROOT"}

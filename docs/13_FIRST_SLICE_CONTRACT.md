@@ -1,5 +1,8 @@
 # 13 — Evidence-first delivery contract
 
+> Team/platform update (2026-11-02): [team handoff](21_TEAM_HANDOFF.md), [finite next-phase plan](22_NEXT_PHASE_PLAN.md), and [current portability/publication evidence](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) supersede earlier onboarding, remote-state and platform assumptions. Historical checks below retain their original date and scope.
+
+
 Approved by the owner on 2026-11-01 following consolidated EGM review and Astra architecture/security review. This contract takes precedence over broader MVP targets in documents 00–12 for the first delivery.
 
 > Status refreshed 2026-11-02: this approved first slice is complete. See [verification evidence](14_IMPLEMENTATION_REVIEW.md) and [proposed remaining checklist](15_NEXT_STEPS.md). The later roadmap does not silently widen this contract. The separately approved [integrated demo contract](16_DEMO_DELIVERY_CONTRACT.md) adds exports, explanations and a fixed viewer; [document 19](19_INTEGRATED_DEMO_REVIEW.md) records its current verification. The exclusions below describe this historical first-slice milestone.

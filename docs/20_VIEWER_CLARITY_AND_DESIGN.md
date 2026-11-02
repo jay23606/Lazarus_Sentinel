@@ -1,5 +1,8 @@
 # 20 — Viewer clarity and graph design
 
+> Team/platform update (2026-11-02): [team handoff](21_TEAM_HANDOFF.md), [finite next-phase plan](22_NEXT_PHASE_PLAN.md), and [current portability/publication evidence](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) supersede earlier onboarding, remote-state and platform assumptions. Historical checks below retain their original date and scope.
+
+
 This increment refines the existing fixed synthetic demo. The owner's request on **2026-11-02** explicitly selected all three audiences: first-time users/demo judges, developers, and security reviewers. UI UX Pro Max and Impeccable guide the work. Backend analysis, source evidence, packaged bundle identities and model-call defaults remain governed by documents 13 and 16.
 
 ## Problem and design intent

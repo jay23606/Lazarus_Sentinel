@@ -5,10 +5,17 @@ from __future__ import annotations
 import http.client
 import multiprocessing
 import os
+import sys
 import time
 from multiprocessing.connection import Connection
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any, cast
+
+if TYPE_CHECKING:
+    if sys.platform == "win32":
+        from multiprocessing.context import SpawnContext as TransportContext
+    else:
+        from multiprocessing.context import ForkContext as TransportContext
 
 from .budget import Budget
 from .bundle import canonical_bytes, parse_json
@@ -54,7 +61,10 @@ def _child(pipe: Connection, payload: bytes, key: str) -> None:
 
 
 def bounded_transport(payload: bytes, key: str) -> dict[str, Any]:
-    context = multiprocessing.get_context("fork")
+    context = cast(
+        "TransportContext",
+        multiprocessing.get_context("spawn" if sys.platform == "win32" else "fork"),
+    )
     reader, writer = context.Pipe(duplex=False)
     process = context.Process(target=_child, args=(writer, payload, key), daemon=True)
     deadline = time.monotonic() + DEADLINE_SECONDS

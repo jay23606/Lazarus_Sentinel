@@ -1,5 +1,8 @@
 # 18 — Controlled demo evaluation and reproducibility
 
+> Team/platform update (2026-11-02): [team handoff](21_TEAM_HANDOFF.md), [finite next-phase plan](22_NEXT_PHASE_PLAN.md), and [current portability/publication evidence](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) supersede earlier onboarding, remote-state and platform assumptions. Historical checks below retain their original date and scope.
+
+
 QA measurement dated **2026-11-02**. The baseline and added cases are synthetic source-level declaration assessments. Results do not estimate production detection accuracy, runtime authorization effectiveness, exploitability, or arbitrary-repository isolation. Integrated UI/provider acceptance and final Astra review belong to the coordinator; this report records this bounded QA tranche.
 
 ## Corpus and predeclared expectations

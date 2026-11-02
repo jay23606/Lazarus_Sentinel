@@ -3,12 +3,19 @@
 from __future__ import annotations
 
 import contextlib
-import fcntl
 import json
+import os
 import sqlite3
+import sys
+import time
 from collections.abc import Iterator, Sequence
 from pathlib import Path
 from typing import Any
+
+if sys.platform == "win32":
+    import msvcrt
+else:
+    import fcntl
 
 from .intake import reject_symlink_components
 from .models import Finding
@@ -31,8 +38,25 @@ class Store:
     @contextlib.contextmanager
     def writer(self) -> Iterator[None]:
         reject_symlink_components(self.root / ".scan.lock")
-        with (self.root / ".scan.lock").open("a") as lock:
-            fcntl.flock(lock, fcntl.LOCK_EX)
+        with (self.root / ".scan.lock").open("a+b") as lock:
+            if sys.platform == "win32":
+                # Lock one persistent byte; never remove the lock file or truncate it.
+                lock.seek(0, os.SEEK_END)
+                if lock.tell() == 0:
+                    lock.write(b"\0")
+                    lock.flush()
+                deadline = time.monotonic() + 30
+                while True:
+                    lock.seek(0)
+                    try:
+                        msvcrt.locking(lock.fileno(), msvcrt.LK_NBLCK, 1)
+                        break
+                    except OSError:
+                        if time.monotonic() >= deadline:
+                            raise TimeoutError("SCAN_LOCK_TIMEOUT") from None
+                        time.sleep(0.05)
+            else:
+                fcntl.flock(lock, fcntl.LOCK_EX)
             try:
                 with self.db:
                     self.db.execute(
@@ -41,7 +65,11 @@ class Store:
                     )
                 yield
             finally:
-                fcntl.flock(lock, fcntl.LOCK_UN)
+                if sys.platform == "win32":
+                    lock.seek(0)
+                    msvcrt.locking(lock.fileno(), msvcrt.LK_UNLCK, 1)
+                else:
+                    fcntl.flock(lock, fcntl.LOCK_UN)
 
     def start(self, scan_id: str) -> None:
         with self.db:

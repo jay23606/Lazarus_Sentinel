@@ -19,7 +19,7 @@ from lazarus_sentinel.bundle import (
 
 def cli(*args: str, expected: int = 0) -> dict:
     result = subprocess.run(
-        [str(ROOT / "backend" / ".venv" / "bin" / "lazarus"), *args],
+        [sys.executable, "-m", "lazarus_sentinel", *args],
         cwd=ROOT,
         capture_output=True,
         text=True,

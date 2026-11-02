@@ -1,10 +1,13 @@
 # 08 — Security, Privacy, Authorization and Isolation
 
+> Team/platform update (2026-11-02): [team handoff](21_TEAM_HANDOFF.md), [finite next-phase plan](22_NEXT_PHASE_PLAN.md), and [current portability/publication evidence](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) supersede earlier onboarding, remote-state and platform assumptions. Historical checks below retain their original date and scope.
+
+
 ## Integrated demo status — 2026-11-02
 
 The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
 
-Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
+Baseline commit `7797b85`, integrated demo `4f0346c` and viewer refinement `2cda191` are preserved on `feat/integrated-demo`. Publication to the owner-specified repository is now authorized; actual remote/CI outcomes are recorded in document 23. License and submission decisions remain unresolved. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
 
 ## Current authorized boundary
 
@@ -38,3 +41,7 @@ Future API/multi-user/triage work requires authentication, access control, tenan
 - Docker isolation references: https://docs.docker.com/engine/security/
 
 These references are guidance, not certification of the current implementation.
+
+## Bounded cross-platform compatibility contract — 2026-11-02
+
+The portability increment preserves POSIX directory-relative/no-follow reads and POSIX resource controls. The approved Windows design rejects reparse/junction ancestry, non-exact path case, reserved names and nonregular or unstable files; it retains byte caps and parent deadlines. CPU/file-descriptor resource limits are POSIX-specific; Windows compatibility does not establish equivalent OS resource or filesystem/network isolation. Meta child startup uses the platform-supported process context without changing redaction, budget or absolute-deadline requirements. See document 23 for measured implementation/native-run outcomes. N14 denial probes remain required before broader intake.

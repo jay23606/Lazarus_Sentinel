@@ -1,5 +1,8 @@
 # 17 — Capability and research report
 
+> Team/platform update (2026-11-02): [team handoff](21_TEAM_HANDOFF.md), [finite next-phase plan](22_NEXT_PHASE_PLAN.md), and [current portability/publication evidence](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) supersede earlier onboarding, remote-state and platform assumptions. Historical checks below retain their original date and scope.
+
+
 Measured **2026-11-02** against the controlled-fixture profile and approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md). This is a bounded compatibility/research tranche, not approval to implement the roadmap. No new detector, global package, analyzer download, provider call, or target execution was performed.
 
 ## Status vocabulary and disposition

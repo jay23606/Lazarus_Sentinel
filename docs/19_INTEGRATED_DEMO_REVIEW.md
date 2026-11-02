@@ -1,5 +1,8 @@
 # 19 — Integrated demo delivery and verification
 
+> Team/platform update (2026-11-02): [team handoff](21_TEAM_HANDOFF.md), [finite next-phase plan](22_NEXT_PHASE_PLAN.md), and [current portability/publication evidence](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) supersede earlier onboarding, remote-state and platform assumptions. Historical checks below retain their original date and scope.
+
+
 Verified **2026-11-02**. The fixed synthetic demo is implemented and independently reviewed. This completes the bounded offline delivery, with explicit external and capability gates below. It does not complete a hackathon submission or the open-ended platform roadmap.
 
 Subsequent UI refinement: [document20](20_VIEWER_CLARITY_AND_DESIGN.md) records the newer guided graph interface and16frontend tests. The8-test result below is the preserved original integrated-demo checkpoint.
@@ -7,12 +10,12 @@ Subsequent UI refinement: [document20](20_VIEWER_CLARITY_AND_DESIGN.md) records 
 ## Delivered workflow
 
 1. `uv sync --project backend --locked` creates the Python 3.13.14 project environment.
-2. `backend/.venv/bin/lazarus scan --target fixture:fastapi-demo` creates a new immutable scan. Expected exit **2** means **PARTIAL**, because dynamic route registration is deliberately unsupported.
-3. `backend/.venv/bin/lazarus explain --scan-id <UUID> --finding-id <ID>` defaults to **disabled**. Explicit `--provider mock` records a separate deterministic annotation. Explicit `meta` exists but live verification is blocked by missing credentials.
-4. `backend/.venv/bin/lazarus demo export --scan-id <UUID> [--annotation-id <UUID>]` verifies committed artifacts and current fixture evidence before publishing a new immutable bundle.
+2. `uv run --project backend --locked lazarus scan --target fixture:fastapi-demo` creates a new immutable scan. Expected exit **2** means **PARTIAL**, because dynamic route registration is deliberately unsupported.
+3. `uv run --project backend --locked lazarus explain --scan-id <UUID> --finding-id <ID>` defaults to **disabled**. Explicit `--provider mock` records a separate deterministic annotation. Explicit `meta` exists but live verification is blocked by missing credentials.
+4. `uv run --project backend --locked lazarus demo export --scan-id <UUID> [--annotation-id <UUID>]` verifies committed artifacts and current fixture evidence before publishing a new immutable bundle.
 5. `cd frontend && npm ci --ignore-scripts --no-audit --no-fund && npm run dev` serves the fixed reviewed assets at `http://127.0.0.1:5173/`. No uploads, arbitrary URLs or backend API are exposed.
 
-`backend/.venv/bin/python scripts/prepare_demo.py` repeats scan → disabled check → mock annotation → verified export → fixed viewer assets. It creates fresh identities and checks that canonical graph bytes and the live budget remain unchanged. Replacing packaged assets is a development operation; original scans and exports remain immutable.
+`uv run --project backend --locked python scripts/prepare_demo.py` repeats scan → disabled check → mock annotation → verified export → fixed viewer assets. It creates fresh identities and checks that canonical graph bytes and the live budget remain unchanged. Replacing packaged assets is a development operation; original scans and exports remain immutable.
 
 Packaged scan: `d4788c12-b956-4535-b897-13744439093e`. Bundle: `f85376c4-9ec1-4b8f-aea2-1c0f89abae3e`. Annotation: `0f517df7-2713-4dff-87c1-cb0166b63f8d` (**recorded mock**, not live).
 

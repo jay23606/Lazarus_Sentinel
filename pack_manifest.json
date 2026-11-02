@@ -1,6 +1,6 @@
 {
   "project": "Lazarus Sentinel",
-  "pack_version": "1.1.0",
+  "pack_version": "1.2.0",
   "prepared_on": "2026-11-01",
   "files": [
     "AGENT.md",
@@ -28,7 +28,12 @@
     "docs/17_CAPABILITY_AND_RESEARCH_REPORT.md",
     "docs/18_DEMO_EVALUATION.md",
     "docs/19_INTEGRATED_DEMO_REVIEW.md",
-    "docs/20_VIEWER_CLARITY_AND_DESIGN.md"
+    "docs/20_VIEWER_CLARITY_AND_DESIGN.md",
+    "CLAUDE.md",
+    "CONTRIBUTING.md",
+    "docs/21_TEAM_HANDOFF.md",
+    "docs/22_NEXT_PHASE_PLAN.md",
+    "docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md"
   ],
   "entrypoint": "CODEX_BOOTSTRAP_PROMPT.md",
   "persistent_instructions": "AGENTS.md",

@@ -2,6 +2,8 @@
 
 Graph-first, evidence-backed application-security analysis. The implemented release is a **controlled synthetic FastAPI fixture scanner**, not an arbitrary-repository security audit.
 
+For teammates, start with the [portable setup and module guide](docs/21_TEAM_HANDOFF.md), [contribution workflow](CONTRIBUTING.md), [next-phase plan](docs/22_NEXT_PHASE_PLAN.md), and [latest platform/publication evidence](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md). Codex reads [AGENTS.md](AGENTS.md); Claude Code has a [CLAUDE.md](CLAUDE.md) entry point.
+
 ## Current demo — 2026-11-02
 
 | Capability | Status |
@@ -38,7 +40,7 @@ uv run --project backend --locked ruff format --check backend/src backend/tests
 uv run --project backend --locked mypy --config-file backend/pyproject.toml backend/src
 ```
 
-If a restricted environment cannot use the shared uv cache, prefix uv commands with `UV_CACHE_DIR=/private/tmp/lazarus-uv-cache`. Do not manually delete shared caches. Installation is project-local; FastAPI is not needed to parse the synthetic target.
+If a restricted environment cannot use the shared uv cache, use the platform-specific writable-cache instructions in [document 21](docs/21_TEAM_HANDOFF.md). Do not manually delete shared caches. Installation is project-local; FastAPI is not needed to parse the synthetic target.
 
 ## View the integrated demo
 
@@ -82,4 +84,4 @@ Reference specifications distinguish current implementation from future capabili
 
 Only the fixed owned fixture is accepted. Intake caps are 100 Python files, 256 KiB/file, 5 MiB total; a credential-free parser child has a 30-second deadline. These are process/input limits, **not an OS filesystem/network sandbox**. Hostile concurrent filesystem replacement is outside scope. No target code is executed, no runtime security is established, and no live source/model request has been made in this delivery. Explicit live transport is gated and disabled by default.
 
-Joern is NOT_ATTEMPTED; LS-DATA-001 and LS-TRUST-001 are NOT_IMPLEMENTED. Local Git baseline `7797b85` exists on `feat/integrated-demo`; license selection is pending. No remote publication or submission occurred. Generated scan reports are historical evidence; use new scan identities rather than editing old results.
+Joern is NOT_ATTEMPTED; LS-DATA-001 and LS-TRUST-001 are NOT_IMPLEMENTED. Local Git baseline `7797b85` exists on `feat/integrated-demo`; license selection is pending. The owner has authorized publication to the specified existing repository; see [document 23](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md) for the actual outcome. Submission remains unverified. Generated scan reports are historical evidence; use new scan identities rather than editing old results.

@@ -56,26 +56,46 @@ def test_failed_transport_retains_reservation(monkeypatch, tmp_path):
     assert calls == [1]
 
 
+def _hanging_child(pipe, payload, key):
+    time.sleep(5)
+
+
+def _successful_child(pipe, payload, key):
+    pipe.send_bytes(b'O{"stub":true}')
+    pipe.close()
+
+
 def test_absolute_deadline_kills_child(monkeypatch):
     monkeypatch.setattr(meta_provider, "DEADLINE_SECONDS", 0.1)
-
-    def hang(*args):
-        time.sleep(5)
-
-    monkeypatch.setattr(meta_provider, "_transport", hang)
+    monkeypatch.setattr(meta_provider, "_child", _hanging_child)
     started = time.monotonic()
     with pytest.raises(ValueError, match="DEADLINE"):
         meta_provider.bounded_transport(b"{}", "fake")
     assert time.monotonic() - started < 2
 
 
+def test_real_spawn_transport_stub(monkeypatch):
+    import multiprocessing
+
+    original = multiprocessing.get_context
+    monkeypatch.setattr(
+        meta_provider.multiprocessing, "get_context", lambda method: original("spawn")
+    )
+    monkeypatch.setattr(meta_provider, "_child", _successful_child)
+    assert meta_provider.bounded_transport(b"{}", "fake") == {"stub": True}
+
+
 def test_child_errors_are_redacted(monkeypatch):
+    from unittest.mock import Mock
+
     def fail(*args):
         raise RuntimeError("fake-test-secret")
 
     monkeypatch.setattr(meta_provider, "_transport", fail)
-    with pytest.raises(ValueError, match="^META_TRANSPORT_FAILED$"):
-        meta_provider.bounded_transport(b"{}", "fake")
+    pipe = Mock()
+    meta_provider._child(pipe, b"{}", "fake")
+    pipe.send_bytes.assert_called_once_with(b"E")
+    pipe.close.assert_called_once()
 
 
 def test_unexpected_tool_call_refused(monkeypatch, tmp_path):

@@ -1,12 +1,15 @@
 # 15 — Complete next-step checklist
 
+> Team/platform update (2026-11-02): [team handoff](21_TEAM_HANDOFF.md), [finite next-phase plan](22_NEXT_PHASE_PLAN.md), and [current portability/publication evidence](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) supersede earlier onboarding, remote-state and platform assumptions. Historical checks below retain their original date and scope.
+
+
 Updated **2026-11-02**. This is the recommended roadmap after the completed first slice, not authorization to implement every item. Document 13 remains the approved implemented scope; document 14 contains verification evidence. Task IDs below are mirrored in TASK_BOARD.md.
 
 ## Integrated demo status — 2026-11-02
 
 The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongside the preserved first-slice analyzer: immutable hash-verified bundles, disabled/mock explanations with a gated Meta adapter, and a fixed React/Vite/TypeScript/Cytoscape viewer. See [capability gates](17_CAPABILITY_AND_RESEARCH_REPORT.md), [finite evaluation](18_DEMO_EVALUATION.md), and [integrated verification](19_INTEGRATED_DEMO_REVIEW.md) for current checks and review disposition. Document 14 remains historical first-slice evidence; its 73-test count is not the integrated total.
 
-Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
+Baseline commit `7797b85`, integrated demo `4f0346c` and viewer refinement `2cda191` are preserved on `feat/integrated-demo`. Publication to the owner-specified repository is now authorized; actual remote/CI outcomes are recorded in document 23. License and submission decisions remain unresolved. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
 
 ## Current disposition of every task
 
@@ -14,7 +17,7 @@ Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remot
 |---|---|---|
 | N01 | BLOCKED | Owner portal acceptance, complete rules and receipt unknown. |
 | N02 | BLOCKED | Missing key/account verification; no live request. |
-| N03 | DONE; license pending | Local baseline 7797b85 and feat/integrated-demo; no remote/publication. |
+| N03 | DONE; license pending | Baseline 7797b85 and subsequent demo/viewer commits preserved; current owner-authorized publication evidence in document 23. |
 | N04 | DONE | Predeclared variant: 3 endpoints, 1 candidate, 1 declaration, 1 unknown; finite synthetic evaluation only. |
 | N05 | DONE | Bundle/explanation/viewer contract frozen in document 16. |
 | N06 | DONE | Fixed accessible graph/findings/coverage viewer; final checks/review in document 19. |

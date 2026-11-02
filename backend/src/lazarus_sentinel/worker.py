@@ -17,7 +17,12 @@ MAX_OUTPUT = 16 * 1024 * 1024
 
 
 def _environment() -> dict[str, str]:
-    return {"PATH": os.defpath, "LANG": "C.UTF-8", "LC_ALL": "C.UTF-8"}
+    environment = {"PATH": os.defpath, "LANG": "C.UTF-8", "LC_ALL": "C.UTF-8"}
+    if os.name == "nt":
+        environment.update(
+            {key: value for key, value in os.environ.items() if key.upper() == "SYSTEMROOT"}
+        )
+    return environment
 
 
 def analyze_snapshot(snapshot: Snapshot, timeout_seconds: float = 30) -> Graph:
@@ -67,11 +72,12 @@ def analyze_snapshot(snapshot: Snapshot, timeout_seconds: float = 30) -> Graph:
 
 def _main() -> None:
     # Limit parser accidents; this is a process boundary, not an OS network sandbox.
-    import resource
+    if sys.platform != "win32":
+        import resource
 
-    resource.setrlimit(resource.RLIMIT_CPU, (25, 25))
-    resource.setrlimit(resource.RLIMIT_FSIZE, (MAX_OUTPUT, MAX_OUTPUT))
-    resource.setrlimit(resource.RLIMIT_NOFILE, (64, 64))
+        resource.setrlimit(resource.RLIMIT_CPU, (25, 25))
+        resource.setrlimit(resource.RLIMIT_FSIZE, (MAX_OUTPUT, MAX_OUTPUT))
+        resource.setrlimit(resource.RLIMIT_NOFILE, (64, 64))
     from .analysis import analyze
 
     data = sys.stdin.buffer.read(MAX_INPUT + 1)

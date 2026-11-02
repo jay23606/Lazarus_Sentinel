@@ -5,8 +5,10 @@ from __future__ import annotations
 import base64
 import hashlib
 import json
+import ntpath
 import os
 import stat
+import sys
 from pathlib import Path, PurePosixPath
 
 from pydantic import ValidationError
@@ -32,9 +34,10 @@ def _path(value: str) -> list[str]:
         or len(value) > 240
         or "\\" in value
         or "\x00" in value
+        or ":" in value
         or path.is_absolute()
         or str(path) != value
-        or any(part in {".", ".."} for part in path.parts)
+        or any(part in {".", ".."} or ntpath.isreserved(part) for part in path.parts)
     ):
         raise ScanError("INVALID_PATH")
     return list(path.parts)
@@ -51,19 +54,24 @@ def reject_symlink_components(path: Path) -> None:
     parts = _absolute_parts(path)
     current = Path(parts[0])
     try:
-        for part in parts[1:]:
+        for part in ("", *parts[1:]):
             current /= part
             try:
-                mode = current.lstat().st_mode
+                metadata = current.lstat()
             except FileNotFoundError:
                 return
-            if stat.S_ISLNK(mode):
+            if (
+                stat.S_ISLNK(metadata.st_mode)
+                or getattr(metadata, "st_file_attributes", 0) & stat.FILE_ATTRIBUTE_REPARSE_POINT
+            ):
                 raise ScanError("SYMLINK_PATH")
     except OSError:
         raise ScanError("UNREADABLE_PATH") from None
 
 
 def _open_root(root: Path) -> int:
+    if sys.platform == "win32":
+        raise ScanError("UNSUPPORTED_POSIX_READER")
     parts = _absolute_parts(root)
     descriptor = os.open(parts[0], os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
     try:
@@ -88,7 +96,51 @@ def _exact_component(directory: int, component: str) -> None:
         raise ScanError("PATH_ALIAS")
 
 
+def _identity(metadata: os.stat_result) -> tuple[int, int, int, int]:
+    return metadata.st_dev, metadata.st_ino, metadata.st_size, metadata.st_mtime_ns
+
+
+def _read_windows(root: Path, name: str, limit: int) -> bytes:
+    """Fixed-fixture reader; prechecks do not provide hostile-filesystem isolation."""
+    parts = _path(name)
+    current = root
+    try:
+        reject_symlink_components(root)
+        for part in parts:
+            found = False
+            with os.scandir(current) as entries:
+                for count, entry in enumerate(entries, 1):
+                    if count > 200:
+                        raise ScanError("DIRECTORY_ENTRY_LIMIT")
+                    found = found or entry.name == part
+            if not found:
+                raise ScanError("PATH_ALIAS")
+            current /= part
+            reject_symlink_components(current)
+        before = current.lstat()
+        if not stat.S_ISREG(before.st_mode) or before.st_size > limit:
+            raise ScanError("INVALID_FILE")
+        with current.open("rb") as stream:
+            opened = os.fstat(stream.fileno())
+            if not stat.S_ISREG(opened.st_mode) or _identity(before) != _identity(opened):
+                raise ScanError("FILE_CHANGED_OR_OVERSIZE")
+            data = stream.read(limit + 1)
+            after = os.fstat(stream.fileno())
+        reject_symlink_components(current)
+        if (
+            len(data) > limit
+            or _identity(before) != _identity(after)
+            or _identity(before) != _identity(current.lstat())
+        ):
+            raise ScanError("FILE_CHANGED_OR_OVERSIZE")
+        return data
+    except OSError:
+        raise ScanError("UNREADABLE_FILE") from None
+
+
 def _read(root: Path, name: str, limit: int) -> bytes:
+    if sys.platform == "win32":
+        return _read_windows(root, name, limit)
     parts = _path(name)
     directory = -1
     descriptor = -1

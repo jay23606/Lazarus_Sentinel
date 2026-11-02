@@ -2,10 +2,20 @@
 
 > **This file is the live status ledger for all coding agents.** Update it after every meaningful task/session. Do not delete historical session notes. Keep the top-level status current and append dated session entries.
 
+## Teammate quick start — Claude Code and Codex
+
+1. Read [shared instructions](AGENTS.md), [team setup/module map](docs/21_TEAM_HANDOFF.md), [latest platform/release evidence](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md), then [next-phase assignments](docs/22_NEXT_PHASE_PLAN.md). Claude Code also loads [CLAUDE.md](CLAUDE.md).
+2. From a clone on macOS Terminal or Windows PowerShell: `uv sync --project backend --locked`, `npm ci --prefix frontend --ignore-scripts --no-audit --no-fund`, `uv run --project backend --locked python scripts/verify_demo.py`, then `npm run dev --prefix frontend`. No key is needed.
+3. Fixed fixture only; scan with `uv run --project backend --locked lazarus scan --target fixture:fastapi-demo`. Expected exit2/PARTIAL is a seeded coverage gap, not a broken setup.
+4. Choose one assigned task, coordinate file ownership, work on a topic branch from remote main, test and open a PR. Do not restart completed work, overlap edits, read secrets, make paid calls or widen intake.
+5. Preserve owner model routing: Astra for critical/security decisions; Claude Code can perform routine work but must not pretend to provide Astra. If unavailable, stop that critical decision for an owner-approved fallback.
+
+`AGENT.md` is the only living log filename. Do not create a case-variant `Agent.md`; keep historical notes below and append new measured results.
+
 ## Current status
 
 - **Project:** Lazarus Sentinel
-- **Status:** Integrated fixed synthetic demo complete; 115 backend tests, 16 frontend tests and quality checks pass; independent Astra review accepted. Live access/submission and platform-expansion gates remain explicit in docs/19_INTEGRATED_DEMO_REVIEW.md.
+- **Status:** Integrated fixed synthetic demo complete; 138 backend tests (plus one Windows-only skip on macOS), 16 frontend tests and quality checks pass; independent Astra review accepted. Live access/submission and platform-expansion gates remain explicit in docs/19_INTEGRATED_DEMO_REVIEW.md.
 - **Current phase:** Offline integrated demo — fixture analysis, immutable bundles, recorded mock explanations and fixed artifact viewer.
 - **Primary MVP language/framework:** CPython 3.13.14 analyzing a synthetic FastAPI fixture without importing FastAPI.
 - **Primary code-analysis candidate:** Python AST structure adapter; Joern NOT_ATTEMPTED (absent from PATH; no failed POC claim).
@@ -225,3 +235,14 @@ For every substantial session, append:
 **Work products:** docs/20_VIEWER_CLARITY_AND_DESIGN.md; artifacts/viewer-v2-verification.json; artifacts/viewer-v2-browser-verification.json; focused/full/mobile screenshots under artifacts/browser/viewer-v2-*.png. README/frontend specification/bootstrap/taskboard/decisionregister updated. Historicalscanreports remain unchanged.
 
 **Next:** Gather actual audiencefeedback; measure loading/rendering before code-splitting/layout expansion; retain existing externalprovider/event/isolationgates.
+
+
+### 2026-11-02 — Team handoff and native-platform publication preparation
+
+**Owner scope:** Refresh all maintained documentation, provide Claude Code/Codex teammate instructions and a finite next-phase plan, support macOS/Windows, and publish to the named GitHub repository. Interrupted sessions ended; saved work was retained and final Sol QA/Astra review restarted without rebuilding completed features.
+
+**Delivered:** Shared AGENTS.md and CLAUDE.md entry points, canonical AGENT.md quickstart, CONTRIBUTING.md, docs21teamhandoff/22finiteplan/23releaseevidence, portable commands throughout maintained docs, LF checkout policy and three-OS CI. Native compatibility changes cover reserved Windows names/reparse points, bounded binary fixture reads, minimal SystemRoot worker environment, Windows spawn provider child, fixed-byte scan writer lock and portable scripts. POSIX descriptor no-follow/resource behavior preserved.
+
+**Review and checks:** Astra caught and required repairs for Windows-only imports/locking, inspector drive-path interpretation and environment casing. Final source review accepted repaired runtime/static guards. Fresh local138backendtests pass, one Windows-only junction test skips onmacOS;16frontendtests pass;allnineofflinechecks pass. Strictmypy default/win32/darwin/linux each clean16sourcefiles. Native CI remains pending at this preparation checkpoint; no Windows pass is claimed from Mac mocks.
+
+**Publication boundary:** Destination verifiedempty/public/pushauthorized; no forcepush. Code, synthetic fixtures/assets, lockfiles, docs and CI are selected. Credentials, environments, generated scan/database/build outputs and the original unreviewed PDF remain excluded. License, live Meta, event/submission and hostile-intake isolation gates remain unresolved. Final remote/nativeCI evidence belongs in document23.

@@ -101,7 +101,7 @@ def main() -> int:
     environment = {
         key: value
         for key, value in os.environ.items()
-        if key in {"PATH", "HOME", "TMPDIR", "SYSTEMROOT"}
+        if key.upper() in {"PATH", "HOME", "TMPDIR", "TMP", "TEMP", "SYSTEMROOT"}
     }
     environment.update(CI="true", NO_COLOR="1")
     for name, command, cwd in commands:
@@ -109,7 +109,10 @@ def main() -> int:
         try:
             with tempfile.TemporaryFile() as output:
                 result = subprocess.run(
-                    command,
+                    "npm run " + name.removeprefix("frontend-")
+                    if os.name == "nt" and name.startswith("frontend-")
+                    else command,
+                    shell=os.name == "nt" and name.startswith("frontend-"),
                     cwd=cwd,
                     env=environment,
                     stdout=output,
@@ -117,15 +120,24 @@ def main() -> int:
                     timeout=180,
                     check=False,
                 )
+                output.seek(0, 2)
+                output.seek(max(0, output.tell() - 4000))
+                failure_tail = (
+                    output.read(4000).decode("utf-8", errors="replace")
+                    if result.returncode
+                    else ""
+                )
             code = result.returncode
         except (OSError, subprocess.TimeoutExpired):
             code = -1
+            failure_tail = "CHECK_START_OR_TIMEOUT_FAILURE"
         results.append(
             {
                 "check": name,
                 "passed": code == 0,
                 "exit_code": code,
                 "elapsed_seconds": round(time.monotonic() - start, 3),
+                **({"failure_output_tail": failure_tail} if code else {}),
             }
         )
     if not npm:

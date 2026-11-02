@@ -12,6 +12,7 @@ import sqlite3
 import stat
 from pathlib import Path, PurePosixPath
 from typing import Any
+from uuid import UUID
 
 MAX_FILE = 16 * 1024 * 1024
 MAX_ROWS = 10000
@@ -23,7 +24,15 @@ SCAN_NAME = re.compile(
 def safe_path(path: Path) -> None:
     absolute = Path(os.path.abspath(path))
     for component in reversed([absolute, *absolute.parents]):
-        if component.is_symlink():
+        try:
+            metadata = component.lstat()
+        except FileNotFoundError:
+            continue
+        if (
+            stat.S_ISLNK(metadata.st_mode)
+            or getattr(metadata, "st_file_attributes", 0)
+            & stat.FILE_ATTRIBUTE_REPARSE_POINT
+        ):
             raise ValueError("SYMLINK_PATH")
 
 
@@ -75,7 +84,9 @@ def inspect(root: Path) -> dict[str, Any]:
         )
         try:
             if (
-                kind not in expected_kinds
+                not isinstance(scan_id, str)
+                or str(UUID(scan_id)) != scan_id
+                or kind not in expected_kinds
                 or not isinstance(relative, str)
                 or "\\" in relative
             ):
@@ -98,12 +109,31 @@ def inspect(root: Path) -> dict[str, Any]:
             metadata = path.lstat()
             if not stat.S_ISREG(metadata.st_mode):
                 raise ValueError("ARTIFACT_SIZE_OR_TYPE")
-            descriptor = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+            flags = os.O_RDONLY | getattr(os, "O_BINARY", 0)
+            if os.name == "posix":
+                flags |= os.O_NOFOLLOW | os.O_NONBLOCK
+            descriptor = os.open(path, flags)
             with os.fdopen(descriptor, "rb") as file:
-                metadata = os.fstat(file.fileno())
-                if not stat.S_ISREG(metadata.st_mode) or metadata.st_size > MAX_FILE:
+                opened = os.fstat(file.fileno())
+                identity = lambda item: (
+                    item.st_dev,
+                    item.st_ino,
+                    item.st_size,
+                    item.st_mtime_ns,
+                )
+                if (
+                    not stat.S_ISREG(opened.st_mode)
+                    or opened.st_size > MAX_FILE
+                    or identity(metadata) != identity(opened)
+                ):
                     raise ValueError("ARTIFACT_SIZE_OR_TYPE")
                 data = file.read(MAX_FILE + 1)
+                after = os.fstat(file.fileno())
+            safe_path(path)
+            if identity(metadata) != identity(after) or identity(metadata) != identity(
+                path.lstat()
+            ):
+                raise ValueError("ARTIFACT_CHANGED")
             if len(data) != size or hashlib.sha256(data).hexdigest() != digest:
                 raise ValueError("ARTIFACT_HASH_OR_SIZE_MISMATCH")
             if kind.endswith(".json"):
@@ -120,7 +150,14 @@ def inspect(root: Path) -> dict[str, Any]:
                 if count > MAX_ROWS:
                     raise ValueError("SCAN_DIRECTORY_LIMIT")
                 name = entry.name if SCAN_NAME.fullmatch(entry.name) else "invalid-name"
-                if entry.is_symlink() or not entry.is_dir(follow_symlinks=False):
+                if (
+                    entry.is_symlink()
+                    or getattr(
+                        entry.stat(follow_symlinks=False), "st_file_attributes", 0
+                    )
+                    & stat.FILE_ATTRIBUTE_REPARSE_POINT
+                    or not entry.is_dir(follow_symlinks=False)
+                ):
                     issues.append({"scan_id": name, "code": "UNEXPECTED_SCAN_ENTRY"})
                 elif entry.name not in committed_dirs:
                     issues.append(

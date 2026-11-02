@@ -1,5 +1,8 @@
 # 16 — Approved integrated demo contract
 
+> Team/platform update (2026-11-02): [team handoff](21_TEAM_HANDOFF.md), [finite next-phase plan](22_NEXT_PHASE_PLAN.md), and [current portability/publication evidence](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) supersede earlier onboarding, remote-state and platform assumptions. Historical checks below retain their original date and scope.
+
+
 Owner approved the parallel delivery plan on 2026-11-02. Preserve document 13's fixture analyzer. This increment adds validated immutable exports, recorded explanation sidecars and a fixed synthetic artifact viewer. Root coordinates; Sol owns backend, Terra frontend, independent QA owns evaluation; one Sol integration worker wires components after handoff. Astra reviews critical boundaries.
 
 ## Bundle v0.1.0 (frozen interface)

@@ -6,7 +6,7 @@ Updated **2026-11-02**. The first-slice baseline is complete. The integrated dem
 |---|---|---|
 | N01 | BLOCKED | Owner portal acceptance, complete rules and receipt unknown. |
 | N02 | BLOCKED | Missing key/account verification; no live request. |
-| N03 | DONE; license pending | Local baseline 7797b85 and feat/integrated-demo; no remote/publication. |
+| N03 | DONE; license pending | Baseline 7797b85 and subsequent demo/viewer commits preserved; current owner-authorized publication evidence in document 23. |
 | N04 | DONE | Predeclared variant: 3 endpoints, 1 candidate, 1 declaration, 1 unknown; finite synthetic evaluation only. |
 | N05 | DONE | Bundle/explanation/viewer contract frozen in document 16. |
 | N06 | DONE | Fixed accessible graph/findings/coverage viewer; final checks/review in document 19. |
@@ -35,3 +35,7 @@ The original fixed fixture remains 6 endpoints / 23 nodes / 36 edges / 2 LOW-con
 - [x] Document research, interaction contracts, screenshots and limits in [document20](docs/20_VIEWER_CLARITY_AND_DESIGN.md).
 
 N01–N18 external/capability gates above remain unchanged. No new model call, intake mode or detector was added.
+
+## Team portability and next phase — 2026-11-02
+
+Current session: portable runtime/CI work and owner-authorized repository publication are in progress; use [document 23](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md) for actual results. Earlier no-remote/hosted-NOT_RUN entries describe the original checkpoint. No success is implied before verification. [Document 21](docs/21_TEAM_HANDOFF.md) provides teammate setup; [document 22](docs/22_NEXT_PHASE_PLAN.md) defines P01–P09 and acceptance gates. N14/N15 remain blocked independently of platform process-limit compatibility.
