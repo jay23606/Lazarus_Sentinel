@@ -3,6 +3,32 @@ import pytest
 from lazarus_sentinel.service import scan
 
 
+def test_scan_serializes_windows_relative_paths_as_posix(tmp_path, monkeypatch):
+    from pathlib import Path, PureWindowsPath
+
+    from lazarus_sentinel.persistence import Store
+
+    original = Path.relative_to
+
+    def windows_relative(path, *args, **kwargs):
+        return PureWindowsPath(*original(path, *args, **kwargs).parts)
+
+    monkeypatch.setattr(Path, "relative_to", windows_relative)
+    result = scan("fixture:fastapi-demo", tmp_path)
+    assert result["status"] == "PARTIAL"
+    assert result["artifact_dir"] == f"scans/{result['scan_id']}"
+    store = Store(tmp_path)
+    try:
+        references = store.get(result["scan_id"])["artifacts"]
+        assert len(references) == 4
+        assert all(
+            reference["path"] == f"scans/{result['scan_id']}/{reference['kind']}"
+            for reference in references
+        )
+    finally:
+        store.close()
+
+
 def test_invalid_target_never_reads(tmp_path, monkeypatch):
     monkeypatch.setattr("pathlib.Path.read_bytes", lambda *args: pytest.fail("read attempted"))
     result = scan("/etc/passwd", tmp_path)

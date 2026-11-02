@@ -29,10 +29,19 @@ Native CI is configured for **macos-latest, windows-latest and ubuntu-latest** w
 
 Local macOS verification: **138 backend tests passed, one native-Windows junction test skipped;16frontend tests passed; allnineoffline checks passed.** Strict mypy for default,win32,darwin andlinux platforms passes16sourcefiles each. Final independent Astra review accepted the bounded runtime/static-guard changes after review findings were repaired. These results do not substitute for native Windows execution.
 
-At this preparation checkpoint, remote publication and native CI are pending. Exact release commit, remote identity and native job URLs will be recorded below after they are observed.
+Publication verified: [commit28798be](https://github.com/sumitjadhav1703/Lazarus_Sentinel/commit/28798bef8a36f8b0949bea7f36d193a6f8acf361) is on remote `main`, with full reviewed history and the CI workflow. The first HTTPS/OAuth push was refused because that credential lacked workflow scope; nothing was published by that attempt. The existing SSH connection authenticated as the repository owner and published the complete branch without changing OAuth scopes or dropping CI.
+
+Native verification run: [Offline demo verification](https://github.com/sumitjadhav1703/Lazarus_Sentinel/actions/runs/41491302001). Final native outcomes will be recorded after the jobs finish.
 
 ## Teammate operating instructions
 
 Use the exact clone/setup commands in document21. `AGENTS.md` carries shared constraints, `CLAUDE.md` imports them for Claude Code, and `AGENT.md` is the canonical state and append-only log. Do not add `Agent.md` alongside it: those names collide on common macOS/Windows filesystems. Branch from current remote `main`; assign one file owner per task and use PRs with platform checks.
 
 Only `fixture:fastapi-demo` is accepted. A normal scan is intentionally PARTIAL/exit2: six endpoints,23nodes,36edges,twoLOW-confidence candidates and three matching declarations with effectiveness unverified. These outcomes are synthetic declaration-context evidence, not runtime authorization or data-flow proof. Keep stored bundle/source identities unchanged unless intentionally creating new evidence.
+
+
+### Initial native result and canonical-path repair
+
+The first native run passed allninechecks onUbuntu. Windows passed eight gates but failed backend tests (18failed/121passed):17artifact/export/inspection checks exposed backslash serialization in stored references, and one router test constructed noncanonical snapshot paths. Production intake already required POSIX snapshot names. The repair serializes artifact/summary paths with `.as_posix()` and fixes both test snapshot producers; strict bundle/inspector validation and route analysis remain unchanged. A PureWindowsPath regression failed before the repair and passed afterward.
+
+Fresh local verification after this repair: **139 backend passed, one Windows-only skip;16frontend passed;allnineoffline gates and strict win32/darwin/linux mypy passed.** Astra accepted the narrow repair read-only. A new commit/run will verify Windows again; the initial failed result is preserved rather than silently rerun. Native macOS job was still queued at this observation.

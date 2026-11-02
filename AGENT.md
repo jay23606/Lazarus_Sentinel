@@ -15,7 +15,7 @@
 ## Current status
 
 - **Project:** Lazarus Sentinel
-- **Status:** Integrated fixed synthetic demo complete; 138 backend tests (plus one Windows-only skip on macOS), 16 frontend tests and quality checks pass; independent Astra review accepted. Live access/submission and platform-expansion gates remain explicit in docs/19_INTEGRATED_DEMO_REVIEW.md.
+- **Status:** Integrated fixed synthetic demo complete; 139 backend tests (plus one Windows-only skip on macOS), 16 frontend tests and quality checks pass; independent Astra review accepted. Live access/submission and platform-expansion gates remain explicit in docs/19_INTEGRATED_DEMO_REVIEW.md.
 - **Current phase:** Offline integrated demo — fixture analysis, immutable bundles, recorded mock explanations and fixed artifact viewer.
 - **Primary MVP language/framework:** CPython 3.13.14 analyzing a synthetic FastAPI fixture without importing FastAPI.
 - **Primary code-analysis candidate:** Python AST structure adapter; Joern NOT_ATTEMPTED (absent from PATH; no failed POC claim).
@@ -246,3 +246,8 @@ For every substantial session, append:
 **Review and checks:** Astra caught and required repairs for Windows-only imports/locking, inspector drive-path interpretation and environment casing. Final source review accepted repaired runtime/static guards. Fresh local138backendtests pass, one Windows-only junction test skips onmacOS;16frontendtests pass;allnineofflinechecks pass. Strictmypy default/win32/darwin/linux each clean16sourcefiles. Native CI remains pending at this preparation checkpoint; no Windows pass is claimed from Mac mocks.
 
 **Publication boundary:** Destination verifiedempty/public/pushauthorized; no forcepush. Code, synthetic fixtures/assets, lockfiles, docs and CI are selected. Credentials, environments, generated scan/database/build outputs and the original unreviewed PDF remain excluded. License, live Meta, event/submission and hostile-intake isolation gates remain unresolved. Final remote/nativeCI evidence belongs in document23.
+
+
+### 2026-11-02 — Publication and first native Windows feedback
+
+Commit28798be published to owner repo main. OAuthpush rejected workflow scope; existing owner-authenticated SSH published fullhistory/workflow, no scopes changed and no CI dropped. InitialnativeCI41491302001:Ubuntuninegatepass,Windows18backendfailures/121pass withother8gatespass,macOSqueued. Rootcauses:artifactstr(Path)backslashes andtest-onlysnapshotpathconstruction;Solcanonicalizedservicepaths/testproducersandadded observedRED/GREENPureWindowsPathregression. Astraacceptednarrowrepair;139localbackendpass/1Windows-onlyskip,16frontendpass,all9checks/platformmypyclean. Newfixedcommitwillcreateanewrun;nounchangedautomaticretryorfalseWindowssuccessclaim.

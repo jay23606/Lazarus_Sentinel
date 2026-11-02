@@ -23,7 +23,9 @@ def snapshot(files):
 
 def test_fixture_routes_and_calls():
     root = Path(__file__).parents[2] / "fixtures/fastapi_demo"
-    graph = analyze(snapshot({str(p.relative_to(root)): p.read_text() for p in root.rglob("*.py")}))
+    graph = analyze(
+        snapshot({p.relative_to(root).as_posix(): p.read_text() for p in root.rglob("*.py")})
+    )
     endpoints = {n.name: n for n in graph.nodes if n.type == "API_ENDPOINT"}
     oracle = json.loads((root.parent / "expected_results/fastapi_demo.json").read_text())
     assert set(endpoints) == set(oracle["endpoints"])
@@ -46,7 +48,7 @@ def test_fixture_routes_and_calls():
     assert (
         graph.model_dump()
         == analyze(
-            snapshot({str(p.relative_to(root)): p.read_text() for p in root.rglob("*.py")})
+            snapshot({p.relative_to(root).as_posix(): p.read_text() for p in root.rglob("*.py")})
         ).model_dump()
     )
 

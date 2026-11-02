@@ -131,15 +131,15 @@ def scan(target: str, artifact_root: Path | None = None) -> dict[str, Any]:
                     refs.append(
                         (
                             file.name,
-                            str(file.relative_to(root)),
+                            file.relative_to(root).as_posix(),
                             hashlib.sha256(data).hexdigest(),
                             len(data),
                         )
                     )
                 summary["artifact_dir"] = (
-                    str(final.relative_to(WORKSPACE))
+                    final.relative_to(WORKSPACE).as_posix()
                     if final.is_relative_to(WORKSPACE)
-                    else str(final.relative_to(root))
+                    else final.relative_to(root).as_posix()
                 )
                 summary["finished_at"] = datetime.now(UTC).isoformat()
                 store.finish(summary, graph.findings, refs)
