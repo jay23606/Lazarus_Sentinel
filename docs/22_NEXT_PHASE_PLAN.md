@@ -1,6 +1,6 @@
 # 22 — Next phase: finite, gated team plan
 
-Proposed execution order, updated 2026-11-02. Completed baseline/demo/viewer work must not restart. [Document 15](15_NEXT_STEPS.md) preserves N01–N18 dispositions; this plan turns remaining work into finite team assignments. [Document 23](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) records actual current checks and publication outcomes. A listed action is not evidence of execution.
+Proposed execution order, updated 2026-11-02. Completed baseline/demo/viewer work must not restart. [Document 15](15_NEXT_STEPS.md) preserves N01–N18 dispositions; this plan turns remaining work into finite team assignments. [Document 23](23_PORTABILITY_AND_RELEASE_VERIFICATION.md) records actual current checks and publication outcomes. P01 and P02 are now complete for the bounded fixed-fixture profile; document23 links native three-platform success and published main. Begin with P03, while P04/P06 can proceed independently. Other listed actions remain unexecuted proposals.
 
 | ID | Owner / dependency | Bounded task and acceptance gate |
 |---|---|---|

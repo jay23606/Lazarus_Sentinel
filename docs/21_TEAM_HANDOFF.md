@@ -39,7 +39,7 @@ uv run --project backend --locked python scripts/verify_demo.py
 npm run dev --prefix frontend
 ```
 
-Use the loopback URL Vite prints. The terminal stays occupied while the viewer is running; press Ctrl+C to stop it. The owner is publishing the reviewed delivery HEAD to remote `main`; availability is established only by document 23. Native Windows execution and hosted CI are only verified when document 23 links successful evidence. Do not mistake portable command syntax for a measured platform pass.
+Use the loopback URL Vite prints. The terminal stays occupied while the viewer is running; press Ctrl+C to stop it. The reviewed delivery is published on remote `main`. Native Windows, macOS and Ubuntu clean setup/tests/build passed; document23 links the exact tested source commit and jobs. This does not establish hostile-repository isolation or live-provider access.
 
 In a second terminal, run the controlled scan:
 

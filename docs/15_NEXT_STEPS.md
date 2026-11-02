@@ -31,7 +31,7 @@ Baseline commit `7797b85`, integrated demo `4f0346c` and viewer refinement `2cda
 | N14 | BLOCKED | sandbox-exec exit71: sandbox_apply: Operation not permitted. Denial probes not run; no enforced isolation claim. |
 | N15 | BLOCKED | Requires N14 before broader authorized intake. |
 | N16 | FINITE PILOT DONE; broader OPEN | Controlled variant support measured; no broad accuracy or interprocedural/data-flow claim. |
-| N17 | FINITE TRANCHE DONE; broader OPEN | Read-only inspector, scripts and credential-free CI configuration present; hosted CI NOT_RUN; clean-copy verification passed in document 19. Retention/triage/remote service remain open. |
+| N17 | FINITE TRANCHE DONE; broader OPEN | Read-only inspector, scripts and credential-free CI configuration present; native Windows/macOS/Linux CI passed in document23; clean-copy verification passed in document19. Retention/triage/remote service remain open. |
 | N18 | FINITE RESEARCH DONE; broader OPEN | Catalog and DATA/TRUST research in document 17; broad detector/language program remains future work. |
 
 The detailed exit criteria below remain useful for unresolved portions; completed work must not be restarted. Status above supersedes prospective wording below.

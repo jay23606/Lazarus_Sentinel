@@ -20,7 +20,7 @@ Updated **2026-11-02**. The first-slice baseline is complete. The integrated dem
 | N14 | BLOCKED | sandbox-exec exit71: sandbox_apply: Operation not permitted. Denial probes not run; no enforced isolation claim. |
 | N15 | BLOCKED | Requires N14 before broader authorized intake. |
 | N16 | FINITE PILOT DONE; broader OPEN | Controlled variant support measured; no broad accuracy or interprocedural/data-flow claim. |
-| N17 | FINITE TRANCHE DONE; broader OPEN | Read-only inspector, scripts and credential-free CI configuration present; hosted CI NOT_RUN; clean-copy verification passed in document 19. Retention/triage/remote service remain open. |
+| N17 | FINITE TRANCHE DONE; broader OPEN | Read-only inspector, scripts and credential-free CI configuration present; native Windows/macOS/Linux CI passed in document23; clean-copy verification passed in document19. Retention/triage/remote service remain open. |
 | N18 | FINITE RESEARCH DONE; broader OPEN | Catalog and DATA/TRUST research in document 17; broad detector/language program remains future work. |
 
 The original fixed fixture remains 6 endpoints / 23 nodes / 36 edges / 2 LOW-confidence candidates / 3 declarations with effectiveness unverified, intentionally PARTIAL. Historical reports and document 14 are preserved. No live call, target execution, global installation, deployment, publication or submission is implied by local demo completion.
@@ -38,4 +38,4 @@ N01–N18 external/capability gates above remain unchanged. No new model call, i
 
 ## Team portability and next phase — 2026-11-02
 
-Current session: portable runtime/CI work and owner-authorized repository publication are in progress; use [document 23](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md) for actual results. Earlier no-remote/hosted-NOT_RUN entries describe the original checkpoint. No success is implied before verification. [Document 21](docs/21_TEAM_HANDOFF.md) provides teammate setup; [document 22](docs/22_NEXT_PHASE_PLAN.md) defines P01–P09 and acceptance gates. N14/N15 remain blocked independently of platform process-limit compatibility.
+Current session complete: native Windows/macOS/Linux CI passed and reviewed source/docs are published on GitHub main; use [document 23](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md) for actual results. Earlier no-remote/hosted-NOT_RUN entries describe the original checkpoint. The linked native run verifies commit06f993e. [Document 21](docs/21_TEAM_HANDOFF.md) provides teammate setup; [document 22](docs/22_NEXT_PHASE_PLAN.md) defines P01–P09 and acceptance gates. N14/N15 remain blocked independently of platform process-limit compatibility.

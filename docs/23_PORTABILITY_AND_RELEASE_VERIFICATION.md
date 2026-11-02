@@ -45,3 +45,20 @@ Only `fixture:fastapi-demo` is accepted. A normal scan is intentionally PARTIAL/
 The first native run passed allninechecks onUbuntu. Windows passed eight gates but failed backend tests (18failed/121passed):17artifact/export/inspection checks exposed backslash serialization in stored references, and one router test constructed noncanonical snapshot paths. Production intake already required POSIX snapshot names. The repair serializes artifact/summary paths with `.as_posix()` and fixes both test snapshot producers; strict bundle/inspector validation and route analysis remain unchanged. A PureWindowsPath regression failed before the repair and passed afterward.
 
 Fresh local verification after this repair: **139 backend passed, one Windows-only skip;16frontend passed;allnineoffline gates and strict win32/darwin/linux mypy passed.** Astra accepted the narrow repair read-only. A new commit/run will verify Windows again; the initial failed result is preserved rather than silently rerun. Native macOS job was still queued at this observation.
+
+
+### Verified release — all native jobs passed
+
+The corrected source commit [06f993e](https://github.com/sumitjadhav1703/Lazarus_Sentinel/commit/06f993e77237086ecf0f2abb40670082b6c84be0) is published on `main`. [Native CI run41492178925](https://github.com/sumitjadhav1703/Lazarus_Sentinel/actions/runs/41492178925) completed **SUCCESS** on2026-11-02. All jobs performed clean locked setup and allnineoffline verifier gates:
+
+| Native runner | Observed result | Job evidence |
+|---|---|---|
+| Windows | PASS | [Windows job](https://github.com/sumitjadhav1703/Lazarus_Sentinel/actions/runs/41492178925/job/125437729293) |
+| macOS | PASS | [macOS job](https://github.com/sumitjadhav1703/Lazarus_Sentinel/actions/runs/41492178925/job/125437729874) |
+| Ubuntu/Linux | PASS | [Linux job](https://github.com/sumitjadhav1703/Lazarus_Sentinel/actions/runs/41492178925/job/125437730148) |
+
+This verifies the bounded fixture/backend workflow and frontend installation, tests and production build on each native runner. Local Mac counts are139backend passed/oneWindows-only skip and16frontend tests. Windows-specific tests run on the Windows job; no broad skip was used to conceal the original failures. Hosted results are per-job gates rather than an invented universal test-count total.
+
+The initial run is superseded; its Windows failure and diagnosis remain documented above. The previously queued obsolete run was canceled after the corrected run passed, rather than consuming more runner time. No failed provider/model call was retried; no live provider call occurred. Final documentation may have a later commit than the source commit linked here; it does not change the tested source.
+
+**Completed:** P01 bounded native portability and P02 publication/verification. **Next:** P03 teammate fresh-clone reproduction, P04 accessibility/user feedback, P05 measured loading/rendering, and owner P06 account/event/license decisions. P07liveverification and P08isolation/P09intake remain separately gated. No installer, hostile-repository isolation, live Meta access, portal submission or license grant is claimed.

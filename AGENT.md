@@ -16,7 +16,7 @@
 
 - **Project:** Lazarus Sentinel
 - **Status:** Integrated fixed synthetic demo complete; 139 backend tests (plus one Windows-only skip on macOS), 16 frontend tests and quality checks pass; independent Astra review accepted. Live access/submission and platform-expansion gates remain explicit in docs/19_INTEGRATED_DEMO_REVIEW.md.
-- **Current phase:** Offline integrated demo — fixture analysis, immutable bundles, recorded mock explanations and fixed artifact viewer.
+- **Current phase:** Team-ready source published on GitHub main; native Windows/macOS/Linux CI verified. See docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md.
 - **Primary MVP language/framework:** CPython 3.13.14 analyzing a synthetic FastAPI fixture without importing FastAPI.
 - **Primary code-analysis candidate:** Python AST structure adapter; Joern NOT_ATTEMPTED (absent from PATH; no failed POC claim).
 - **Graph computation:** NetworkX for MVP.
@@ -251,3 +251,14 @@ For every substantial session, append:
 ### 2026-11-02 — Publication and first native Windows feedback
 
 Commit28798be published to owner repo main. OAuthpush rejected workflow scope; existing owner-authenticated SSH published fullhistory/workflow, no scopes changed and no CI dropped. InitialnativeCI41491302001:Ubuntuninegatepass,Windows18backendfailures/121pass withother8gatespass,macOSqueued. Rootcauses:artifactstr(Path)backslashes andtest-onlysnapshotpathconstruction;Solcanonicalizedservicepaths/testproducersandadded observedRED/GREENPureWindowsPathregression. Astraacceptednarrowrepair;139localbackendpass/1Windows-onlyskip,16frontendpass,all9checks/platformmypyclean. Newfixedcommitwillcreateanewrun;nounchangedautomaticretryorfalseWindowssuccessclaim.
+
+
+### 2026-11-02 — Native platform verification and publication complete
+
+**Publication:** Public ownerrepo sumitjadhav1703/Lazarus_Sentinel main contains source/docs/syntheticassets/locks/CI. Sourcefix06f993e verifiedagainstremote. ExistingSSHauthused afterOAuthworkflow-scope rejection; no new authscope/globalinstallation/secretexposure.
+
+**Native evidence:** GitHubActions41492178925 completedSUCCESS for Windowsjob125437729293,macOSjob125437729874 andUbuntujob125437730148;eachcleanlockedsetupandallnineofflinegatespassed. Local139backendpass/oneWindows-onlyskip,16frontendpass,threeplatformstrictmypyclean. Initial18Windowsfailurespreservedinlogandfixedcanonically;obsoleteoldqueuedrun canceledafterreplacementsuccess. No automaticunchangedretry or liveproviderrequest.
+
+**Docs:**31-file documentationmanifest/relative links verified; AGENTteammatequickstart,AGENTSsharedrules,CLAUDEentrypoint,CONTRIBUTING,docs21onboarding,22finiteP01–P09plan,23releaseevidence maintained. P01/P02closed;P03teamfreshclone,P04a11y/userfeedback,P05measuredperformance,P06owneraccount/event/license next.
+
+**Remaining:** License/eventportal/liveMeta/OSsandboxandbroaderintakegatesremainexplicit. No deployment/installer/paidcall/submission;originalblueprintPDF stayslocaluntracked andgeneratedartifacts/credentialsignored.

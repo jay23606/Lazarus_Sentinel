@@ -85,3 +85,8 @@ No universal compiler, complete-graph promise, automatic exploit validation/reme
 ### D-026 — Viewer comprehension and truthful navigation (2026-11-02)
 
 Owner selected all three audiences: first-time/demo, developer and security reviewer. Refine the existing visual identity with a guided exact path, explicit full-graph view, endpoint search and node-level evidence. Keep candidate path identities separate from declaration relationships. A noncandidate endpoint is “No candidate in this scan,” never a safe/security label. Astra approved these constraints and accepted the implementation read-only. Details and verification are in document20. No backend, provider, intake or detector contract changes.
+
+
+### D-027 — Team handoff and bounded native portability (2026-11-02)
+
+Owner authorized public repository publication and macOS/Windows support. Preserve canonical AGENT.md across case-insensitive platforms; AGENTS.md shared rules and CLAUDE.md entry point serve both agents. Retain POSIX no-follow/resource controls; Windows uses explicit reparse rejection, bounded binary identity checks, spawn and byte-range writer locks, with no OS-isolation equivalence claim. Native Windows/macOS/Linux setup/tests/build passed for06f993e; strict canonical POSIX artifact/snapshot identities are unchanged. P01/P02 complete; future account/intake/license/remote-service decisions remain gated. See document23 for original failures, repairs and primary job evidence.

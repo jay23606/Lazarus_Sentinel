@@ -14,11 +14,15 @@ For teammates, start with the [portable setup and module guide](docs/21_TEAM_HAN
 | Rule | LS-AUTH-001, LOW-confidence declaration-gap candidates; opaque controls are diagnostics only |
 | Persistence/report | SQLite committed references; graph/findings/coverage JSON and escaped Markdown |
 | Measured demo | 6 endpoints, 23 nodes, 36 edges, 2 candidates, 3 matching declarations with effectiveness unverified |
-| Quality | See [integrated verification](docs/19_INTEGRATED_DEMO_REVIEW.md) for final counts/checks/review; 73 tests is the historical first-slice baseline |
+| Quality | [Current release](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md): native Windows/macOS/Linux CI passed; local139backend tests plus oneWindows-only skip,16frontend tests |
 | Demo | Hash-verified immutable bundle, disabled/mock explanation sidecars, fixed React/Cytoscape viewer; Meta adapter tested offline |
 | Blocked/deferred | Live Meta access, Joern setup, data/trust rules, HTTP API, LangGraph, arbitrary repositories and OS isolation |
 
 The fixture intentionally contains unsupported dynamic registration. Its normal outcome is **PARTIAL / exit 2**. A matching authorization declaration is syntax evidence, not proof of enforcement or a secure endpoint.
+
+## Platform support
+
+Native **Windows, macOS and Ubuntu/Linux** clean installation, tests and build passed in [GitHub Actions](https://github.com/sumitjadhav1703/Lazarus_Sentinel/actions/runs/41492178925). Use the same uv/npm commands below in macOS Terminal or Windows PowerShell. This is a local CLI/browser application; no desktop installer is provided.
 
 ## Run locally
 
