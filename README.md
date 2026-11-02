@@ -75,10 +75,16 @@ uv run --project backend --locked lazarus scan --target fixture:fastapi-demo
 
 Artifacts land in `artifacts/scans/<scan_id>/{graph.json,findings.json,coverage.json,report.md}` and metadata in `artifacts/sentinel.sqlite3`. Repeated scans never overwrite each other. Evidence stores relative locations and hashes, not raw source excerpts.
 
-Reproduce everything offline in one command:
+Install dependencies once (needs network access to the uv and npm registries):
 
 ```sh
+uv sync --project backend --locked
 npm ci --prefix frontend --ignore-scripts --no-audit --no-fund
+```
+
+Then run the full verification. This step makes no network or model calls and needs no API key:
+
+```sh
 uv run --project backend --locked python scripts/verify_demo.py
 ```
 
