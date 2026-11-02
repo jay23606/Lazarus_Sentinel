@@ -167,7 +167,7 @@ New here? Start with issues labelled [`good first issue`](https://github.com/sum
 
 ## Documentation
 
-- Start: [team handoff](docs/21_TEAM_HANDOFF.md), [contributing](CONTRIBUTING.md), [task board](TASK_BOARD.md), [live log](AGENT.md), [platform evidence](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md).
+- Start: [team handoff](docs/21_TEAM_HANDOFF.md), [contributing](CONTRIBUTING.md), [task board](TASK_BOARD.md), [live log](AGENT.md), [platform evidence](docs/23_PORTABILITY_AND_RELEASE_VERIFICATION.md), [CI and issue backlog](docs/24_CONTRIBUTOR_READINESS_AND_CI.md).
 - Contracts: [first slice](docs/13_FIRST_SLICE_CONTRACT.md), [demo delivery](docs/16_DEMO_DELIVERY_CONTRACT.md), [implementation review](docs/14_IMPLEMENTATION_REVIEW.md), [next steps](docs/15_NEXT_STEPS.md).
 - Evidence: [capability report](docs/17_CAPABILITY_AND_RESEARCH_REPORT.md), [evaluation](docs/18_DEMO_EVALUATION.md), [integrated review](docs/19_INTEGRATED_DEMO_REVIEW.md).
 - Reference: [00 Charter](docs/00_PROJECT_CHARTER.md), [01 Requirements](docs/01_REQUIREMENTS.md), [02 Architecture](docs/02_ARCHITECTURE.md), [03 Graph schema](docs/03_GRAPH_SCHEMA.md), [04 Rules](docs/04_ANALYSIS_RULES.md), [05 Orchestration](docs/05_ORCHESTRATION.md), [06 API/persistence](docs/06_API_AND_PERSISTENCE.md), [07 Frontend](docs/07_FRONTEND.md), [08 Security](docs/08_SECURITY_MODEL.md), [09 Evaluation](docs/09_TESTING_EVALUATION.md), [10 Roadmap](docs/10_IMPLEMENTATION_PLAN.md), [11 Decisions](docs/11_DECISIONS_AND_ASSUMPTIONS.md), [12 Sources](docs/12_SOURCES.md).
