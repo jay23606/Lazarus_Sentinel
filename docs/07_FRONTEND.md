@@ -6,6 +6,10 @@ The approved [demo contract](16_DEMO_DELIVERY_CONTRACT.md) is implemented alongs
 
 Local baseline commit `7797b85` is preserved on `feat/integrated-demo`; no remote, publication, submission or license selection is implied. Only fixed synthetic intake is supported. Live access is BLOCKED by the missing key; zero paid calls were made. Joern setup is blocked and analysis NOT_ATTEMPTED; data/trust rules remain NOT_IMPLEMENTED. OS sandbox launch failed before execution, so broader intake remains blocked.
 
+## Viewer clarity increment — 2026-11-02
+
+[Document20](20_VIEWER_CLARITY_AND_DESIGN.md) records the delivered guided investigation experience: endpoint search, exact focused paths, deterministic full graph, node/edge labels, graph controls, node-specific evidence, responsive layout and keyboard alternatives. Current checks are115backend/16frontend tests, with independent Astra semantics review. Document19 preserves the earlier integrated delivery measurements.
+
 ## Current user experience
 
 A fixed React/Vite/TypeScript/Cytoscape viewer loads only the reviewed synthetic bundle from `frontend/public/demo/v1/`. It provides graph, finding/path/evidence tables, endpoint declarations, coverage and recorded mock explanation provenance. There is no HTTP API, upload, scan-start form or arbitrary URL/path loader. The CLI and Markdown reports remain usable. The [verified implementation review](14_IMPLEMENTATION_REVIEW.md) links the latest report and measurements.

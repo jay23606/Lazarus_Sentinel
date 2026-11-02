@@ -77,3 +77,8 @@ No universal compiler, complete-graph promise, automatic exploit validation/reme
 - **D-023:** Explanations are separately bound immutable annotations, disabled by default. Standard MuseSpark1.3,1024 outputtokens,20s absolutedeadline,16KiBcontext/32KiBresponse,oneattempt,no redirects/retries/tools. Transactional ledgerUSD3/fiveattemptsglobaldemo; ambiguous outcome retains reservation and blocks more calls. Budget follows owner'sUSD3–4 range conservatively; no key present and no livecall implied by mock success.
 - **D-024:** Local Git baseline7797b85 and feat/integrated-demo branch created using existing Git identity; no remote, license selection or publication. Reviewed fixed synthetic assets may be bundled for offline clean-checkout UI.
 - **D-025:** Optional analyzer/isolation/research deliverables must report actual measured gates. N18 firsttranche catalogs alltopics and evaluates DATA/TRUST; it does not falsely close open-ended implementation families. Broader intake remains behind tested OS isolation.
+
+
+### D-026 — Viewer comprehension and truthful navigation (2026-11-02)
+
+Owner selected all three audiences: first-time/demo, developer and security reviewer. Refine the existing visual identity with a guided exact path, explicit full-graph view, endpoint search and node-level evidence. Keep candidate path identities separate from declaration relationships. A noncandidate endpoint is “No candidate in this scan,” never a safe/security label. Astra approved these constraints and accepted the implementation read-only. Details and verification are in document20. No backend, provider, intake or detector contract changes.

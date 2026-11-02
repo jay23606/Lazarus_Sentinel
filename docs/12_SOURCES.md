@@ -235,3 +235,10 @@ The local CPython 3.13.14 environment resolved Pydantic 2.14.2, NetworkX 3.7, py
 This is read-only primary-source verification, not an API/model test or an assertion of event eligibility. Retain Muse Spark as the intended provider family; do not silently switch to another model because the general overview also advertises other models. Recheck exact model/request compatibility and terms when a live adapter is selected. No keys, account secrets or source were sent.
 
 The full recommended sequence is [15_NEXT_STEPS.md](15_NEXT_STEPS.md). Implemented results are in [14_IMPLEMENTATION_REVIEW.md](14_IMPLEMENTATION_REVIEW.md); current scope is [13_FIRST_SLICE_CONTRACT.md](13_FIRST_SLICE_CONTRACT.md).
+
+
+## Viewer clarity research — 2026-11-02
+
+- [Cytoscape layout guide](https://blog.js.cytoscape.org/2020/05/11/layouts/) and [preset layout documentation](https://js.cytoscape.org/#layouts/preset): opened for selected-subgraph and deterministic-position design; implementation retains the installed dependency/lock.
+- [Nielsen Norman Group: Progressive Disclosure](https://www.nngroup.com/articles/progressive-disclosure/): opened for first-pass guidance versus deeper evidence.
+- Owner-requested local UI UX Pro Max chart/React guidance and Impeccable Operate/craft-floor/context/detector workflow applied; no new plugin/global installation. See [design decisions and verification](20_VIEWER_CLARITY_AND_DESIGN.md).

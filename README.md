@@ -47,7 +47,7 @@ npm ci --prefix frontend --ignore-scripts --no-audit --no-fund
 npm run dev --prefix frontend
 ```
 
-The viewer loads only the reviewed synthetic bundle in `frontend/public/demo/v1/`; use the loopback URL printed by Vite. Select a candidate to inspect its exact ordered graph path, evidence hashes, coverage and recorded mock explanation. No upload, source path input or HTTP backend is involved.
+The viewer loads only the reviewed synthetic bundle in `frontend/public/demo/v1/`; use the loopback URL printed by Vite. Start with the three-step guide, search an endpoint, and inspect a focused path with readable node types and labeled arrows. Switch to Full graph for all relationships; select a node to inspect its source evidence. Fit/zoom/reset, keyboard step controls and expandable identity tables support deeper review. See the [viewer design and verification](docs/20_VIEWER_CLARITY_AND_DESIGN.md). No upload, source path input or HTTP backend is involved.
 
 To create new immutable artifacts, substitute IDs returned by your own scan (finding IDs are in its findings.json):
 

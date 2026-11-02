@@ -27,7 +27,8 @@
     "docs/16_DEMO_DELIVERY_CONTRACT.md",
     "docs/17_CAPABILITY_AND_RESEARCH_REPORT.md",
     "docs/18_DEMO_EVALUATION.md",
-    "docs/19_INTEGRATED_DEMO_REVIEW.md"
+    "docs/19_INTEGRATED_DEMO_REVIEW.md",
+    "docs/20_VIEWER_CLARITY_AND_DESIGN.md"
   ],
   "entrypoint": "CODEX_BOOTSTRAP_PROMPT.md",
   "persistent_instructions": "AGENTS.md",

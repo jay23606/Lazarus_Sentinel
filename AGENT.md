@@ -5,7 +5,7 @@
 ## Current status
 
 - **Project:** Lazarus Sentinel
-- **Status:** Integrated fixed synthetic demo complete; 115 backend tests, 8 frontend tests and quality checks pass; independent Astra review accepted. Live access/submission and platform-expansion gates remain explicit in docs/19_INTEGRATED_DEMO_REVIEW.md.
+- **Status:** Integrated fixed synthetic demo complete; 115 backend tests, 16 frontend tests and quality checks pass; independent Astra review accepted. Live access/submission and platform-expansion gates remain explicit in docs/19_INTEGRATED_DEMO_REVIEW.md.
 - **Current phase:** Offline integrated demo — fixture analysis, immutable bundles, recorded mock explanations and fixed artifact viewer.
 - **Primary MVP language/framework:** CPython 3.13.14 analyzing a synthetic FastAPI fixture without importing FastAPI.
 - **Primary code-analysis candidate:** Python AST structure adapter; Joern NOT_ATTEMPTED (absent from PATH; no failed POC claim).
@@ -210,3 +210,18 @@ For every substantial session, append:
 **Reproducibility:** Fresh source copy in /private/tmp excluding environments, generated artifacts, credentials and build output; npm ci --ignore-scripts --offline succeeded. uv locked offline setup lacked cached mypy; explicit network-enabled locked sync installed the missing project-local dependencies. This is a clean working-tree copy, not a claim of hosted CI execution. All nine checks passed in the clean copy. Final clean-copy result is recorded in artifacts/clean-copy-verification.json.
 
 **Limits and next actions:** Meta credentials absent; zero live calls/US$0. Event eligibility/portal submission and license undecided; no remote publication or submission. Joern setup blocked (analysis NOT_ATTEMPTED); DATA/TRUST NOT_IMPLEMENTED. sandbox-exec launch denied, so N14/N15 remain BLOCKED. Finite N16–N18 evaluation/operations/research deliverables are complete, not their open-ended product programs. Preserve original blueprint PDF and historical scans. Next: owner external gates, bounded live verification when prerequisites pass, then reviewed isolation infrastructure.
+
+
+### 2026-11-02 — Viewer clarity and graph refinement
+
+**Owner request:** Use UI UX Pro Max and Impeccable to improve the graph, immediate product comprehension and documentation. Owner selected all three audiences (first-time/demo, developers and security reviewers). Continued the existing visual world rather than replacing its identity.
+
+**Team:** Sol graph projection/rendering/tests; Terra shell/responsive styles/tests; independent Astra truth/semantics review; coordinator integration/browser/docs. Shared Network props were frozen before parallel edits. Both requested skills were read/applied; Impeccable context/detector and UIUX local chart/React searches ran. Official Cytoscape layout/preset and NNGroup progressive-disclosure references informed the selected-path-first design.
+
+**Delivered:** Guided explanation, searchable six-endpoint selector, exact focused path and deterministic full23node/36edge graph, typed node cards, labeled arrows, Fit/zoom/reset controls, selected-node evidence inspection and expandable raw identities. Noncandidate selection clears stale assessment/mock state. Real declaration relationships remain unverified context, never extra candidate-path steps. No new dependencies, backend changes or packaged artifact modifications (19fingerprints unchanged).
+
+**Verification:**115backend/16frontend tests and all9scripts/verify_demo.py checks pass. Astra independently passed16frontend tests and accepted the display semantics with no material issue. Browser1440/320/720reflow no document overflow; exact4node/3edge path, fullgraphmembership, keyboardinspection, zoom/reset/fit and noncandidateclearing checked. Mobile600px verticalpath and44x44viewportbuttons verified. Impeccable detector flaggedselectedsideborder; single repairbatch replacedit and improvedlabels/layout. One zoomed captureclipped;Fitrestoredpath;8boundedcandidate switchesfitallnodes after2frames. Nativezoom/screenreader nottested. Existinglargechunkwarning remains. No paid/livecalls.
+
+**Work products:** docs/20_VIEWER_CLARITY_AND_DESIGN.md; artifacts/viewer-v2-verification.json; artifacts/viewer-v2-browser-verification.json; focused/full/mobile screenshots under artifacts/browser/viewer-v2-*.png. README/frontend specification/bootstrap/taskboard/decisionregister updated. Historicalscanreports remain unchanged.
+
+**Next:** Gather actual audiencefeedback; measure loading/rendering before code-splitting/layout expansion; retain existing externalprovider/event/isolationgates.

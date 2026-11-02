@@ -9,3 +9,6 @@ Do not repeat completed implementation or claim live access. Missing key blocks 
 For any selected remaining increment, freeze acceptance criteria, reuse existing interfaces and focused tests, apply the actual Astra/Sol/Terra routing policy, and update affected docs/ledgers with measured results. Do not invent test counts: use document 19. Do not run optional roadmap tasks merely because they are listed.
 
 Keep source-byte evidence authoritative; CALLS is not data flow and DEPENDS_ON is a declaration rather than enforcement. Unknown control scope stays diagnostic. Separate severity, confidence, candidate status and coverage. Explanation prose remains non-authoritative even after schema validation. No arbitrary targets, target execution, global installs, exploitation, automatic fixes, unrequested publication or submission. Preserve historical scan reports and append-only logs; create new scan identities.
+
+
+Latest UI continuation: read [docs/20_VIEWER_CLARITY_AND_DESIGN.md](docs/20_VIEWER_CLARITY_AND_DESIGN.md). Guided endpoint/path/graph/evidence navigation is implemented and verified (115backend/16frontend tests); do not restart that work. Native zoom/screen-reader testing and large-graph usability remain unverified.

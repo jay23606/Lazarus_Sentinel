@@ -24,3 +24,14 @@ Updated **2026-11-02**. The first-slice baseline is complete. The integrated dem
 | N18 | FINITE RESEARCH DONE; broader OPEN | Catalog and DATA/TRUST research in document 17; broad detector/language program remains future work. |
 
 The original fixed fixture remains 6 endpoints / 23 nodes / 36 edges / 2 LOW-confidence candidates / 3 declarations with effectiveness unverified, intentionally PARTIAL. Historical reports and document 14 are preserved. No live call, target execution, global installation, deployment, publication or submission is implied by local demo completion.
+
+
+## Viewer clarity increment — completed 2026-11-02
+
+- [x] Apply requested UI UX Pro Max and Impeccable guidance to the existing viewer.
+- [x] Support first-time users, developer navigation and security-review depth in one workspace.
+- [x] Add exact focused paths, deterministic full graph, labels/legend, controls, endpoint search and node evidence inspection.
+- [x] Verify115backend/16frontend tests, allninequalitychecks, desktop/mobile/reflow/keyboard behavior and independent Astra semantics review.
+- [x] Document research, interaction contracts, screenshots and limits in [document20](docs/20_VIEWER_CLARITY_AND_DESIGN.md).
+
+N01–N18 external/capability gates above remain unchanged. No new model call, intake mode or detector was added.

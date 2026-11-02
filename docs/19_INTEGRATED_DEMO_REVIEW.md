@@ -2,6 +2,8 @@
 
 Verified **2026-11-02**. The fixed synthetic demo is implemented and independently reviewed. This completes the bounded offline delivery, with explicit external and capability gates below. It does not complete a hackathon submission or the open-ended platform roadmap.
 
+Subsequent UI refinement: [document20](20_VIEWER_CLARITY_AND_DESIGN.md) records the newer guided graph interface and16frontend tests. The8-test result below is the preserved original integrated-demo checkpoint.
+
 ## Delivered workflow
 
 1. `uv sync --project backend --locked` creates the Python 3.13.14 project environment.
